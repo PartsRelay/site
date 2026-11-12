@@ -4,7 +4,6 @@ export const sliders = [
   {
     name: 'requests',
     letter: 'a',
-    label: 'Requests a day',
     min: 5,
     max: 200,
     step: 5,
@@ -15,7 +14,6 @@ export const sliders = [
   {
     name: 'minutes',
     letter: 'b',
-    label: 'Minutes to look one up by hand',
     min: 1,
     max: 20,
     step: 1,
@@ -26,7 +24,6 @@ export const sliders = [
   {
     name: 'hourly',
     letter: 'c',
-    label: 'Cost of an hour at the counter',
     min: 10,
     max: 60,
     step: 1,
@@ -37,7 +34,6 @@ export const sliders = [
   {
     name: 'returns',
     letter: 'd',
-    label: 'Wrong parts sent back a month',
     min: 0,
     max: 60,
     step: 1,
@@ -46,9 +42,8 @@ export const sliders = [
     after: '',
   },
   {
-    name: 'returnCost',
+    name: 'cost',
     letter: 'e',
-    label: 'Cost of each return',
     min: 5,
     max: 150,
     step: 5,
@@ -60,22 +55,20 @@ export const sliders = [
 
 export type Inputs = Record<(typeof sliders)[number]['name'], number>
 
-export function sum({ requests, minutes, hourly, returns, returnCost }: Inputs) {
+export function sum({ requests, minutes, hourly, returns, cost }: Inputs, locale: string) {
+  const format = (amount: number, digits = 0) =>
+    amount.toLocaleString(locale, { maximumFractionDigits: digits, useGrouping: 'always' })
   const hours =
     (requests * assumptions.days * Math.max(0, minutes - assumptions.relayMinutes)) / 60
   const avoided = returns * assumptions.avoidedShare
-  const month = hours * hourly + avoided * returnCost
+  const month = hours * hourly + avoided * cost
 
   return {
     hours: format(hours),
     time: format(hours * hourly),
     avoided: format(avoided, 1),
-    saved: format(avoided * returnCost),
+    saved: format(avoided * cost),
     month: format(month),
     year: format(month * 12),
   }
-}
-
-function format(amount: number, digits = 0) {
-  return amount.toLocaleString('en-GB', { maximumFractionDigits: digits })
 }

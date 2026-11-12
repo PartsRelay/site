@@ -1,35 +1,34 @@
 ---
 import { price } from '../facts'
+import { translator } from '../i18n'
 import Section from './Section.astro'
 
-const included = [
-  'WhatsApp replies for the numbers you enable',
-  'The web app, with searches from a plate or a VIN',
-  'Your team as admins or viewers',
-  'English and Italian, in the app and in the replies',
-]
+const t = translator(Astro.currentLocale)
+const items = ['whatsapp', 'app', 'team', 'languages']
 ---
 
 <Section id="price">
   <div class="flex flex-wrap items-start gap-x-18 gap-y-10">
     <div class="flex min-w-0 flex-[1_1_23.75rem] flex-col gap-4">
-      <h2 class="h2">What Parts Relay costs</h2>
+      <h2 class="h2">{t('site.price.title')}</h2>
       <p
         class="font-heading text-[clamp(2.4rem,4.4vw,3.4rem)] leading-[1.05] font-extrabold tracking-[-0.03em]"
       >
-        {price.amount}
-        <span class="font-sans text-xl font-normal tracking-normal text-slate">a month</span>
+        {price}
+        <span class="font-sans text-xl font-normal tracking-normal text-slate">
+          {t('site.price.period')}
+        </span>
       </p>
-      <p class="text-slate">{price.terms}</p>
+      <p class="text-slate">{t('site.price.terms')}</p>
     </div>
     <div class="flex min-w-0 flex-[1_1_23.75rem] flex-col">
-      <p class="label mb-3">Included</p>
+      <p class="label mb-3">{t('site.price.included')}</p>
       <ul class="border-t border-dotted border-rule">
         {
-          included.map((item) => (
+          items.map((item) => (
             <li class="row flex gap-3.5 py-3">
               <span aria-hidden="true" class="mt-[0.7rem] size-2 flex-none rounded-full bg-teal" />
-              {item}
+              {t(`site.price.items.${item}`)}
             </li>
           ))
         }

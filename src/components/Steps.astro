@@ -1,35 +1,18 @@
 ---
+import { translator } from '../i18n'
 import Plate from './Plate.astro'
 import Section from './Section.astro'
 
-const steps = [
-  [
-    'The workshop writes',
-    'A plate and the part needed, as a text, a photo or a voice message, sent to your WhatsApp number.',
-  ],
-  [
-    'The vehicle is identified',
-    'From the registration plate or the VIN, Parts Relay finds the exact vehicle before it looks for any part.',
-  ],
-  [
-    'The original parts are found',
-    'It picks the right catalog category and reads the original part numbers, with the exploded view and each position.',
-  ],
-  [
-    'The answer goes back',
-    'Original numbers and aftermarket matches arrive in the chat, and the request lands in your search queue.',
-  ],
-]
+const t = translator(Astro.currentLocale)
+const steps = ['write', 'identify', 'find', 'answer']
 ---
 
 <Section id="how">
-  <h2 class="h2 max-w-[20em]">
-    From a WhatsApp message to part numbers, with nobody typing at the counter
-  </h2>
-  <Plate caption="Fig. 1 · The relay, from the chat to the counter and back">
+  <h2 class="h2 max-w-[20em]">{t('site.how.title')}</h2>
+  <Plate caption={t('site.how.caption')}>
     <div class="flex flex-wrap gap-x-7 gap-y-9 px-8 py-10">
       {
-        steps.map(([title, text], index) => (
+        steps.map((step, index) => (
           <article class="flex min-w-0 flex-[1_1_13rem] flex-col gap-2.5">
             <div aria-hidden="true" class="relative h-3.5">
               <div class="absolute inset-x-0 top-1.5 h-0.5 bg-grid" />
@@ -40,8 +23,8 @@ const steps = [
               />
             </div>
             <p class="label mt-2.5">{'abcd'[index]}</p>
-            <h3 class="h3">{title}</h3>
-            <p class="text-slate">{text}</p>
+            <h3 class="h3">{t(`site.how.steps.${step}.title`)}</h3>
+            <p class="text-slate">{t(`site.how.steps.${step}.text`)}</p>
           </article>
         ))
       }

@@ -1,6 +1,9 @@
 ---
 import { appUrl } from '../facts'
+import { translator } from '../i18n'
 import Section from './Section.astro'
+
+const t = translator(Astro.currentLocale)
 ---
 
 <Section id="start">
@@ -9,17 +12,14 @@ import Section from './Section.astro'
       <h2
         class="text-[clamp(2.2rem,4vw,3.4rem)] leading-[1.05] font-extrabold tracking-[-0.03em] text-balance"
       >
-        Open your counter
+        {t('site.start.title')}
       </h2>
-      <p class="max-w-[28em] text-xl text-slate">
-        Sign in and land in the app. There is no password to remember, and your first sign in
-        creates your company.
-      </p>
+      <p class="max-w-[28em] text-xl text-slate">{t('site.start.text')}</p>
     </div>
     <div class="plate flex min-w-0 flex-[0_1_26.25rem] flex-col gap-4 p-8">
-      <h3 class="text-[1.375rem] font-bold tracking-[-0.01em]">Sign in to Parts Relay</h3>
-      <p class="text-slate">With Google, or with a link sent to your email.</p>
-      <a href={`${appUrl}/login`} class="button text-center text-lg">Sign in</a>
+      <h3 class="text-[1.375rem] font-bold tracking-[-0.01em]">{t('site.start.card.title')}</h3>
+      <p class="text-slate">{t('site.start.card.text')}</p>
+      <a href={`${appUrl}/login`} class="button text-center text-lg">{t('site.sign-in')}</a>
     </div>
   </div>
 </Section>

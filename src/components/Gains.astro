@@ -1,35 +1,24 @@
 ---
+import { translator } from '../i18n'
 import Section from './Section.astro'
 
-const gains = [
-  {
-    title: 'Requests answer themselves',
-    text: 'A workshop writes, confirms with one word and gets the part numbers in the chat. Nobody at the counter retypes the plate.',
-    icon: '<path d="M5 7h22v15H13l-6 5v-5H5z"/><path class="stroke-teal" d="M11 13h10M11 17h6"/>',
-  },
-  {
-    title: 'The vehicle comes first',
-    text: 'Parts Relay identifies the exact vehicle from the plate or the VIN before it looks for any part, so the numbers belong to that car.',
-    icon: '<path d="M4 20v-5l3-7h18l3 7v5z"/><path d="M4 15h24"/><circle class="stroke-teal" cx="9.5" cy="21.5" r="2.5"/><circle class="stroke-teal" cx="22.5" cy="21.5" r="2.5"/>',
-  },
-  {
-    title: 'One queue for everything',
-    text: 'Requests from WhatsApp and searches from your team share one list, with the vehicle, the status and who asked.',
-    icon: '<rect x="5" y="5" width="22" height="22" rx="2"/><path class="stroke-teal" d="M10 11h12M10 16h12M10 21h7"/>',
-  },
-  {
-    title: 'Nothing to install',
-    text: 'Your workshops keep using WhatsApp, with no account to create. Only the numbers you enable can search.',
-    icon: '<rect x="10" y="3" width="12" height="26" rx="3"/><path d="M14 24h4"/><path class="stroke-teal" d="M13.5 13.5l2 2 3.5-4"/>',
-  },
-]
+const t = translator(Astro.currentLocale)
+const icons = {
+  replies: '<path d="M5 7h22v15H13l-6 5v-5H5z"/><path class="stroke-teal" d="M11 13h10M11 17h6"/>',
+  vehicle:
+    '<path d="M4 20v-5l3-7h18l3 7v5z"/><path d="M4 15h24"/><circle class="stroke-teal" cx="9.5" cy="21.5" r="2.5"/><circle class="stroke-teal" cx="22.5" cy="21.5" r="2.5"/>',
+  queue:
+    '<rect x="5" y="5" width="22" height="22" rx="2"/><path class="stroke-teal" d="M10 11h12M10 16h12M10 21h7"/>',
+  install:
+    '<rect x="10" y="3" width="12" height="26" rx="3"/><path d="M14 24h4"/><path class="stroke-teal" d="M13.5 13.5l2 2 3.5-4"/>',
+}
 ---
 
 <Section id="gain">
-  <h2 class="h2 max-w-[20em]">What changes at the counter</h2>
+  <h2 class="h2 max-w-[20em]">{t('site.gain.title')}</h2>
   <div class="flex flex-wrap gap-x-14 border-t border-dotted border-rule">
     {
-      gains.map(({ title, text, icon }) => (
+      Object.entries(icons).map(([item, icon]) => (
         <article class="row flex min-w-0 flex-[1_1_25rem] gap-5 py-7">
           <svg
             viewBox="0 0 32 32"
@@ -43,8 +32,8 @@ const gains = [
             set:html={icon}
           />
           <div class="flex flex-col gap-1.5">
-            <h3 class="h3">{title}</h3>
-            <p class="text-slate">{text}</p>
+            <h3 class="h3">{t(`site.gain.items.${item}.title`)}</h3>
+            <p class="text-slate">{t(`site.gain.items.${item}.text`)}</p>
           </div>
         </article>
       ))

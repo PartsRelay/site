@@ -14,6 +14,11 @@
   --color-slate: #455a64;
   --color-rule: #8a9ba6;
   --color-grid: #d0d9de;
+  --color-phone: #10171c;
+  --color-bar: #f6f6f6;
+  --color-chat: #efeae2;
+  --color-sent: #d9fdd3;
+  --color-read: #53bdeb;
 }
 
 @layer base {

@@ -2,44 +2,42 @@
 import { Image } from 'astro:assets'
 import queue from '../assets/queue.png'
 import search from '../assets/search.png'
+import { translator } from '../i18n'
 import Plate from './Plate.astro'
 import Section from './Section.astro'
 
-const points = [
-  'Results appear while the search runs, with no page to reload.',
-  'Filter by workshop or colleague, status, channel and period.',
-  'Start a search yourself from a plate or a VIN.',
-]
+const t = translator(Astro.currentLocale)
+const points = ['live', 'filters', 'search']
 ---
 
 <Section id="counter">
   <div class="flex flex-wrap items-start gap-x-18 gap-y-6">
-    <h2 class="h2 min-w-0 flex-[1_1_23.75rem]">One queue for every request</h2>
+    <h2 class="h2 min-w-0 flex-[1_1_23.75rem]">{t('site.counter.title')}</h2>
     <ul class="min-w-0 flex-[1_1_23.75rem] border-t border-dotted border-rule">
       {
         points.map((point) => (
           <li class="row flex gap-3.5 py-3">
             <span aria-hidden="true" class="mt-[0.7rem] size-2 flex-none rounded-full bg-teal" />
-            {point}
+            {t(`site.counter.points.${point}`)}
           </li>
         ))
       }
     </ul>
   </div>
   <div class="flex flex-wrap items-start gap-8">
-    <Plate class="min-w-0 flex-[3_1_30rem]" caption="Fig. 5a · The search queue">
+    <Plate class="min-w-0 flex-[3_1_30rem]" caption={t('site.counter.queue.caption')}>
       <Image
         src={queue}
-        alt="The Parts Relay search queue: each request with its plate, part, vehicle, status, channel and requester"
+        alt={t('site.counter.queue.alt')}
         widths={[640, 960, 1360]}
         sizes="(min-width: 70rem) 39rem, 100vw"
         class="h-auto w-full"
       />
     </Plate>
-    <Plate class="min-w-0 flex-[2_1_21.25rem]" caption="Fig. 5b · A completed search">
+    <Plate class="min-w-0 flex-[2_1_21.25rem]" caption={t('site.counter.search.caption')}>
       <Image
         src={search}
-        alt="A completed search in Parts Relay: the vehicle, the exploded view and the original part numbers with their aftermarket matches"
+        alt={t('site.counter.search.alt')}
         widths={[480, 720, 960]}
         sizes="(min-width: 70rem) 26rem, 100vw"
         class="h-auto w-full"

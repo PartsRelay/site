@@ -1,67 +1,114 @@
 ---
+import { example } from '../facts'
+import { translator } from '../i18n'
+import Logo from './Logo.astro'
+import Phone from './Phone.astro'
 import Plate from './Plate.astro'
 import Section from './Section.astro'
 
+const t = translator(Astro.currentLocale)
+const { plate, vehicle, code } = example
+const query = t('site.example.query')
+const match = (letter: string) =>
+  t('assistant.aftermarket', { code: `${code}-${letter}`, description: t('site.example.match') })
 const messages = [
-  { from: 'workshop', text: 'AB123CD front brake pads' },
+  { sent: true, time: '09:41', text: `${plate} ${query}` },
+  { sent: false, time: '09:41', text: t('assistant.summary', { plate, query }) },
+  { sent: true, time: '09:41', text: t('site.example.yes') },
+  { sent: false, time: '09:41', text: t('assistant.received', { plate, query }) },
+  { sent: false, time: '09:42', text: t('assistant.results', { vehicle, plate, query }) },
   {
-    from: 'relay',
-    text: 'Ready to search AB123CD · front brake pads. Reply YES to start the search, or tell me what to change.',
+    sent: false,
+    time: '09:42',
+    text: [
+      t('assistant.oem', { code, description: t('site.example.part') }),
+      t('assistant.aftermarket-title'),
+      match('A'),
+      match('B'),
+    ].join('\n'),
   },
-  { from: 'workshop', text: 'YES' },
-  { from: 'relay', text: 'Request received. Searching…' },
 ]
-const bubble = {
-  workshop: 'self-end rounded-br-sm bg-mist',
-  relay: 'self-start rounded-bl-sm bg-white',
+const icons = {
+  back: '<path d="M15 5l-7 7 7 7"/>',
+  video: '<rect x="3" y="6.5" width="12" height="11" rx="3"/><path d="M15 10.5l6-3v9l-6-3z"/>',
+  call: '<path d="M6 3.5h3l1.5 4.5-2 1.5a12 12 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2 2A15.5 15.5 0 0 1 4 5.5a2 2 0 0 1 2-2z"/>',
+  add: '<path d="M12 5v14M5 12h14"/>',
+  camera: '<path d="M4 8h3.5l1.5-2h6l1.5 2H20v11H4z"/><circle cx="12" cy="13.2" r="3.3"/>',
+  voice: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11.5a6 6 0 0 0 12 0M12 17.5V21"/>',
 }
+const icon = 'size-5.5 flex-none fill-none stroke-navy'
 ---
 
 <Section id="whatsapp">
   <div class="flex flex-wrap items-start gap-x-18 gap-y-10">
     <div class="flex min-w-0 flex-[1_1_23.75rem] flex-col gap-4">
-      <h2 class="h2">Your workshops already have the app</h2>
-      <p class="text-xl text-slate">
-        Nothing to install and no account to create. A workshop writes to your number the way it
-        always has, and confirms the request with one word.
-      </p>
-      <p class="text-slate">
-        Only the numbers you enable can search. Anyone else gets a reply asking them to contact
-        you. Replies go out in English or Italian, the language you choose for your company.
-      </p>
+      <h2 class="h2">{t('site.whatsapp.title')}</h2>
+      <p class="text-xl text-slate">{t('site.whatsapp.lead')}</p>
+      <p class="text-slate">{t('site.whatsapp.text')}</p>
     </div>
-    <Plate class="min-w-0 flex-[1_1_25rem]" caption="Fig. 6 · A request, start to finish">
-      <div
-        role="group"
-        aria-label="Example WhatsApp conversation"
-        class="dots flex flex-col gap-2.5 px-6 py-7 text-[1.0625rem] leading-[1.45]"
-      >
-        {
-          messages.map(({ from, text }, index) => (
-            <p
-              class:list={[
-                'rise max-w-[85%] rounded-xl border border-navy px-3.5 py-2',
-                bubble[from as keyof typeof bubble],
-              ]}
-              style={`--delay: ${0.1 + index * 0.4}s`}
-            >
-              {text}
+    <Plate class="min-w-0 flex-[1_1_25rem]" caption={t('site.whatsapp.caption')}>
+      <div class="dots flex justify-center px-3 py-8 sm:px-6">
+        <Phone label={t('site.whatsapp.label')}>
+          <div class="flex items-center gap-2 border-b border-grid px-2 pb-2">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class={icon} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons.back} />
+            <span class="flex size-9 flex-none items-center justify-center rounded-full bg-white ring-1 ring-grid *:h-4.5 *:w-auto">
+              <Logo />
+            </span>
+            <p class="flex min-w-0 flex-1 flex-col leading-tight">
+              <span class="truncate text-[4.6875cqw] font-semibold">Parts Relay</span>
+              <span class="text-[3.75cqw] text-slate">{t('site.whatsapp.status')}</span>
             </p>
-          ))
-        }
-        <p
-          class:list={[
-            'rise flex max-w-[92%] flex-col gap-1 rounded-xl border border-navy px-3.5 py-2.5',
-            bubble.relay,
-          ]}
-          style="--delay: 1.7s"
-        >
-          <span>Fiat Panda 1.2 · AB123CD · front brake pads</span>
-          <span class="font-mono text-[0.9375rem] text-teal">OEM 77367141 · Front brake pad set</span>
-          <span>Aftermarket:</span>
-          <span class="font-mono text-[0.9375rem] text-slate">• 77367141-A · Front brake pads</span>
-          <span class="font-mono text-[0.9375rem] text-slate">• 77367141-B · Front brake pads</span>
-        </p>
+            {
+              [icons.video, icons.call].map((path) => (
+                <svg viewBox="0 0 24 24" aria-hidden="true" class:list={[icon, 'mx-1']} stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={path} />
+              ))
+            }
+          </div>
+
+          <div class="flex min-h-0 flex-1 flex-col-reverse overflow-hidden bg-chat px-3 py-2.5">
+            <div class="mb-auto flex flex-col gap-1.5">
+              <p class="mb-1 self-center rounded-md bg-white px-2.5 py-0.5 text-[3.75cqw] text-slate shadow-sm">
+                {t('site.whatsapp.today')}
+              </p>
+              {
+                messages.map(({ sent, time, text }, index) => (
+                  <p
+                    class:list={[
+                      'rise relative max-w-[86%] rounded-[2.5cqw] px-2 pt-1 pb-1.5 whitespace-pre-line shadow-[0_1px_0.5px_rgb(20_43_58/0.2)] before:absolute before:top-0 before:border-t-[2.5cqw]',
+                      sent
+                        ? 'self-end rounded-tr-none bg-sent before:left-full before:border-r-[2.5cqw] before:border-t-sent before:border-r-transparent'
+                        : 'self-start rounded-tl-none bg-white before:right-full before:border-l-[2.5cqw] before:border-t-white before:border-l-transparent',
+                    ]}
+                    style={`--delay: ${0.1 + index * 0.4}s`}
+                  >
+                    {text}
+                    <span aria-hidden="true" class:list={['inline-block', sent ? 'w-13' : 'w-9']} />
+                    <span class="absolute right-2 bottom-1 flex items-center gap-1 text-[3.4375cqw] leading-none text-slate">
+                      {time}
+                      {
+                        sent && (
+                          <svg viewBox="0 0 16 11" aria-hidden="true" class="h-2.75 fill-none stroke-read" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 6l3 3.5L10 1.5M7 8.3l1 1.2L15 1.5" />
+                          </svg>
+                        )
+                      }
+                    </span>
+                  </p>
+                ))
+              }
+            </div>
+          </div>
+
+          <div aria-hidden="true" class="flex items-center gap-2.5 px-3 pt-2 pb-6">
+            <svg viewBox="0 0 24 24" class={icon} stroke-width="1.7" stroke-linecap="round" set:html={icons.add} />
+            <span class="h-8 flex-1 rounded-full border border-grid bg-white"></span>
+            {
+              [icons.camera, icons.voice].map((path) => (
+                <svg viewBox="0 0 24 24" class={icon} stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" set:html={path} />
+              ))
+            }
+          </div>
+        </Phone>
       </div>
     </Plate>
   </div>

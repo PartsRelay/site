@@ -1,0 +1,31 @@
+---
+interface Props {
+  label: string
+}
+
+const { label } = Astro.props
+const buttons = ['top-24 -left-1 h-7', 'top-36 -left-1 h-12', 'top-52 -left-1 h-12', 'top-40 -right-1 h-20']
+---
+
+<div role="group" aria-label={label} class="@container w-full max-w-[20rem]">
+  <div class="relative font-[system-ui] text-[4.0625cqw] leading-[1.35] [--spacing:calc(100cqw/80)]">
+    {buttons.map((button) => <span class:list={['absolute w-1 rounded-sm bg-phone', button]} />)}
+    <div
+      class="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[15cqw] border-[2.5cqw] border-phone bg-bar shadow-[0_0_0_2px_var(--color-rule),0_1.5rem_2.5rem_-1.5rem_rgb(20_43_58/0.55)]"
+    >
+      <div aria-hidden="true" class="flex items-center justify-between px-7 pt-3.5 pb-2 font-semibold">
+        <span>9:41</span>
+        <span class="absolute top-2.5 left-1/2 h-6 w-22 -translate-x-1/2 rounded-full bg-phone"></span>
+        <svg viewBox="0 0 58 12" class="h-3 fill-navy">
+          <path d="M0 8h3v4H0zM5 6h3v6H5zM10 3h3v9h-3zM15 0h3v12h-3z"></path>
+          <path d="M30 3.2a8 8 0 0 1 5.6 2.3l-1.4 1.4a6 6 0 0 0-8.4 0l-1.4-1.4A8 8 0 0 1 30 3.2m0 4a4 4 0 0 1 2.8 1.2L30 11.2l-2.8-2.8A4 4 0 0 1 30 7.2"></path>
+          <rect x="42.5" y="1.5" width="13" height="9" rx="2.5" class="fill-none stroke-navy"></rect>
+          <rect x="44" y="3" width="10" height="6" rx="1.2"></rect>
+          <path d="M57 4.5v3"></path>
+        </svg>
+      </div>
+      <slot />
+      <span aria-hidden="true" class="absolute bottom-1.5 left-1/2 h-1 w-28 -translate-x-1/2 rounded-full bg-phone"></span>
+    </div>
+  </div>
+</div>

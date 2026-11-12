@@ -1,12 +1,16 @@
 ---
-import { film } from '../facts'
+import { example, film } from '../facts'
+import { translator } from '../i18n'
 import Plate from './Plate.astro'
 import Section from './Section.astro'
+
+const t = translator(Astro.currentLocale)
+const caption = t('site.film.caption', { plate: example.plate, query: t('site.example.query') })
 ---
 
 <Section id="film">
-  <h2 class="h2 max-w-[20em]">Watch one request travel from the chat to the counter</h2>
-  <Plate caption="Fig. 7 · AB123CD, front brake pads" note={film.length}>
+  <h2 class="h2 max-w-[20em]">{t('site.film.title')}</h2>
+  <Plate caption={caption} note={film.length}>
     {
       film.src ? (
         <video controls preload="none" src={film.src} poster={film.poster} class="aspect-video w-full bg-navy" />
@@ -29,8 +33,8 @@ import Section from './Section.astro'
                 <path d="M8 5v14l11-7z" />
               </svg>
             </div>
-            <p class="font-mono text-[0.9375rem] tracking-widest text-mist uppercase">{film.label}</p>
-            <p class="max-w-[30em] text-[#c9d8df]">The poster frame of the film goes here.</p>
+            <p class="font-mono text-[0.9375rem] tracking-widest text-mist uppercase">{t('site.film.label')}</p>
+            <p class="max-w-[30em] text-[#c9d8df]">{t('site.film.poster')}</p>
           </div>
         </div>
       )
