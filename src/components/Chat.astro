@@ -1,0 +1,68 @@
+---
+import Plate from './Plate.astro'
+import Section from './Section.astro'
+
+const messages = [
+  { from: 'workshop', text: 'AB123CD front brake pads' },
+  {
+    from: 'relay',
+    text: 'Ready to search AB123CD · front brake pads. Reply YES to start the search, or tell me what to change.',
+  },
+  { from: 'workshop', text: 'YES' },
+  { from: 'relay', text: 'Request received. Searching…' },
+]
+const bubble = {
+  workshop: 'self-end rounded-br-sm bg-mist',
+  relay: 'self-start rounded-bl-sm bg-white',
+}
+---
+
+<Section id="whatsapp">
+  <div class="flex flex-wrap items-start gap-x-18 gap-y-10">
+    <div class="flex min-w-0 flex-[1_1_23.75rem] flex-col gap-4">
+      <h2 class="h2">Your workshops already have the app</h2>
+      <p class="text-xl text-slate">
+        Nothing to install and no account to create. A workshop writes to your number the way it
+        always has, and confirms the request with one word.
+      </p>
+      <p class="text-slate">
+        Only the numbers you enable can search. Anyone else gets a reply asking them to contact
+        you. Replies go out in English or Italian, the language you choose for your company.
+      </p>
+    </div>
+    <Plate class="min-w-0 flex-[1_1_25rem]" caption="Fig. 6 · A request, start to finish">
+      <div
+        role="group"
+        aria-label="Example WhatsApp conversation"
+        class="dots flex flex-col gap-2.5 px-6 py-7 text-[1.0625rem] leading-[1.45]"
+      >
+        {
+          messages.map(({ from, text }, index) => (
+            <p
+              class:list={[
+                'rise max-w-[85%] rounded-xl border border-navy px-3.5 py-2',
+                bubble[from as keyof typeof bubble],
+              ]}
+              style={`--delay: ${0.1 + index * 0.4}s`}
+            >
+              {text}
+            </p>
+          ))
+        }
+        <p
+          class:list={[
+            'rise flex max-w-[92%] flex-col gap-1 rounded-xl border border-navy px-3.5 py-2.5',
+            bubble.relay,
+          ]}
+          style="--delay: 1.7s"
+        >
+          <span>Fiat Panda 1.2 · AB123CD · front brake pads</span>
+          <span class="font-mono text-[0.9375rem] text-teal">OEM 77367141 · Front brake pad set</span>
+          <span>Aftermarket:</span>
+          <span class="font-mono text-[0.9375rem] text-slate">• 77367141-A · Front brake pads</span>
+          <span class="font-mono text-[0.9375rem] text-slate">• 77367141-B · Front brake pads</span>
+        </p>
+      </div>
+    </Plate>
+  </div>
+</Section>

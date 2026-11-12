@@ -1,0 +1,182 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/source-sans-3';
+@import '@fontsource-variable/jetbrains-mono';
+
+@theme {
+  --font-heading: 'Manrope Variable', sans-serif;
+  --font-sans: 'Source Sans 3 Variable', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', monospace;
+  --color-navy: #142b3a;
+  --color-teal: #087781;
+  --color-mist: #dff3ef;
+  --color-canvas: #f5f7f8;
+  --color-slate: #455a64;
+  --color-rule: #8a9ba6;
+  --color-grid: #d0d9de;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-navy antialiased;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--color-teal);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .label {
+    @apply font-mono text-[0.8125rem] tracking-[0.08em] text-slate uppercase;
+  }
+
+  .h2 {
+    @apply text-[clamp(1.9rem,3.4vw,2.75rem)] leading-[1.1] font-extrabold tracking-[-0.025em] text-balance;
+  }
+
+  .h3 {
+    @apply text-[1.3125rem] leading-tight font-bold tracking-[-0.01em];
+  }
+
+  .plate {
+    @apply rounded-md border border-navy bg-white;
+  }
+
+  .caption {
+    @apply border-t border-navy px-5 py-3 font-mono text-xs tracking-[0.06em] text-slate uppercase;
+  }
+
+  .row {
+    @apply border-b border-dotted border-rule;
+  }
+
+  .dots {
+    background-image: radial-gradient(var(--color-grid) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .button {
+    @apply inline-block rounded-md bg-navy px-6 py-3 font-semibold text-white no-underline;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translate(var(--from-x), var(--from-y, 0));
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 300;
+  }
+}
+
+@keyframes glow {
+  50% {
+    fill-opacity: 0.3;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes run {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  24% {
+    left: calc(100% - 8px);
+    opacity: 1;
+  }
+  30%,
+  100% {
+    left: calc(100% - 8px);
+    opacity: 0;
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  70%,
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.slide {
+  animation: slide 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.show {
+  animation: show 0.5s var(--delay, 0s) both;
+}
+
+.draw {
+  stroke-dasharray: 300;
+  animation: draw 1s ease-out 1.7s both;
+}
+
+.glow {
+  animation: glow 3.6s ease-in-out 2.4s infinite;
+}
+
+.rise {
+  animation: rise 0.45s var(--delay, 0s) both;
+}
+
+.run {
+  animation: run 6.4s linear var(--delay, 0s) infinite;
+}
+
+.ring {
+  animation: ring 3s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .slide,
+  .show,
+  .draw,
+  .glow,
+  .rise,
+  .run,
+  .ring {
+    animation: none;
+  }
+}

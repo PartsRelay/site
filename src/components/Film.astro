@@ -1,0 +1,39 @@
+---
+import { film } from '../facts'
+import Plate from './Plate.astro'
+import Section from './Section.astro'
+---
+
+<Section id="film">
+  <h2 class="h2 max-w-[20em]">Watch one request travel from the chat to the counter</h2>
+  <Plate caption="Fig. 7 · AB123CD, front brake pads" note={film.length}>
+    {
+      film.src ? (
+        <video controls preload="none" src={film.src} poster={film.poster} class="aspect-video w-full bg-navy" />
+      ) : (
+        <div class="relative flex aspect-video items-center justify-center bg-navy text-center">
+          <svg
+            viewBox="0 0 1600 900"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            class="absolute inset-0 size-full fill-none stroke-[#3a5567]"
+            stroke-width="1.5"
+            stroke-dasharray="8 10"
+          >
+            <path d="M0 450H1600M800 0V900" />
+          </svg>
+          <div class="relative flex flex-col items-center gap-5 p-6">
+            <div aria-hidden="true" class="relative flex size-22 items-center justify-center rounded-full bg-mist">
+              <span class="ring absolute inset-0 rounded-full border-2 border-mist" />
+              <svg viewBox="0 0 24 24" width="32" height="32" class="fill-navy">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <p class="font-mono text-[0.9375rem] tracking-widest text-mist uppercase">{film.label}</p>
+            <p class="max-w-[30em] text-[#c9d8df]">The poster frame of the film goes here.</p>
+          </div>
+        </div>
+      )
+    }
+  </Plate>
+</Section>

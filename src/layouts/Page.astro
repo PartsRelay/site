@@ -1,0 +1,64 @@
+---
+import '../styles/global.css'
+import Logo from '../components/Logo.astro'
+import { appUrl } from '../facts'
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+const url = Astro.site && new URL(Astro.url.pathname, Astro.site)
+const image = Astro.site && new URL('/og.png', Astro.site)
+const links = [
+  { href: '#how', text: 'How it works' },
+  { href: '#gain', text: 'Gains' },
+  { href: '#costs', text: 'Costs' },
+  { href: '#questions', text: 'Questions' },
+]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {url && <link rel="canonical" href={url} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Parts Relay" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {url && <meta property="og:url" content={url} />}
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+  </head>
+  <body id="top" class="overflow-x-hidden">
+    <header
+      class="mx-auto flex max-w-[70rem] flex-wrap items-center justify-between gap-x-8 gap-y-2 px-8 py-5"
+    >
+      <a href="#top" class="flex min-h-11 items-center gap-3 text-navy no-underline">
+        <Logo />
+        <span class="font-heading text-[1.375rem] font-bold tracking-[-0.01em]">Parts Relay</span>
+      </a>
+      <nav aria-label="Sections" class="label flex flex-wrap items-center gap-x-6">
+        {links.map(({ href, text }) => <a href={href} class="py-3 text-navy">{text}</a>)}
+        <a href={`${appUrl}/login`} class="rounded-md bg-navy px-4 py-2.5 text-white">Sign in</a>
+      </nav>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="mx-auto max-w-[70rem] px-8 pb-12">
+      <div
+        class="flex flex-wrap items-center justify-between gap-x-10 gap-y-2 border-t border-navy pt-5 text-base text-slate"
+      >
+        <span class="font-heading text-lg font-bold text-navy">Parts Relay</span>
+        <span>Original and aftermarket car parts from a plate or a VIN.</span>
+      </div>
+    </footer>
+  </body>
+</html>

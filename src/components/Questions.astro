@@ -1,0 +1,44 @@
+---
+import { price } from '../facts'
+import Section from './Section.astro'
+
+const questions = [
+  [
+    'Do workshops need to install anything?',
+    'No. They send a WhatsApp message to your number with a plate and the part they need, as a text, a photo or a voice message.',
+  ],
+  [
+    'Who can search?',
+    'The WhatsApp numbers you add as contacts, and your team from the web app. Any other number gets a reply asking them to contact you.',
+  ],
+  [
+    'Can we search without WhatsApp?',
+    'Yes. Anyone in your team starts a search from the web app with a registration plate or a VIN, and the result joins the same queue.',
+  ],
+  [
+    'Which languages does it speak?',
+    'The web app and the WhatsApp replies are available in English and Italian.',
+  ],
+  ['How much does it cost?', price.answer],
+  [
+    'Are the results a fitment guarantee?',
+    'No. Results are identification guidance. Always confirm vehicle fitment before purchase.',
+  ],
+]
+---
+
+<Section id="questions">
+  <div class="flex flex-wrap items-start gap-x-18 gap-y-6">
+    <h2 class="h2 min-w-0 flex-[1_1_18.75rem]">Questions parts sellers ask</h2>
+    <div class="min-w-0 flex-[2_1_32.5rem] border-t border-dotted border-rule">
+      {
+        questions.map(([question, answer], index) => (
+          <details open={index === 0} class="row py-4">
+            <summary class="min-h-7 cursor-pointer font-heading text-xl font-bold">{question}</summary>
+            <p class="mt-2.5 text-slate">{answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</Section>
