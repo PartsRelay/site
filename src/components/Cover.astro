@@ -1,5 +1,5 @@
 ---
-import { appUrl, example, sections } from '../facts'
+import { example, sections, uiUrl } from '../facts'
 import { translator } from '../i18n'
 import Brake from './Brake.astro'
 import Plate from './Plate.astro'
@@ -23,7 +23,7 @@ const columns = [sections.slice(0, half), sections.slice(half)]
         {t('site.cover.text')}
       </p>
       <div class="flex flex-wrap items-center gap-x-7 gap-y-3">
-        <a href={`${appUrl}/login`} class="button">{t('site.sign-in')}</a>
+        <a href={`${uiUrl}/login`} class="button">{t('site.sign-in')}</a>
         <a href="#film" class="inline-flex items-center gap-2.5 py-3 font-semibold underline-offset-4">
           <svg
             viewBox="0 0 24 24"

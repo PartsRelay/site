@@ -1,4 +1,4 @@
-export const appUrl: string = import.meta.env.APP_URL ?? 'http://localhost:5173'
+export const uiUrl: string = import.meta.env.UI_URL ?? 'http://localhost:5173'
 
 export const sections = [
   'how',
