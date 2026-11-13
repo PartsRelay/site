@@ -34,7 +34,7 @@ The dev container of `.devcontainer` checks out the submodules, copies `.env` an
 
 - `locales/`: the git submodule of PartsRelay/locales (branch `main`), the only home of the texts, in ICU MessageFormat. `src/i18n.ts` reads every file at build time, so `t('site.cover.title')` reads `cover.title` of `<locale>/site.json`. The example chat shows the real WhatsApp replies of the `assistant` namespace.
 - To add or change a text, commit it to the locales repository, run `git submodule update --remote locales` and commit the new pointer with the code.
-- `i18n` of `astro.config.ts` lists the languages: English at `/`, Italian at `/it/`. Every page links the others with `hreflang`.
+- `astro.config.ts` reads the languages from the submodule: every `<locale>` folder with a `site.json` is a page at the path of its language, so English is at `/` and Italian at `/it/`. A new language needs only its `site.json` and its name in `languages.json`. Every page links the others with `hreflang`.
 - The site is static, so the browser picks the language: the English page sends a visitor whose browser prefers another listed language to that page, once, unless they chose a language with the link in the header, which `localStorage` remembers.
 
 ## Before going live
