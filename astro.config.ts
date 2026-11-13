@@ -16,7 +16,6 @@ const locales = readdirSync('locales')
 
 export default defineConfig({
   site: SITE_URL || undefined,
-  publicDir: './public/static',
   server: { host: true, allowedHosts: ['.trycloudflare.com'] },
   i18n: { defaultLocale: 'en', locales },
   vite: { plugins: [tailwindcss()] },
