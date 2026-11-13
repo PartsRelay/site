@@ -1,0 +1,84 @@
+---
+import { example, sections, uiUrl } from '../facts'
+import { translator } from '../i18n'
+import Brake from './Brake.astro'
+import Plate from './Plate.astro'
+
+const t = translator(Astro.currentLocale)
+const specs = ['starts', 'answers', 'returns', 'speaks']
+const half = Math.ceil(sections.length / 2)
+const columns = [sections.slice(0, half), sections.slice(half)]
+---
+
+<section class="mx-auto flex max-w-[70rem] flex-col gap-16 px-8 pt-14 pb-24">
+  <div class="flex flex-wrap items-start gap-x-16 gap-y-14">
+    <div class="flex min-w-0 flex-[1_1_27.5rem] flex-col gap-7">
+      <p class="label">{t('site.cover.label')}</p>
+      <h1
+        class="text-[clamp(2.5rem,5vw,4.25rem)] leading-[1.03] font-extrabold tracking-[-0.035em] text-balance"
+      >
+        {t('site.cover.title')}
+      </h1>
+      <p class="max-w-[33em] text-[1.3125rem] leading-normal text-slate">
+        {t('site.cover.text')}
+      </p>
+      <div class="flex flex-wrap items-center gap-x-7 gap-y-3">
+        <a href={`${uiUrl}/login`} class="button">{t('site.sign-in')}</a>
+        <a href="#film" class="inline-flex items-center gap-2.5 py-3 font-semibold underline-offset-4">
+          <svg
+            viewBox="0 0 24 24"
+            width="22"
+            height="22"
+            aria-hidden="true"
+            class="fill-none stroke-navy"
+            stroke-width="1.6"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path class="fill-navy" d="M10 8.5v7l6-3.5z"></path>
+          </svg>
+          {t('site.cover.film')}
+        </a>
+      </div>
+      <dl class="mt-2 border-t border-navy">
+        {
+          specs.map((spec) => (
+            <div class="row flex gap-5 py-2.5">
+              <dt class="label w-[6.875rem] flex-none pt-1">{t(`site.cover.specs.${spec}.term`)}</dt>
+              <dd>{t(`site.cover.specs.${spec}.detail`)}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <Plate
+      class="min-w-0 flex-[1_1_30rem]"
+      caption={t('site.cover.caption')}
+      note={`${example.vehicle} · ${example.plate}`}
+    >
+      <div class="dots px-5 pt-5 pb-2"><Brake /></div>
+    </Plate>
+  </div>
+
+  <nav aria-label={t('site.cover.contents')} class="flex flex-col gap-3.5">
+    <p class="label">{t('site.cover.contents')}</p>
+    <div class="flex flex-wrap gap-x-14 border-t border-navy">
+      {
+        columns.map((column, at) => (
+          <div class="flex min-w-0 flex-[1_1_23.75rem] flex-col">
+            {column.map((id, index) => (
+              <a href={`#${id}`} class="row flex items-baseline gap-4 py-3 text-navy">
+                <span class="font-mono text-sm text-slate">
+                  {String(at * half + index + 1).padStart(2, '0')}
+                </span>
+                <span class="font-semibold">{t(`site.${id}.name`)}</span>
+                <span class="ml-auto text-right text-base text-slate">{t(`site.${id}.hint`)}</span>
+              </a>
+            ))}
+          </div>
+        ))
+      }
+    </div>
+  </nav>
+</section>

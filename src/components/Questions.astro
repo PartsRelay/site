@@ -1,0 +1,25 @@
+---
+import { translator } from '../i18n'
+import Section from './Section.astro'
+
+const t = translator(Astro.currentLocale)
+const items = ['install', 'who', 'web', 'languages', 'cost', 'fitment']
+---
+
+<Section id="questions">
+  <div class="flex flex-wrap items-start gap-x-18 gap-y-6">
+    <h2 class="h2 min-w-0 flex-[1_1_18.75rem]">{t('site.questions.title')}</h2>
+    <div class="min-w-0 flex-[2_1_32.5rem] border-t border-dotted border-rule">
+      {
+        items.map((item, index) => (
+          <details open={index === 0} class="row py-4">
+            <summary class="min-h-7 cursor-pointer font-heading text-xl font-bold">
+              {t(`site.questions.items.${item}.question`)}
+            </summary>
+            <p class="mt-2.5 text-slate">{t(`site.questions.items.${item}.answer`)}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</Section>

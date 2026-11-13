@@ -1,0 +1,91 @@
+---
+import { example } from '../facts'
+import { translator } from '../i18n'
+
+const t = translator(Astro.currentLocale)
+const { code } = example
+---
+
+<svg
+  viewBox="0 0 640 380"
+  role="img"
+  aria-label={t('site.cover.figure', { code })}
+  class="block h-auto w-full"
+>
+  <line class="stroke-rule" x1="30" y1="200" x2="610" y2="200" stroke-width="1.2" stroke-dasharray="6 8"
+  ></line>
+  <g class="slide fill-white stroke-navy" style="--from-x: 150px" stroke-width="2" stroke-linejoin="round">
+    <rect x="52" y="140" width="10" height="120" rx="3"></rect>
+    <rect x="62" y="122" width="96" height="156" rx="14"></rect>
+    <circle cx="110" cy="200" r="34"></circle>
+    <circle cx="110" cy="200" r="11"></circle>
+  </g>
+  <g class="slide fill-white stroke-navy" style="--from-x: 86px" stroke-width="2">
+    <ellipse cx="212" cy="200" rx="13" ry="112"></ellipse>
+    <ellipse cx="212" cy="200" rx="6" ry="58"></ellipse>
+  </g>
+  <g class="slide fill-white stroke-navy" style="--from-x: 48px" stroke-width="2">
+    <ellipse cx="258" cy="200" rx="8" ry="62"></ellipse>
+  </g>
+  <g class="slide stroke-teal" style="--from-x: 8px" stroke-width="2.4" stroke-linejoin="round">
+    <rect class="glow fill-teal" x="288" y="140" width="30" height="120" rx="6" fill-opacity="0.12"></rect>
+    <path fill="none" d="M296 170h14M296 200h14M296 230h14"></path>
+  </g>
+  <g class="slide stroke-teal" style="--from-x: -36px" stroke-width="2.4" stroke-linejoin="round">
+    <rect class="glow fill-teal" x="340" y="140" width="30" height="120" rx="6" fill-opacity="0.12"></rect>
+    <path fill="none" d="M348 170h14M348 200h14M348 230h14"></path>
+  </g>
+  <g class="slide fill-white stroke-navy" style="--from-x: -104px" stroke-width="2" stroke-linejoin="round">
+    <rect x="418" y="128" width="108" height="144" rx="22"></rect>
+    <circle cx="462" cy="200" r="30"></circle>
+    <rect x="526" y="186" width="26" height="28" rx="5"></rect>
+    <path fill="none" d="M552 200h38"></path>
+  </g>
+  <g
+    class="slide fill-white stroke-navy"
+    style="--from-x: -104px; --from-y: -26px"
+    stroke-width="2"
+    stroke-linejoin="round"
+  >
+    <rect x="478" y="62" width="16" height="10" rx="2"></rect>
+    <rect x="482" y="72" width="8" height="38" rx="1"></rect>
+  </g>
+  <g class="show font-mono" style="--delay: 1.3s" font-size="12" text-anchor="middle">
+    <g class="fill-none stroke-slate" stroke-width="1.1">
+      <path d="M110 45V118"></path>
+      <path d="M212 45V84"></path>
+      <path d="M258 45V134"></path>
+      <path d="M440 45V124"></path>
+      <path d="M521 34H506L494 58"></path>
+    </g>
+    <path class="fill-none stroke-teal" d="M329 45V118M303 136V124H355V136" stroke-width="1.4"></path>
+    <g class="fill-white stroke-slate" stroke-width="1.1">
+      <circle cx="110" cy="34" r="11"></circle>
+      <circle cx="212" cy="34" r="11"></circle>
+      <circle cx="258" cy="34" r="11"></circle>
+      <circle cx="440" cy="34" r="11"></circle>
+      <circle cx="532" cy="34" r="11"></circle>
+    </g>
+    <circle class="fill-teal" cx="329" cy="34" r="11"></circle>
+    <g class="fill-navy">
+      <text x="110" y="38">1</text>
+      <text x="212" y="38">2</text>
+      <text x="258" y="38">3</text>
+      <text x="440" y="38">5</text>
+      <text x="532" y="38">6</text>
+    </g>
+    <text class="fill-white" x="329" y="38" font-weight="500">4</text>
+  </g>
+  <path
+    class="draw fill-none stroke-teal"
+    d="M303 264V276H355V264M329 276V318q0 14 14 14H452"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <g class="show" style="--delay: 2.5s">
+    <circle class="fill-teal" cx="329" cy="276" r="5"></circle>
+    <circle class="fill-teal" cx="456" cy="332" r="5"></circle>
+    <text class="fill-navy font-mono" x="472" y="330" font-size="16" font-weight="500">OEM {code}</text>
+    <text class="fill-slate" x="472" y="352" font-size="14">{t('site.example.part')}</text>
+  </g>
+</svg>

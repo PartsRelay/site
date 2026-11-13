@@ -1,0 +1,103 @@
+---
+import '../../index.css'
+import Logo from '../components/Logo.astro'
+import { uiUrl } from '../facts'
+import { languages, translator } from '../i18n'
+
+const t = translator(Astro.currentLocale)
+const language = languages.find(({ code }) => code === Astro.currentLocale)!
+const title = t('site.title')
+const description = t('app.description')
+const address = (path: string) => Astro.site && new URL(path, Astro.site)
+const url = address(Astro.url.pathname)
+const image = address('/og.png')
+const links = ['how', 'gain', 'costs', 'questions']
+const paths = Object.fromEntries(languages.map(({ path, href }) => [path, href]))
+---
+
+<!doctype html>
+<html lang={language.code}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {url && <link rel="canonical" href={url} />}
+    {
+      Astro.site &&
+        languages.map(({ path, href, main }) => (
+          <>
+            <link rel="alternate" hreflang={path} href={address(href)} />
+            {main && <link rel="alternate" hreflang="x-default" href={address(href)} />}
+          </>
+        ))
+    }
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Parts Relay" />
+    <meta property="og:locale" content={language.code.replace('-', '_')} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {url && <meta property="og:url" content={url} />}
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    {
+      language.main && (
+        <script is:inline define:vars={{ paths }}>
+          const language =
+            localStorage.getItem('language') ??
+            navigator.languages.map((tag) => tag.split('-')[0]).find((tag) => tag in paths)
+
+          if (paths[language] && paths[language] !== location.pathname) {
+            location.replace(paths[language] + location.hash)
+          }
+        </script>
+      )
+    }
+  </head>
+  <body id="top" class="overflow-x-hidden">
+    <header
+      class="mx-auto flex max-w-[70rem] flex-wrap items-center justify-between gap-x-8 gap-y-2 px-8 py-5"
+    >
+      <a href="#top" class="flex min-h-11 items-center gap-3 text-navy no-underline">
+        <Logo />
+        <span class="font-heading text-[1.375rem] font-bold tracking-[-0.01em]">Parts Relay</span>
+      </a>
+      <div class="label flex flex-wrap items-center gap-x-6">
+        <nav aria-label={t('site.nav.sections')} class="contents">
+          {links.map((id) => <a href={`#${id}`} class="py-3 text-navy">{t(`site.nav.${id}`)}</a>)}
+        </nav>
+        {
+          languages.map(
+            ({ path, href, name }) =>
+              path !== language.path && (
+                <a href={href} hreflang={path} lang={path} class="py-3 text-navy">
+                  {name}
+                </a>
+              )
+          )
+        }
+        <a href={`${uiUrl}/login`} class="rounded-md bg-navy px-4 py-2.5 text-white">
+          {t('site.sign-in')}
+        </a>
+      </div>
+    </header>
+
+    <main><slot /></main>
+
+    <footer class="mx-auto max-w-[70rem] px-8 pb-12">
+      <div
+        class="flex flex-wrap items-center justify-between gap-x-10 gap-y-2 border-t border-navy pt-5 text-base text-slate"
+      >
+        <span class="font-heading text-lg font-bold text-navy">Parts Relay</span>
+        <span>{t('site.tagline')}</span>
+      </div>
+    </footer>
+
+    <script>
+      for (const link of document.querySelectorAll<HTMLAnchorElement>('a[hreflang]')) {
+        link.addEventListener('click', () => localStorage.setItem('language', link.hreflang))
+      }
+    </script>
+  </body>
+</html>

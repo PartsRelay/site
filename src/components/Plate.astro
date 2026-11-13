@@ -1,0 +1,17 @@
+---
+interface Props {
+  caption: string
+  note?: string
+  class?: string
+}
+
+const { caption, note, class: className } = Astro.props
+---
+
+<figure class:list={['plate flex flex-col overflow-hidden', className]}>
+  <slot />
+  <figcaption class="caption flex flex-wrap justify-between gap-x-4">
+    <span>{caption}</span>
+    {note && <span>{note}</span>}
+  </figcaption>
+</figure>

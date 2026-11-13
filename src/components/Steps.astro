@@ -1,0 +1,33 @@
+---
+import { translator } from '../i18n'
+import Plate from './Plate.astro'
+import Section from './Section.astro'
+
+const t = translator(Astro.currentLocale)
+const steps = ['write', 'identify', 'find', 'answer']
+---
+
+<Section id="how">
+  <h2 class="h2 max-w-[20em]">{t('site.how.title')}</h2>
+  <Plate caption={t('site.how.caption')}>
+    <div class="flex flex-wrap gap-x-7 gap-y-9 px-8 py-10">
+      {
+        steps.map((step, index) => (
+          <article class="flex min-w-0 flex-[1_1_13rem] flex-col gap-2.5">
+            <div aria-hidden="true" class="relative h-3.5">
+              <div class="absolute inset-x-0 top-1.5 h-0.5 bg-grid" />
+              <div class="absolute top-0 left-0 size-3.5 rounded-full bg-teal" />
+              <div
+                class="run absolute top-[3px] left-0 size-2 rounded-full bg-teal opacity-0"
+                style={`--delay: ${index * 1.6}s`}
+              />
+            </div>
+            <p class="label mt-2.5">{'abcd'[index]}</p>
+            <h3 class="h3">{t(`site.how.steps.${step}.title`)}</h3>
+            <p class="text-slate">{t(`site.how.steps.${step}.text`)}</p>
+          </article>
+        ))
+      }
+    </div>
+  </Plate>
+</Section>
