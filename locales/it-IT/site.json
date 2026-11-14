@@ -1,0 +1,226 @@
+{
+  "title": "Parts Relay: codici ricambio da una targa, con risposta su WhatsApp",
+  "tagline": "Ricambi auto originali e aftermarket da una targa o da un telaio.",
+  "sign-in": "Accedi",
+  "nav": {
+    "sections": "Sezioni",
+    "how": "Come funziona",
+    "gain": "Vantaggi",
+    "costs": "Costi",
+    "questions": "Domande"
+  },
+  "example": {
+    "query": "pastiglie freno anteriori",
+    "yes": "SÌ",
+    "part": "Kit pastiglie freno anteriori",
+    "match": "Pastiglie freno anteriori"
+  },
+  "cover": {
+    "label": "Un breve manuale per il banco ricambi",
+    "title": "Entra una targa. Escono i codici giusti.",
+    "text": "Le tue officine scrivono su WhatsApp la targa e il ricambio che serve. Parts Relay identifica il veicolo, trova i codici originali con i loro equivalenti aftermarket e risponde nella chat. Il tuo banco segue ogni richiesta in un'unica coda.",
+    "film": "Guarda il video",
+    "contents": "Indice",
+    "caption": "Fig. 0 · Freni anteriori, posizione 4",
+    "figure": "Esploso di un freno anteriore: il kit pastiglie è evidenziato e collegato al suo codice originale, OEM {code}",
+    "specs": {
+      "starts": {
+        "term": "Parte da",
+        "detail": "una targa o un telaio"
+      },
+      "answers": {
+        "term": "Risponde su",
+        "detail": "WhatsApp e app web"
+      },
+      "returns": {
+        "term": "Restituisce",
+        "detail": "i codici originali con i loro equivalenti aftermarket"
+      },
+      "speaks": {
+        "term": "Parla",
+        "detail": "italiano e inglese"
+      }
+    }
+  },
+  "how": {
+    "name": "Come funziona",
+    "hint": "quattro passaggi",
+    "title": "Da un messaggio WhatsApp ai codici ricambio, senza che nessuno scriva al banco",
+    "caption": "Fig. 1 · Il percorso, dalla chat al banco e ritorno",
+    "steps": {
+      "write": {
+        "title": "L'officina scrive",
+        "text": "La targa e il ricambio che serve, con un messaggio, una foto o un vocale, al numero di Parts Relay su WhatsApp."
+      },
+      "identify": {
+        "title": "Il veicolo viene identificato",
+        "text": "Dalla targa o dal telaio, Parts Relay trova il veicolo esatto prima di cercare qualsiasi ricambio."
+      },
+      "find": {
+        "title": "Si trovano i ricambi originali",
+        "text": "Sceglie la categoria giusta del catalogo e legge i codici originali, con l'esploso e ogni posizione."
+      },
+      "answer": {
+        "title": "La risposta torna indietro",
+        "text": "I codici originali e gli equivalenti aftermarket arrivano nella chat, e la richiesta entra nella tua coda delle ricerche."
+      }
+    }
+  },
+  "gain": {
+    "name": "Cosa ci guadagni",
+    "hint": "al banco",
+    "title": "Cosa cambia al banco",
+    "items": {
+      "replies": {
+        "title": "Le richieste si rispondono da sole",
+        "text": "L'officina scrive, conferma con una parola e riceve i codici nella chat. Al banco nessuno riscrive la targa."
+      },
+      "vehicle": {
+        "title": "Prima viene il veicolo",
+        "text": "Parts Relay identifica il veicolo esatto dalla targa o dal telaio prima di cercare qualsiasi ricambio, così i codici sono quelli di quell'auto."
+      },
+      "queue": {
+        "title": "Un'unica coda per tutto",
+        "text": "Le richieste da WhatsApp e le ricerche del tuo team stanno in un'unica lista, con il veicolo, lo stato e chi ha chiesto."
+      },
+      "install": {
+        "title": "Niente da installare",
+        "text": "Le tue officine continuano a usare WhatsApp, senza creare un account. Possono cercare solo i numeri che abiliti."
+      }
+    }
+  },
+  "costs": {
+    "name": "Quanto ti costa oggi",
+    "hint": "un esempio di calcolo",
+    "title": "Calcola cosa torna al tuo banco",
+    "text": "Due cose costano a un banco ricambi: i minuti passati a cercare ogni richiesta e i ricambi sbagliati che tornano indietro. Inserisci i tuoi numeri e leggi il totale.",
+    "caption": "Fig. 3 · Un esempio di calcolo. Una stima, non una promessa: i valori tra parentesi quadre sono ipotesi",
+    "inputs": "Il tuo banco",
+    "sliders": {
+      "requests": "Richieste al giorno",
+      "minutes": "Minuti per cercarne una a mano",
+      "hourly": "Costo di un'ora al banco",
+      "returns": "Ricambi sbagliati resi al mese",
+      "cost": "Costo di ogni reso"
+    },
+    "sum": "Il calcolo, al mese",
+    "lines": {
+      "hours": {
+        "label": "Ore recuperate al banco",
+        "formula": "a × {days} giorni × (b − [{minutes} min]) ÷ 60"
+      },
+      "time": {
+        "label": "Valore di quel tempo",
+        "formula": "ore × c"
+      },
+      "avoided": {
+        "label": "Ricambi sbagliati evitati",
+        "formula": "d × [{share}%]"
+      },
+      "saved": {
+        "label": "Resi che non paghi più",
+        "formula": "evitati × e"
+      }
+    },
+    "month": "Recuperi ogni mese",
+    "year": "In un anno",
+    "measured": {
+      "title": "Misurato presso {source}",
+      "minutes": "dal messaggio WhatsApp ai codici ricambio",
+      "returns": "ricambi sbagliati resi in meno",
+      "hours": "recuperate al banco ogni mese"
+    }
+  },
+  "price": {
+    "name": "Il prezzo",
+    "hint": "cosa è incluso",
+    "title": "Quanto costa Parts Relay",
+    "period": "al mese",
+    "terms": "[CONDIZIONI DI FATTURAZIONE, PROVA O ATTIVAZIONE]",
+    "included": "Incluso",
+    "items": {
+      "whatsapp": "Risposte su WhatsApp per i numeri che abiliti",
+      "app": "L'app web, con ricerche da targa o telaio",
+      "team": "Il tuo team come amministratori o visualizzatori",
+      "languages": "Italiano e inglese, nell'app e nelle risposte"
+    }
+  },
+  "counter": {
+    "name": "Il banco",
+    "hint": "un'unica coda",
+    "title": "Un'unica coda per ogni richiesta",
+    "points": {
+      "live": "I risultati compaiono mentre la ricerca è in corso, senza ricaricare la pagina.",
+      "filters": "Filtra per officina o collega, stato, canale e periodo.",
+      "search": "Avvia tu una ricerca da una targa o da un telaio."
+    },
+    "queue": {
+      "caption": "Fig. 5a · La coda delle ricerche",
+      "alt": "La coda delle ricerche di Parts Relay: ogni richiesta con targa, ricambio, veicolo, stato, canale e richiedente"
+    },
+    "search": {
+      "caption": "Fig. 5b · Una ricerca completata",
+      "alt": "Una ricerca completata in Parts Relay: il veicolo, l'esploso e i codici originali con i loro equivalenti aftermarket"
+    }
+  },
+  "whatsapp": {
+    "name": "Su WhatsApp",
+    "hint": "una conversazione",
+    "title": "Le tue officine hanno già l'app",
+    "lead": "Niente da installare e nessun account da creare. L'officina scrive al numero di Parts Relay su WhatsApp e conferma la richiesta con una parola.",
+    "text": "Possono cercare solo i numeri che abiliti. Tutti gli altri ricevono una risposta che li invita a contattarti. Le risposte partono in italiano o in inglese, la lingua che scegli per la tua azienda.",
+    "caption": "Fig. 6 · Una richiesta, dall'inizio alla fine",
+    "label": "Esempio di conversazione WhatsApp con Parts Relay",
+    "status": "online",
+    "today": "Oggi"
+  },
+  "film": {
+    "name": "Il video",
+    "hint": "[30 s]",
+    "title": "Guarda una richiesta viaggiare dalla chat al banco",
+    "caption": "Fig. 7 · {plate}, {query}",
+    "label": "[VIDEO DI BRAND · 30 S]",
+    "poster": "Qui va il fotogramma di copertina del video."
+  },
+  "questions": {
+    "name": "Domande",
+    "hint": "sei risposte",
+    "title": "Le domande dei ricambisti",
+    "items": {
+      "install": {
+        "question": "Le officine devono installare qualcosa?",
+        "answer": "No. Scrivono su WhatsApp al numero di Parts Relay la targa e il ricambio che serve, con un messaggio, una foto o un vocale."
+      },
+      "who": {
+        "question": "Chi può cercare?",
+        "answer": "I numeri WhatsApp che aggiungi come contatti e il tuo team dall'app web. Ogni altro numero riceve una risposta che lo invita a contattarti."
+      },
+      "web": {
+        "question": "Possiamo cercare senza WhatsApp?",
+        "answer": "Sì. Chiunque nel tuo team avvia una ricerca dall'app web con una targa o un telaio, e il risultato entra nella stessa coda."
+      },
+      "languages": {
+        "question": "Che lingue parla?",
+        "answer": "L'app web e le risposte su WhatsApp sono disponibili in italiano e in inglese."
+      },
+      "cost": {
+        "question": "Quanto costa?",
+        "answer": "[IL TUO PREZZO E LE CONDIZIONI]"
+      },
+      "fitment": {
+        "question": "I risultati garantiscono la compatibilità?",
+        "answer": "No. I risultati aiutano a identificare il ricambio. Verifica sempre la compatibilità con il veicolo prima dell'acquisto."
+      }
+    }
+  },
+  "start": {
+    "name": "Accedi",
+    "hint": "apri il tuo banco",
+    "title": "Apri il tuo banco",
+    "text": "Accedi ed entri nell'app. Non c'è nessuna password da ricordare, e il primo accesso crea la tua azienda.",
+    "card": {
+      "title": "Accedi a Parts Relay",
+      "text": "Con Google, oppure con un link inviato alla tua email."
+    }
+  }
+}

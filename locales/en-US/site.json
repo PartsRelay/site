@@ -1,0 +1,226 @@
+{
+  "title": "Parts Relay: car part numbers from a plate, answered on WhatsApp",
+  "tagline": "Original and aftermarket car parts from a plate or a VIN.",
+  "sign-in": "Sign in",
+  "nav": {
+    "sections": "Sections",
+    "how": "How it works",
+    "gain": "Gains",
+    "costs": "Costs",
+    "questions": "Questions"
+  },
+  "example": {
+    "query": "front brake pads",
+    "yes": "YES",
+    "part": "Front brake pad set",
+    "match": "Front brake pads"
+  },
+  "cover": {
+    "label": "A short manual for the parts counter",
+    "title": "A plate comes in. The right part numbers go out.",
+    "text": "Your workshops write on WhatsApp with a plate and the part they need. Parts Relay identifies the vehicle, finds the original part numbers with their aftermarket matches, and answers in the chat. Your counter follows every request in one queue.",
+    "film": "Watch the film",
+    "contents": "Contents",
+    "caption": "Fig. 0 · Front brakes, position 4",
+    "figure": "Exploded view of a front brake: the pad set is highlighted and linked to its original part number, OEM {code}",
+    "specs": {
+      "starts": {
+        "term": "Starts from",
+        "detail": "a registration plate or a VIN"
+      },
+      "answers": {
+        "term": "Answers on",
+        "detail": "WhatsApp and the web app"
+      },
+      "returns": {
+        "term": "Returns",
+        "detail": "original part numbers with their aftermarket matches"
+      },
+      "speaks": {
+        "term": "Speaks",
+        "detail": "English and Italian"
+      }
+    }
+  },
+  "how": {
+    "name": "How it works",
+    "hint": "four steps",
+    "title": "From a WhatsApp message to part numbers, with nobody typing at the counter",
+    "caption": "Fig. 1 · The relay, from the chat to the counter and back",
+    "steps": {
+      "write": {
+        "title": "The workshop writes",
+        "text": "A plate and the part needed, as a text, a photo or a voice message, sent to the Parts Relay number on WhatsApp."
+      },
+      "identify": {
+        "title": "The vehicle is identified",
+        "text": "From the registration plate or the VIN, Parts Relay finds the exact vehicle before it looks for any part."
+      },
+      "find": {
+        "title": "The original parts are found",
+        "text": "It picks the right catalog category and reads the original part numbers, with the exploded view and each position."
+      },
+      "answer": {
+        "title": "The answer goes back",
+        "text": "Original numbers and aftermarket matches arrive in the chat, and the request lands in your search queue."
+      }
+    }
+  },
+  "gain": {
+    "name": "What you gain",
+    "hint": "at the counter",
+    "title": "What changes at the counter",
+    "items": {
+      "replies": {
+        "title": "Requests answer themselves",
+        "text": "A workshop writes, confirms with one word and gets the part numbers in the chat. Nobody at the counter retypes the plate."
+      },
+      "vehicle": {
+        "title": "The vehicle comes first",
+        "text": "Parts Relay identifies the exact vehicle from the plate or the VIN before it looks for any part, so the numbers belong to that car."
+      },
+      "queue": {
+        "title": "One queue for everything",
+        "text": "Requests from WhatsApp and searches from your team share one list, with the vehicle, the status and who asked."
+      },
+      "install": {
+        "title": "Nothing to install",
+        "text": "Your workshops keep using WhatsApp, with no account to create. Only the numbers you enable can search."
+      }
+    }
+  },
+  "costs": {
+    "name": "What it costs you today",
+    "hint": "a worked example",
+    "title": "Work out what your counter gets back",
+    "text": "Two things cost a parts counter: the minutes spent looking up each request, and the wrong parts that come back. Put in your own numbers and read the sum.",
+    "caption": "Fig. 3 · A worked example. An estimate, not a promise: the values in brackets are assumptions",
+    "inputs": "Your counter",
+    "sliders": {
+      "requests": "Requests a day",
+      "minutes": "Minutes to look one up by hand",
+      "hourly": "Cost of an hour at the counter",
+      "returns": "Wrong parts sent back a month",
+      "cost": "Cost of each return"
+    },
+    "sum": "The sum, per month",
+    "lines": {
+      "hours": {
+        "label": "Hours back at the counter",
+        "formula": "a × {days} days × (b − [{minutes} min]) ÷ 60"
+      },
+      "time": {
+        "label": "Value of that time",
+        "formula": "hours × c"
+      },
+      "avoided": {
+        "label": "Wrong parts avoided",
+        "formula": "d × [{share}%]"
+      },
+      "saved": {
+        "label": "Returns you no longer pay for",
+        "formula": "avoided × e"
+      }
+    },
+    "month": "Back each month",
+    "year": "Over a year",
+    "measured": {
+      "title": "Measured at {source}",
+      "minutes": "from the WhatsApp message to the part numbers",
+      "returns": "fewer wrong parts sent back",
+      "hours": "back at the counter each month"
+    }
+  },
+  "price": {
+    "name": "The price",
+    "hint": "what is included",
+    "title": "What Parts Relay costs",
+    "period": "a month",
+    "terms": "[BILLING TERMS, TRIAL OR SETUP DETAILS]",
+    "included": "Included",
+    "items": {
+      "whatsapp": "WhatsApp replies for the numbers you enable",
+      "app": "The web app, with searches from a plate or a VIN",
+      "team": "Your team as admins or viewers",
+      "languages": "English and Italian, in the app and in the replies"
+    }
+  },
+  "counter": {
+    "name": "The counter",
+    "hint": "one queue",
+    "title": "One queue for every request",
+    "points": {
+      "live": "Results appear while the search runs, with no page to reload.",
+      "filters": "Filter by workshop or colleague, status, channel and period.",
+      "search": "Start a search yourself from a plate or a VIN."
+    },
+    "queue": {
+      "caption": "Fig. 5a · The search queue",
+      "alt": "The Parts Relay search queue: each request with its plate, part, vehicle, status, channel and requester"
+    },
+    "search": {
+      "caption": "Fig. 5b · A completed search",
+      "alt": "A completed search in Parts Relay: the vehicle, the exploded view and the original part numbers with their aftermarket matches"
+    }
+  },
+  "whatsapp": {
+    "name": "On WhatsApp",
+    "hint": "a conversation",
+    "title": "Your workshops already have the app",
+    "lead": "Nothing to install and no account to create. A workshop writes to the Parts Relay number on WhatsApp, and confirms the request with one word.",
+    "text": "Only the numbers you enable can search. Anyone else gets a reply asking them to contact you. Replies go out in English or Italian, the language you choose for your company.",
+    "caption": "Fig. 6 · A request, start to finish",
+    "label": "Example WhatsApp conversation with Parts Relay",
+    "status": "online",
+    "today": "Today"
+  },
+  "film": {
+    "name": "The film",
+    "hint": "[30 s]",
+    "title": "Watch one request travel from the chat to the counter",
+    "caption": "Fig. 7 · {plate}, {query}",
+    "label": "[BRAND FILM · 30 S]",
+    "poster": "The poster frame of the film goes here."
+  },
+  "questions": {
+    "name": "Questions",
+    "hint": "six answers",
+    "title": "Questions parts sellers ask",
+    "items": {
+      "install": {
+        "question": "Do workshops need to install anything?",
+        "answer": "No. They send a WhatsApp message to the Parts Relay number with a plate and the part they need, as a text, a photo or a voice message."
+      },
+      "who": {
+        "question": "Who can search?",
+        "answer": "The WhatsApp numbers you add as contacts, and your team from the web app. Any other number gets a reply asking them to contact you."
+      },
+      "web": {
+        "question": "Can we search without WhatsApp?",
+        "answer": "Yes. Anyone in your team starts a search from the web app with a registration plate or a VIN, and the result joins the same queue."
+      },
+      "languages": {
+        "question": "Which languages does it speak?",
+        "answer": "The web app and the WhatsApp replies are available in English and Italian."
+      },
+      "cost": {
+        "question": "How much does it cost?",
+        "answer": "[YOUR PRICE AND TERMS]"
+      },
+      "fitment": {
+        "question": "Are the results a fitment guarantee?",
+        "answer": "No. Results are identification guidance. Always confirm vehicle fitment before purchase."
+      }
+    }
+  },
+  "start": {
+    "name": "Sign in",
+    "hint": "open your counter",
+    "title": "Open your counter",
+    "text": "Sign in and land in the app. There is no password to remember, and your first sign in creates your company.",
+    "card": {
+      "title": "Sign in to Parts Relay",
+      "text": "With Google, or with a link sent to your email."
+    }
+  }
+}

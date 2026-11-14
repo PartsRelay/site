@@ -1,25 +1,23 @@
 # Parts Relay site
 
-The showcase site of Parts Relay: one static page per language built with [Astro](https://astro.build) and Tailwind. It calls no service: the fonts come from packages, the texts come from the [PartsRelay/locales](https://github.com/PartsRelay/locales) submodule, the numbers live in the code, and Sign in is a link to the app.
+The showcase site of Parts Relay: one static page per language built with [Astro](https://astro.build) and Tailwind. It calls no service: the fonts come from packages, the texts live in `locales`, the numbers live in the code, and Sign in is a link to the app.
 
 ## Run it
 
 ```sh
-git clone --recurse-submodules https://github.com/PartsRelay/site.git
+git clone https://github.com/PartsRelay/site.git
 cd site
 bun install
 cp .env.example .env
 bun run dev
 ```
 
-A clone made without `--recurse-submodules` needs `git submodule update --init`.
-
 - `SITE_URL`: the public address of this site, for the canonical link, `og:url` and `og:image`. Without it the page has none of the three.
 - `UI_URL`: the address of the app, where every Sign in link leads (`<UI_URL>/login`).
 
 The UI and the core use the same names: `SITE_URL`, `UI_URL` and `CORE_URL` always name the site, the app and the core.
 
-The dev container of `.devcontainer` checks out the submodule, copies `.env` and installs, then runs `bun run dev` in the terminal of the editor that attaches, where Ctrl+C stops it and frees the port. `docker-compose.yml` publishes port 4321 on `127.0.0.1`. To share the site, run `cloudflared tunnel --url http://localhost:4321`, which the dev container has installed.
+The dev container of `.devcontainer` copies `.env` and installs, then runs `bun run dev` in the terminal of the editor that attaches, where Ctrl+C stops it and frees the port. `docker-compose.yml` publishes port 4321 on `127.0.0.1`. To share the site, run `cloudflared tunnel --url http://localhost:4321`, which the dev container has installed.
 
 ## Structure
 
@@ -32,9 +30,8 @@ The dev container of `.devcontainer` checks out the submodule, copies `.env` and
 
 ## Texts and languages
 
-- `locales/`: the git submodule of PartsRelay/locales (branch `main`), the only home of the texts, in ICU MessageFormat. `src/i18n.ts` reads every file at build time, so `t('site.cover.title')` reads `cover.title` of `<locale>/site.json`. The example chat shows the real WhatsApp replies of the `assistant` namespace.
-- To add or change a text, commit it to the locales repository, run `git submodule update --remote locales` and commit the new pointer with the code.
-- `astro.config.ts` reads the languages from the submodule: every `<locale>` folder with a `site.json` is a page at the path of its language, so English is at `/` and Italian at `/it/`. A new language needs only its `site.json` and its name in `languages.json`. Every page links the others with `hreflang`.
+- `locales/`: the only home of the texts, `<locale>/<namespace>.json` in ICU MessageFormat with kebab-case keys. `src/i18n.ts` reads every file at build time, so `t('site.cover.title')` reads `cover.title` of `<locale>/site.json`. The example chat copies in `assistant.json` the WhatsApp replies of the core it shows, so change them with the core.
+- `astro.config.ts` reads the languages from `locales`: every `<locale>` folder with a `site.json` is a page at the path of its language, so English is at `/` and Italian at `/it/`. A new language needs only its `site.json` and its name in `languages.json`. Every page links the others with `hreflang`.
 - The site is static, so the browser picks the language: the English page sends a visitor whose browser prefers another listed language to that page, once, unless they chose a language with the link in the header, which `localStorage` remembers.
 
 ## Before going live

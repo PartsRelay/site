@@ -1,0 +1,8 @@
+{
+  "summary": "Cerco {plate} · {query}. Rispondi SÌ per avviare la ricerca, oppure scrivimi cosa cambiare.",
+  "received": "Richiesta ricevuta. Ricerca in corso…\n{plate} · {query}",
+  "results": "{vehicle} · {plate} · {query}",
+  "oem": "OEM {code} · {description}",
+  "aftermarket-title": "Aftermarket:",
+  "aftermarket": "• {code} · {description}"
+}

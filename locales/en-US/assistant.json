@@ -1,0 +1,8 @@
+{
+  "summary": "Ready to search {plate} · {query}. Reply YES to start the search, or tell me what to change.",
+  "received": "Request received. Searching…\n{plate} · {query}",
+  "results": "{vehicle} · {plate} · {query}",
+  "oem": "OEM {code} · {description}",
+  "aftermarket-title": "Aftermarket:",
+  "aftermarket": "• {code} · {description}"
+}

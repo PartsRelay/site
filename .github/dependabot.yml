@@ -16,14 +16,6 @@ updates:
         patterns: ['*']
         update-types: [major]
 
-  - package-ecosystem: gitsubmodule
-    directory: /
-    commit-message:
-      prefix: chore
-      include: scope
-    schedule:
-      interval: weekly
-
   - package-ecosystem: github-actions
     directory: /
     commit-message:
