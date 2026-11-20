@@ -920,23 +920,23 @@ body:has(#main .team-about) .site-mobile i {
 body:has(#main .team-about) .site-trigger:hover {
   color: #a5dbd2;
 }
-body:has(#main .team-about) :is(.site-dropdown, .site-open .site-menu, .fx-mobile-exit .site-menu) {
-  color: #142b3a;
+body:has(#main .team-about) .site-chrome .site-dropdown {
+  background: #1b3440;
+  border-color: #39525d;
+  color: #f4fbfa;
 }
-@media (min-width: 768px) {
-  body:has(#main .team-about) .site-chrome .site-dropdown {
-    background: #1b3440;
-    border-color: #39525d;
-    color: #f4fbfa;
-  }
-  body:has(#main .team-about) .site-chrome .site-dropdown a:hover,
-  body:has(#main .team-about) .site-chrome .site-dropdown a:focus-visible,
-  body:has(#main .team-about) .fx-menu-pill {
-    background: #2c4750;
-  }
-  body:has(#main .team-about) .site-item-icon,
-  body:has(#main .team-about) .site-item-labels > span {
-    color: #b9ccca;
+body:has(#main .team-about) .site-chrome .site-dropdown a:hover,
+body:has(#main .team-about) .site-chrome .site-dropdown a:focus-visible,
+body:has(#main .team-about) .fx-menu-pill {
+  background: #2c4750;
+}
+body:has(#main .team-about) .site-item-icon,
+body:has(#main .team-about) .site-item-labels > span {
+  color: #b9ccca;
+}
+@media (max-width: 767px) {
+  body:has(#main .team-about) .site-chrome .site-menu {
+    background: #102430;
   }
 }
 body:has(#main .team-about) .base-footer {
