@@ -1,0 +1,111 @@
+---
+import Workshop from '../../layouts/Workshop.astro';
+
+const prepare = [
+  {
+    term: 'Evidence to hand',
+    text: 'An alternator enquiry and the original label, a legible photo or the technician’s reading.',
+  },
+  {
+    term: 'Callback record',
+    text: 'A record of what distinguishes the required unit, or a specific detail to ask the technician for.',
+  },
+];
+---
+
+<Workshop
+  title="An alternator fit check | Parts Relay"
+  description="Record the markings on an alternator and the details you still need from the workshop before quoting."
+  heading="An alternator fit check"
+  audience="For distributors. Self-guided, about 15 minutes."
+  poster="/assets/alternator.svg"
+  posterAlt="Alternator with its connector and pulley"
+  prepare={prepare}
+>
+  <Fragment slot="intro">
+    When two units are listed for the same vehicle, the last few characters on the old alternator
+    can decide which one to price. Use the worksheet to keep the label reading separate from your
+    interpretation.
+  </Fragment>
+  <section class="workshop-materials">
+    <h2>Keep a record of the label</h2>
+    <p>
+      Download the callback sheet before contacting the workshop. Leave room to record the
+      supplier’s question exactly as they ask it.
+    </p>
+    <div>
+      <a
+        href="/worksheets/parts-relay-fit-check-worksheet.md"
+        download="Parts-Relay-fit-check-worksheet.md"
+      >
+        Download worksheet ↓
+      </a>
+      <a href="/journal/alternator-labels/">Read the alternator label guide</a>
+    </div>
+  </section>
+  <section class="workshop-agenda">
+    <h2>When the suffix is unreadable</h2>
+    <p>
+      Start with the marking the technician can see. The output rating might still be clear even
+      when the end of the manufacturer’s reference has rubbed away. Keep both pieces of information.
+    </p>
+    <h2>Work through the reference</h2>
+    <ol>
+      <li>
+        <h3>Take the markings in order</h3>
+        <p>
+          Write the vehicle identifier on the sheet. Record the manufacturer’s part number character
+          by character and put the amp rating on a separate line.
+        </p>
+      </li>
+      <li>
+        <h3>Mark the gap</h3>
+        <p>
+          Note where a character is unreadable. Ask for a closer photo if it would settle the
+          reading. Leave a genuine gap open rather than supplying a likely letter from the
+          catalogue.
+        </p>
+      </li>
+      <li>
+        <h3>Ask the supplier what separates the units</h3>
+        <p>
+          If the partial reference leaves more than one candidate, find out which visible detail
+          would decide between them. Give the technician that question before they go back to the
+          car.
+        </p>
+      </li>
+    </ol>
+    <h2>What belongs in your callback record</h2>
+    <dl class="workshop-answer">
+      <div>
+        <dt>Readable markings</dt>
+        <dd>Copy only the characters the workshop can verify. Keep units with the rating.</dd>
+      </div>
+      <div>
+        <dt>Unresolved characters</dt>
+        <dd>Mark whether the gap is at the start, in the middle or at the end of the reference.</dd>
+      </div>
+      <div>
+        <dt>Next check</dt>
+        <dd>Write the supplier’s exact question about the label, connector or equipment.</dd>
+      </div>
+      <div>
+        <dt>Outcome</dt>
+        <dd>
+          Record which reference the supplier confirmed, or who will call back with the missing
+          detail.
+        </dd>
+      </div>
+    </dl>
+    <h2>Before you release the quote</h2>
+    <p>
+      Could a colleague point to the evidence for the quoted reference? When two variants still fit
+      the information on hand, keep the quote open until the supplier can distinguish them.
+    </p>
+    <h2>Using the check on a starter</h2>
+    <p>
+      Use the same sheet for a starter motor. Replace the alternator rating with the markings the
+      supplier needs for that starter application.
+    </p>
+  </section>
+</Workshop>

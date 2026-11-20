@@ -1,0 +1,21 @@
+---
+const { title, text, primary, secondary } = Astro.props;
+---
+
+<section class="tool-closing base-cta">
+  <div class="tool-film-slot" aria-hidden="true">
+    <div class="base-motion"></div>
+  </div>
+  <div class="base-bound base-cta-inner">
+    <h2>{title}</h2>
+    <p>{text}</p>
+    <div class="base-actions">
+      <a class="base-button base-light" href={primary.href}>
+        {primary.label}
+      </a>
+      <a class="base-button base-tint" href={secondary.href}>
+        {secondary.label}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Parts Relay workshops | Parts Relay"
+  description="Choose a practical worksheet for a service desk enquiry, a distributor callback or the next shift’s handover."
+>
+  <div class="workshop">
+    <div class="workshop-cover">
+      <img src="/assets/workshop-traces.svg" alt="" />
+      <div class="workshop-emblem">
+        <img src="/assets/symbol.svg" alt="" />
+      </div>
+    </div>
+    <div class="workshop-bound">
+      <header class="workshop-header">
+        <h1 tabindex="-1">Parts Relay workshops</h1>
+        <p>
+          Bring a repair order, a supplier callback or an unfinished enquiry. Each workshop gives
+          you a worksheet you can keep with the job.
+        </p>
+      </header>
+      <div class="workshop-directory">
+        <section>
+          <h2>Choose a workshop</h2>
+          <p class="workshop-chooser">
+            Choose the job you have in front of you. Allow 10 to 15 minutes to work through it.
+          </p>
+          <div class="workshop-filters" role="group" aria-label="Filter workshops by audience">
+            <button type="button" data-workshop-filter="All" aria-pressed="true">
+              All
+            </button>
+            <button type="button" data-workshop-filter="Repair shops" aria-pressed="false">
+              Repair shops
+            </button>
+            <button type="button" data-workshop-filter="Distributors" aria-pressed="false">
+              Distributors
+            </button>
+            <button type="button" data-workshop-filter="Both teams" aria-pressed="false">
+              Both teams
+            </button>
+          </div>
+          <ul class="workshop-list">
+            <li data-workshop-role="Repair shops">
+              <span class="workshop-duration">
+                <strong>10</strong> min
+              </span>
+              <a href="/workshops/first-request/">
+                <div>
+                  <span>Repair shops</span>
+                  <h3>From repair order to counter</h3>
+                  <p>
+                    Turn a technician’s diagnosis into a description the distributor can quote.
+                    Start with the position and quantity.
+                  </p>
+                </div>
+                <img src="/assets/workshop.webp" alt="" loading="lazy" />
+              </a>
+            </li>
+            <li data-workshop-role="Distributors">
+              <span class="workshop-duration">
+                <strong>15</strong> min
+              </span>
+              <a href="/workshops/fit-check/">
+                <div>
+                  <span>Distributors</span>
+                  <h3>Taking down a worn part number</h3>
+                  <p>
+                    Use a supplier callback to settle a missing character, a connector question or
+                    an incomplete reference.
+                  </p>
+                </div>
+                <img src="/assets/alternator.svg" alt="" loading="lazy" />
+              </a>
+            </li>
+            <li data-workshop-role="Both teams">
+              <span class="workshop-duration">
+                <strong>12</strong> min
+              </span>
+              <a href="/workshops/handoff/">
+                <div>
+                  <span>Both teams</span>
+                  <h3>A handover the next shift can use</h3>
+                  <p>
+                    Write the note that lets a colleague make the next call without starting the
+                    enquiry again.
+                  </p>
+                </div>
+                <img src="/assets/counter.webp" alt="" loading="lazy" />
+              </a>
+            </li>
+          </ul>
+          <p class="workshop-status" aria-live="polite"></p>
+        </section>
+        <aside class="workshop-aside">
+          <h2>Working with a colleague?</h2>
+          <p>
+            Have the person who missed the call read the completed worksheet. Ask which item they
+            would price and which detail they would check first.
+          </p>
+          <p>
+            If you picture different parts, find the word that caused the mix-up. “Housing” and
+            “complete assembly” can mean different orders at the counter.
+          </p>
+          <a href="/guides/guidebook/">Read the getting-started guide</a>
+        </aside>
+      </div>
+      <section class="workshop-debrief">
+        <h2>Keep the note with the repair</h2>
+        <div>
+          <p>
+            When a supplier calls back after a shift change, the repair order is usually easier to
+            find than the person who took the original call. File the worksheet with that order.
+          </p>
+          <p>
+            Date the latest reply. If the supplier changes the quoted reference, keep the earlier
+            number with a short note explaining which one the shop is now considering.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/workshops.js';
+</script>

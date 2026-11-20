@@ -1,0 +1,393 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClosingBand from '../../components/ClosingBand.astro';
+import FigureNotes from '../../components/FigureNotes.astro';
+
+const figures = [
+  {
+    label: 'Brakes',
+    name: 'Front brake pads',
+    image: '/assets/brake-pads.svg',
+    alt: 'Exploded view of inner and outer brake pads beside a brake disc',
+    caption: 'Front axle',
+    text: 'Look for the disc in the centre of the drawing. There’s a pad on each face.',
+    notes: [
+      [
+        'Outer pad and inner pad',
+        'Both belong to the front axle in this drawing. Use the vehicle record to identify the set.',
+      ],
+      [
+        'Brake disc',
+        'The disc sits between the pads. Check the job card to see if the technician wants discs as well.',
+      ],
+      [
+        'Sensor and fitting hardware',
+        'If the job calls for a sensor, clips or shims, check the kit listing for each item.',
+      ],
+    ],
+  },
+  {
+    label: 'Electrical',
+    name: 'Alternator',
+    image: '/assets/alternator.svg',
+    alt: 'Technical drawing of the alternator, pulley, connector and mounting points',
+    caption: 'Charging system',
+    text: 'Compare the drawing with the alternator still on the car. The plug and pulley are useful places to start.',
+    notes: [
+      [
+        'Connector',
+        'Look at the plug shape and the arrangement of its pins. Tell the counter if you can only read part of a marking.',
+      ],
+      [
+        'Housing',
+        'Read the output rating and manufacturer’s number from the label on the housing. Include the letters at the end.',
+      ],
+      [
+        'Belt pulley',
+        'Does the replacement come with the pulley? If the catalogue lists several, tell the counter which one you have.',
+      ],
+    ],
+  },
+  {
+    label: 'Service parts',
+    name: 'Filter cartridge',
+    image: '/assets/manual.webp',
+    alt: 'Service illustration of a filter cartridge separated from its cap and housing',
+    caption: 'Filter housing',
+    text: 'The drawing shows the filter opened up. You can see where the cartridge sits once the cover is back on.',
+    notes: [
+      [
+        'Cartridge',
+        'The pleated element lifts out. If the shop is keeping the housing, ask for the cartridge.',
+      ],
+      [
+        'Cover and housing',
+        'Damaged threads or a broken mounting point can mean the shop needs the cover or housing itself. Identify which piece is damaged.',
+      ],
+      [
+        'Seals',
+        'The seal sits next to the cover in the drawing. Does it come in the cartridge kit, or does the counter need a second reference?',
+      ],
+    ],
+  },
+];
+---
+
+<Layout
+  title="Find the piece in the drawing | Parts Relay"
+  description="Read an exploded view of a brake, alternator or filter assembly and name the item you want the supplier to quote."
+>
+  <div class="tool tool-diagrams">
+    <section class="tool-hero">
+      <div class="tool-bound">
+        <div class="tool-title">
+          <p class="tool-label">Parts diagrams</p>
+          <h1 tabindex="-1">Find the piece in the drawing</h1>
+          <p class="tool-intro">
+            In an exploded view the pieces sit apart, in the order they fit together. Find the one
+            you need, then look up its reference in the list for that figure.
+          </p>
+          <div class="page-actions">
+            <button type="button" class="page-btn" data-jump="tool-figures">
+              Explore diagrams
+            </button>
+            <a class="page-btn page-secondary" href="/tools/vin-check/">
+              Check a VIN
+            </a>
+          </div>
+        </div>
+        <div class="tool-terminal" aria-hidden="true">
+          <div class="tool-terminal-bar">
+            <span>● ● ●</span>
+            <b>FIGURE VIEWER</b>
+            <span>⤢</span>
+          </div>
+          <div class="tool-terminal-art">
+            <img src="/assets/brake-pads.svg" alt="" />
+            <div></div>
+          </div>
+          <div class="tool-terminal-foot">
+            <b>PAD SET</b>
+            <span>FRONT AXLE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section" id="tool-figures" tabindex="-1">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">Figure viewer</p>
+          <h2>Three assemblies up close</h2>
+          <p class="tool-copy">
+            These drawings show common component arrangements. Use your vehicle’s catalogue for the
+            applicable reference.
+          </p>
+        </div>
+        <div class="tool-browser" data-picker>
+          <div class="tool-browser-art">
+            <img data-picker-image loading="lazy" src={figures[0].image} alt={figures[0].alt} />
+            <span data-picker-caption>{figures[0].caption}</span>
+          </div>
+          <div class="tool-browser-body">
+            <div class="tool-choices" role="group" aria-label="Select a parts illustration">
+              {figures.map((figure, index) => (
+                <button
+                  type="button"
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                  data-pick={index}
+                  data-image={figure.image}
+                  data-alt={figure.alt}
+                  data-caption={figure.caption}
+                >
+                  {figure.label}
+                </button>
+              ))}
+            </div>
+            <div aria-live="polite" data-picker-text>
+              <FigureNotes figure={figures[0]} />
+            </div>
+            {figures.map((figure, index) => (
+              <template data-option={index}>
+                <FigureNotes figure={figure} />
+              </template>
+            ))}
+          </div>
+        </div>
+        <div class="tool-pair">
+          <article>
+            <div class="tool-lineart">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="7" width="26" height="18" rx="2" />
+                <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
+              </svg>
+            </div>
+            <h3>Choosing the vehicle</h3>
+            <p>
+              If the drawing doesn’t resemble the unit in front of you, go back to the vehicle
+              description.
+            </p>
+            <a class="tool-textlink" href="/guides/vehicle-identification/">
+              Vehicle guide
+            </a>
+          </article>
+          <article>
+            <div class="tool-lineart">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m12 20 8-8m-6-4 3-3a7 7 0 1 1 10 10l-4 4m-5 5-3 3A7 7 0 1 1 5 17l4-4" />
+              </svg>
+            </div>
+            <h3>Quoting a separate item</h3>
+            <p>
+              Tell the counter which piece you want and whether you also need the hardware beside
+              it.
+            </p>
+            <a class="tool-textlink" href="/tools/enquiry-builder/">
+              Enquiry builder
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-center tool-muted">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">Catalogue drawings</p>
+          <h2>Follow a callout to its part number</h2>
+        </div>
+        <div class="tool-darkrows">
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="4" y="4" width="10" height="10" rx="1" />
+                <rect x="18" y="4" width="10" height="10" rx="1" />
+                <rect x="4" y="18" width="10" height="10" rx="1" />
+                <rect x="18" y="18" width="10" height="10" rx="1" />
+              </svg>
+            </div>
+            <div>
+              <h3>Open the right figure</h3>
+              <p>
+                Look for the assembly under its catalogue section. Some sections have a parts list
+                but no drawing.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m2 11 14-7 14 7-14 7zm1 6 13 7 13-7M3 23l13 7 13-7" />
+              </svg>
+            </div>
+            <div>
+              <h3>Trace the callout line</h3>
+              <p>
+                Follow the line from the piece to its callout number, then find that number in the
+                figure’s list. A callout only identifies a position in that particular drawing.
+              </p>
+            </div>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 3h13l5 5v21H8zM21 3v6h5M12 14h10m-10 5h10m-10 5h6" />
+              </svg>
+            </div>
+            <div>
+              <h3>Use the reference in the list</h3>
+              <p>
+                Copy the full original equipment reference, including the suffix, with its
+                description. Tell the distributor how many you need and which hardware they should
+                check.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">Housing and fittings</p>
+            <h2>One repair can need three catalogue entries</h2>
+            <p class="tool-copy">
+              Look at the cover, its seal and the fasteners separately. A drawing can show all three
+              together, even when the supplier sells each one individually.
+            </p>
+          </div>
+          <dl class="tool-field-notes">
+            <div>
+              <dt>Cover</dt>
+              <dd>Use the cover entry when the cover itself is damaged.</dd>
+            </div>
+            <div>
+              <dt>Gasket</dt>
+              <dd>
+                The gasket has a number of its own. If you’re also ordering the cover, ask whether a
+                gasket comes with it.
+              </dd>
+            </div>
+            <div>
+              <dt>Mounting screw</dt>
+              <dd>The screw also has a separate entry. Ask the workshop how many it needs.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">At the parts desk</p>
+          <h2>Working with the figure you found</h2>
+        </div>
+        <div class="tool-deck">
+          <a href="/tools/part-details/">
+            <span>Parts guide</span>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 19c0-6 5-11 15-11h6c2 0 3 2 3 5v4c0 4-2 6-6 6H9l-5 3zm4 0c0-4 3-7 11-7h5" />
+            </svg>
+            <h3>Describe a component</h3>
+          </a>
+          <a href="/guides/vehicle-identification/">
+            <span>Vehicle guide</span>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="7" width="26" height="18" rx="2" />
+              <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
+            </svg>
+            <h3>Identify the vehicle</h3>
+          </a>
+          <a href="/tools/enquiry-builder/">
+            <span>Enquiry builder</span>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 5h24v17H14l-8 5v-5H3zM8 11h14m-14 5h9" />
+            </svg>
+            <h3>Ask the parts counter</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+    <ClosingBand
+      title="From callout to quote"
+      text="Compare similar catalogue descriptions or put the item you found into a message for your supplier."
+      primary={{ href: '/tools/part-details/', label: 'Compare part descriptions' }}
+      secondary={{ href: '/tools/enquiry-builder/', label: 'Prepare an enquiry' }}
+    />
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/picker.js';
+</script>

@@ -1,0 +1,16 @@
+---
+const { figure } = Astro.props;
+---
+
+<h3>{figure.name}</h3>
+<p>{figure.text}</p>
+<div>
+  <dl class="tool-field-notes">
+    {figure.notes.map(([part, note]) => (
+      <div>
+        <dt>{part}</dt>
+        <dd>{note}</dd>
+      </div>
+    ))}
+  </dl>
+</div>

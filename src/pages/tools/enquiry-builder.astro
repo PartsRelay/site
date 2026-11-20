@@ -1,0 +1,632 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClosingBand from '../../components/ClosingBand.astro';
+---
+
+<Layout
+  title="Prepare a parts enquiry | Parts Relay"
+  description="Prepare an enquiry for any vehicle part. Include the vehicle, quantity and fit questions, then copy the wording for your distributor."
+>
+  <div class="tool tool-request">
+    <section class="tool-hero">
+      <div class="tool-bound">
+        <div class="tool-title">
+          <p class="tool-label">Parts requests</p>
+          <h1 tabindex="-1">Prepare a parts enquiry</h1>
+          <p class="tool-intro">
+            Ask your distributor about any component on the repair order. Include its position, the
+            quantity and the questions they need to answer before you can give the customer a price.
+          </p>
+          <div class="page-actions">
+            <button type="button" class="page-btn" data-tool-action="jump">
+              Open enquiry builder
+            </button>
+            <a class="page-btn page-secondary" href="/repair-shops/">
+              For repair shops
+            </a>
+          </div>
+        </div>
+        <div class="tool-queue" aria-hidden="true">
+          <div class="tool-queue-title">
+            <span>PARTS COUNTER</span>
+            <b>COMPONENT DETAILS</b>
+          </div>
+          <div class="tool-queue-row">
+            <span>Brakes</span>
+            <b>Brake pads</b>
+            <span>Front axle</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Body</span>
+            <b>Mirror glass</b>
+            <span>Left side</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Electrical</span>
+            <b>Alternator</b>
+            <span>Output rating</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Lighting</span>
+            <b>Tail lamp</b>
+            <span>Rear right</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Suspension</span>
+            <b>Control arm</b>
+            <span>Lower arm</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Cooling</span>
+            <b>Fan motor</b>
+            <span>Connector</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Steering</span>
+            <b>Tie rod</b>
+            <span>Outer end</span>
+          </div>
+          <div class="tool-queue-row">
+            <span>Drivetrain</span>
+            <b>Wheel hub</b>
+            <span>Rear axle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div aria-hidden="true" class="tool-ticker is-words">
+      <div class="tool-track">
+        <div>
+          <span class="tool-tick tool-tick-0">Repair shop</span>
+          <span class="tool-tick tool-tick-1">Parts counter</span>
+          <span class="tool-tick tool-tick-2">Service adviser</span>
+          <span class="tool-tick tool-tick-3">Distributor</span>
+          <span class="tool-tick tool-tick-4">Technician</span>
+          <span class="tool-tick tool-tick-5">Workshop</span>
+        </div>
+        <div>
+          <span class="tool-tick tool-tick-0">Repair shop</span>
+          <span class="tool-tick tool-tick-1">Parts counter</span>
+          <span class="tool-tick tool-tick-2">Service adviser</span>
+          <span class="tool-tick tool-tick-3">Distributor</span>
+          <span class="tool-tick tool-tick-4">Technician</span>
+          <span class="tool-tick tool-tick-5">Workshop</span>
+        </div>
+      </div>
+    </div>
+    <section id="page-workspace" class="page-scene tool-workspace" aria-label="Workshop tool">
+      <noscript>
+        Enable JavaScript to use this tool. You can also email contact@reasonandrender.com with
+        questions about Parts Relay.
+      </noscript>
+      <div class="page-wrap page-panel page-split" data-tool-view="form">
+        <div class="page-text">
+          <p class="page-overline">Enquiry builder</p>
+          <h2 class="page-heading" tabindex="-1">
+            What does the repair need?
+          </h2>
+          <p class="page-desc">
+            Name the part and add what you know about the vehicle. You’ll get a message you can copy
+            and send to your distributor.
+          </p>
+          <form class="page-part-form" data-tool-form="request" autocomplete="off" novalidate>
+            <div class="page-field">
+              <label for="page-field-part">Part name</label>
+              <input
+                id="page-field-part"
+                name="part"
+                value=""
+                type="text"
+                maxlength="180"
+                required
+                disabled
+              />
+            </div>
+            <div class="page-field">
+              <label for="page-field-quantity">Quantity</label>
+              <input
+                id="page-field-quantity"
+                name="quantity"
+                value="1"
+                type="number"
+                min="1"
+                step="1"
+                required
+                disabled
+              />
+            </div>
+            <div class="page-field">
+              <label for="page-field-vin">VIN (optional)</label>
+              <input
+                id="page-field-vin"
+                name="vin"
+                value=""
+                type="text"
+                spellcheck="false"
+                autocapitalize="characters"
+                maxlength="64"
+                disabled
+              />
+            </div>
+            <div class="page-field">
+              <label for="page-field-vehicle">Vehicle description (optional)</label>
+              <input
+                id="page-field-vehicle"
+                name="vehicle"
+                value=""
+                type="text"
+                maxlength="180"
+                disabled
+              />
+            </div>
+            <div class="page-field">
+              <label for="page-field-notes">Position, markings or questions (optional)</label>
+              <textarea
+                id="page-field-notes"
+                name="notes"
+                rows="3"
+                maxlength="1800"
+                disabled
+              ></textarea>
+            </div>
+            <div class="page-ctrls">
+              <button type="submit" class="page-btn" disabled>
+                Prepare enquiry
+              </button>
+            </div>
+          </form>
+        </div>
+        <aside class="page-text page-guide-example">
+          <h3>Before you ask for a price</h3>
+          <dl class="page-facts">
+            <div>
+              <dt>Which side?</dt>
+              <dd>Say left or right as you face forward in the vehicle.</dd>
+            </div>
+            <div>
+              <dt>How many?</dt>
+              <dd>
+                Give the number the job needs. For a part fitted on both sides, say whether you want
+                one or the pair.
+              </dd>
+            </div>
+            <div>
+              <dt>Which fittings?</dt>
+              <dd>Tell the counter if the job needs seals, clips or a mounting kit.</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+      <div class="page-wrap page-panel" data-tool-view="result" hidden>
+        <div class="page-text">
+          <p class="page-overline">Parts enquiry</p>
+          <h2 class="page-heading" tabindex="-1">
+            Your message to the distributor
+          </h2>
+          <p class="page-desc">
+            Copy the text into the email or messaging channel you use with your parts counter.
+          </p>
+          <div class="page-field">
+            <label for="page-enquiry-text">Enquiry text</label>
+            <textarea id="page-enquiry-text" readonly rows="8"></textarea>
+          </div>
+          <div class="page-ctrls">
+            <button type="button" class="page-btn" data-tool-action="copy">
+              Copy enquiry
+            </button>
+            <button type="button" class="page-btn page-secondary" data-tool-action="edit-enquiry">
+              Edit enquiry
+            </button>
+          </div>
+          <p class="page-desc" role="status" data-tool-copy-status></p>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">Inside Parts Relay</p>
+            <h2>How a distributor follows a request</h2>
+            <p class="tool-copy">
+              In Parts Relay, a search carries the name of the person who started it and the channel
+              it came from. Open it in the search queue for the vehicle and the parts the catalogue
+              found.
+            </p>
+          </div>
+          <dl class="tool-field-notes">
+            <div>
+              <dt>A member of the team</dt>
+              <dd>
+                At the desk, choose New search and enter the registration plate or VIN and the part
+                needed. Add its position if you know it. Your name appears on the search.
+              </dd>
+            </div>
+            <div>
+              <dt>A workshop contact</dt>
+              <dd>
+                A workshop whose number is an active contact searches by sending a WhatsApp message
+                to the company’s Parts Relay number. Staff can see who sent it and that it came from
+                WhatsApp.
+              </dd>
+            </div>
+            <div>
+              <dt>A colleague taking over</dt>
+              <dd>
+                Find the original search by plate or VIN, or filter the queue by requester, status,
+                period or channel. Its time and status tell you whether someone has already started
+                the job.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">The opening message</p>
+          <h2>What do you need the counter to find out?</h2>
+        </div>
+        <div class="tool-cards" style="--cards: 4">
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="7" width="26" height="18" rx="2" />
+                <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
+              </svg>
+            </div>
+            <h3>Will it fit?</h3>
+            <p>Give the VIN with the enquiry so the counter can check the item against that car.</p>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m3 22 19-19 7 7-19 19zm5-3 4 4m0-8 3 3m1-7 4 4m0-8 3 3" />
+              </svg>
+            </div>
+            <h3>Which version?</h3>
+            <p>
+              If the counter has two choices, a marking on the old unit or the shape of its plug may
+              settle it.
+            </p>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m3 10 13-7 13 7v13l-13 7-13-7zm0 0 13 7 13-7M16 17v13M9 7l13 7" />
+              </svg>
+            </div>
+            <h3>What comes in the box?</h3>
+            <p>
+              Name the clips or seals the technician will need. The supplier can tell you whether to
+              add them to the quote.
+            </p>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 5h24v17H14l-8 5v-5H3zM8 11h14m-14 5h9" />
+              </svg>
+            </div>
+            <h3>What’s still missing?</h3>
+            <p>
+              Put the technician’s answer beside the question it resolves so the next reader can
+              follow the exchange.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">A window regulator enquiry</p>
+          <h2>The customer says the passenger window sticks</h2>
+          <p class="tool-copy">
+            The technician finds a damaged regulator in the left front door. The adviser needs to
+            know whether the replacement comes with a motor.
+          </p>
+        </div>
+        <dl class="tool-record">
+          <div>
+            <dt>
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <rect x="3" y="7" width="26" height="18" rx="2" />
+                <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
+              </svg>
+              Vehicle
+            </dt>
+            <dd>
+              Start the search with the plate or VIN on the job card. Make sure the returned vehicle
+              matches.
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m3 10 13-7 13 7v13l-13 7-13-7zm0 0 13 7 13-7M16 17v13M9 7l13 7" />
+              </svg>
+              Part
+            </dt>
+            <dd>
+              Ask for the front door window regulator and tell the counter whether the shop can
+              reuse the motor.
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M16 29S6 18 6 12a10 10 0 1 1 20 0c0 6-10 17-10 17z" />
+                <circle cx="16" cy="12" r="3" />
+              </svg>
+              Position
+            </dt>
+            <dd>Write “left front door.” The driver’s side varies by market.</dd>
+          </div>
+          <div>
+            <dt>
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M3 5h24v17H14l-8 5v-5H3zM8 11h14m-14 5h9" />
+              </svg>
+              Question
+            </dt>
+            <dd>
+              “Could you quote the left front regulator for this car? Please check whether the
+              motor’s in the box.”
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">In the Parts Relay web app</p>
+            <h2>What each search status means</h2>
+          </div>
+          <dl class="tool-field-notes">
+            <div>
+              <dt>Searching</dt>
+              <dd>
+                The result shows as soon as it is ready, with no need to reload. You can leave the
+                page and the search keeps going.
+              </dd>
+            </div>
+            <div>
+              <dt>Done</dt>
+              <dd>
+                Read the original parts and any aftermarket matches or exploded views. You still
+                need the supplier’s confirmation of fit, price and when the part can arrive.
+              </dd>
+            </div>
+            <div>
+              <dt>Vehicle not found</dt>
+              <dd>The catalogue does not know this plate or VIN. Check it and search again.</dd>
+            </div>
+            <div>
+              <dt>No category matched</dt>
+              <dd>
+                The vehicle was identified, but no part category matched the request. Try a more
+                specific part name or its position.
+              </dd>
+            </div>
+            <div>
+              <dt>Failed</dt>
+              <dd>The catalogue could not complete the search. Search again in a moment.</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">Reading from the journal</p>
+          <h2>Questions to bring back to the technician</h2>
+        </div>
+        <div class="tool-request-examples">
+          <article>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="16" cy="16" r="10" />
+              <circle cx="16" cy="16" r="3" />
+              <path d="M24 6l4 5-2 3-5-5zM10 9l2 2m-4 4h3m-1 6l2-2" />
+            </svg>
+            <h3>Front brake pads</h3>
+            <p>Do we need a separate wear sensor with the front set?</p>
+            <a class="tool-textlink" href="/journal/brake-pad-sets/">
+              Read about brake pad sets
+            </a>
+          </article>
+          <article>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 22c0-5-4-6-4-11a8 8 0 0 1 16 0c0 5-4 6-4 11zm1 4h6m-5 3h4m-4-10 2-8 2 8" />
+            </svg>
+            <h3>Alternator</h3>
+            <p>Which output rating is stamped on the unit with this plug?</p>
+            <a class="tool-textlink" href="/journal/alternator-labels/">
+              Read about alternator labels
+            </a>
+          </article>
+          <article>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 19c0-6 5-11 15-11h6c2 0 3 2 3 5v4c0 4-2 6-6 6H9l-5 3zm4 0c0-4 3-7 11-7h5" />
+            </svg>
+            <h3>Mirror glass</h3>
+            <p>Can we keep the housing and replace just the heated glass on the left?</p>
+            <a class="tool-textlink" href="/journal/mirror-glass/">
+              Read about mirror glass
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-feature">
+          <div>
+            <div class="tool-head">
+              <p class="tool-label">Service desk</p>
+              <h2>When the technician hands you the job card</h2>
+              <p class="tool-copy">
+                A note can name a wheel bearing or a rear door latch and still leave out the side.
+                That’s worth asking about while the car is in the bay.
+              </p>
+            </div>
+            <a class="tool-textlink" href="/repair-shops/">
+              Explore the repair shop guide
+            </a>
+          </div>
+          <img
+            loading="lazy"
+            src="/assets/workshop.webp"
+            alt="A service adviser working at a repair shop"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">Preparing an enquiry</p>
+            <h2>Before you contact the counter</h2>
+          </div>
+          <div class="tool-faq">
+            <details name="requests-faq">
+              <summary>What if I only have part of a reference?</summary>
+              <p>
+                Put the characters you can read in the notes. Tell the distributor where the marking
+                is worn so they can decide what else to check.
+              </p>
+            </details>
+            <details name="requests-faq">
+              <summary>Do I need the full VIN?</summary>
+              <p>
+                You can prepare an enquiry with the vehicle description alone. The distributor may
+                ask for the VIN or registration before confirming a match.
+              </p>
+            </details>
+            <details name="requests-faq">
+              <summary>How do I get a price?</summary>
+              <p>
+                Choose Copy enquiry and paste the text into a message to your usual distributor.
+                They can confirm price, availability and any conditions on the quote.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+    <ClosingBand
+      title="When the counter calls back"
+      text="Check a VIN transcription or read how a broken headlamp mount changes what the shop asks the counter to price."
+      primary={{ href: '/tools/vin-check/', label: 'Check VIN format' }}
+      secondary={{ href: '/guides/counter/', label: 'Follow the headlamp enquiry' }}
+    />
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/tools.js';
+</script>

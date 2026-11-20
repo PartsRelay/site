@@ -1,0 +1,6 @@
+Parts Relay brand package
+
+Manrope Variable, upright (weights 200–800)
+Source Sans 3 Variable, upright (weights 200–900)
+Web fonts are WOFF2 encodings of Manrope-Variable.ttf and SourceSans3-Variable.ttf from the Parts Relay brand package. The diagram labels embed subsets of Source Sans 3 Regular.
+License texts: licenses/Manrope-OFL.txt and licenses/SourceSans3-OFL.txt.

@@ -1,0 +1,316 @@
+/* Shared styles for the interior pages and the two tools. */
+.page-detail {
+  --page-ink: #142b3a;
+  --page-teal: #087781;
+  --page-mist: #dff3ef;
+  --page-paper: #fff;
+  --page-light: #f5f7f8;
+  --page-line: #dce5e3;
+  --page-muted: #586a70;
+  color: var(--page-ink);
+  background: var(--page-paper);
+  font-family: var(--body-font);
+}
+.page-detail :is(h1, h2, h3) {
+  font-family: var(--heading-font);
+}
+.page-detail * {
+  box-sizing: border-box;
+}
+.page-detail [hidden] {
+  display: none !important;
+}
+.page-detail h1,
+.page-detail h2,
+.page-detail h3,
+.page-detail p,
+.page-detail figure,
+.page-detail blockquote,
+.page-detail ol,
+.page-detail ul,
+.page-detail dl,
+.page-detail dd {
+  margin: 0;
+}
+.page-detail button,
+.page-detail input {
+  font: inherit;
+}
+.page-detail button {
+  cursor: pointer;
+}
+.page-detail a {
+  color: inherit;
+  text-decoration: none;
+}
+.page-detail :focus-visible {
+  outline: 3px solid #20747d;
+  outline-offset: 4px;
+}
+.page-detail [tabindex='-1']:focus:not(:focus-visible) {
+  outline: 0;
+}
+.page-wrap {
+  width: min(1140px, calc(100% - 64px));
+  margin-inline: auto;
+}
+.page-hero {
+  padding: 68px 20px 102px;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+.page-hero h1 {
+  font-size: clamp(38px, 4.2vw, 60px);
+  font-weight: 400;
+  line-height: 1.055;
+  letter-spacing: -0.062em;
+  max-width: 780px;
+  margin-top: 24px;
+  text-wrap: balance;
+}
+.page-hero .page-intro {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.45;
+  letter-spacing: -0.025em;
+  color: var(--page-muted);
+  max-width: 655px;
+  margin-top: 20px;
+  text-wrap: pretty;
+}
+.page-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.page-detail .page-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 21px;
+  min-height: 47px;
+  line-height: 1.2;
+  border-radius: 100px;
+  background: var(--page-teal);
+  color: white !important;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  border: 0;
+  transition: background 0.18s;
+}
+.page-detail .page-btn:hover {
+  background: #065a62;
+}
+.page-detail .page-btn.page-secondary {
+  color: var(--page-ink) !important;
+  background: #e9eeee;
+}
+.page-detail .page-btn.page-secondary:hover {
+  background: #d9e6e3;
+}
+.page-detail .page-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.page-scene {
+  background: var(--page-light);
+  border-block: 1px solid var(--page-line);
+  padding-block: 70px 78px;
+}
+.page-panel {
+  background: #fff;
+  border: 1px solid var(--page-line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.page-split {
+  display: grid;
+  grid-template-columns: 1.14fr 0.86fr;
+}
+.page-text {
+  padding: clamp(25px, 4vw, 58px);
+  align-self: center;
+}
+.page-overline {
+  font: 400 12px/1.45 var(--body-font);
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+  color: var(--page-teal);
+}
+.page-detail .page-heading {
+  font-size: clamp(29px, 3vw, 42px);
+  line-height: 1.09;
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  margin-top: 12px;
+}
+.page-desc {
+  font-size: 17px;
+  line-height: 1.52;
+  color: var(--page-muted);
+  margin-top: 14px !important;
+}
+.page-field {
+  margin: 22px 0 0;
+  display: grid;
+  gap: 7px;
+}
+.page-field label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--page-ink);
+}
+.page-field select,
+.page-part-form input {
+  width: 100%;
+  max-width: 100%;
+  min-height: 47px;
+  border: 1px solid #a6b9b7;
+  border-radius: 7px;
+  background: white;
+  padding: 8px 12px;
+  color: var(--page-ink);
+  font: inherit;
+}
+.page-text {
+  min-width: 0;
+}
+.page-text h2 {
+  overflow-wrap: anywhere;
+}
+.page-vehicle-panel {
+  background: var(--page-mist);
+  color: var(--page-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 36px 20px;
+  text-align: center;
+}
+.page-vehicle-panel svg {
+  width: min(74%, 290px);
+  height: auto;
+}
+.page-vehicle-panel figcaption {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.page-vehicle-panel strong {
+  display: block;
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--page-ink);
+}
+.page-field input {
+  min-height: 47px;
+  background: #f6f8f8;
+  border: 1px solid #a6b9b7;
+  color: var(--page-ink);
+  border-radius: 7px;
+  padding: 8px 14px;
+  font-family: var(--body-font);
+  letter-spacing: 0.04em;
+}
+.page-part-form input {
+  font-family: inherit;
+  letter-spacing: normal;
+  background: white;
+}
+.page-field textarea {
+  width: 100%;
+  min-width: 0;
+  resize: vertical;
+  font: inherit;
+  line-height: 1.45;
+  padding: 12px;
+  border: 1px solid #a6b9b7;
+  border-radius: 7px;
+  color: var(--page-ink);
+  background: white;
+}
+.page-ctrls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.page-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 22px;
+  margin-top: 22px !important;
+}
+.page-facts div {
+  border-top: 1px solid var(--page-line);
+  padding-top: 10px;
+}
+.page-facts dt {
+  color: #586a70;
+  font-size: 13px;
+}
+.page-facts dd {
+  font-weight: 500;
+  font-size: 17px;
+  margin-top: 3px;
+}
+.page-guide-example {
+  align-self: stretch;
+  display: grid;
+  align-content: center;
+  background: var(--page-mist);
+}
+.page-guide-example .page-facts {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 780px) {
+  .page-hero {
+    padding: 45px 20px 63px;
+  }
+  .page-wrap {
+    width: calc(100% - 32px);
+  }
+  .page-scene {
+    padding-block: 32px;
+  }
+  .page-split {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .page-hero .page-intro {
+    font-size: 17px;
+  }
+  .page-hero h1 {
+    margin-top: 14px;
+  }
+  .page-text {
+    padding: 24px 20px;
+  }
+  .page-ctrls {
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-detail * {
+    transition: none !important;
+  }
+}
+
+.page-field .page-error {
+  margin: 0;
+  font: 500 14px/1.4 var(--body-font);
+  letter-spacing: 0;
+  color: #a3271f;
+}
+.page-field :is(input, textarea)[aria-invalid='true'] {
+  border-color: #a3271f;
+  box-shadow: 0 0 0 1px #a3271f;
+}

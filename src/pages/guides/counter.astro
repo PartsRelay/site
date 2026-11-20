@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const checks = [
+  {
+    topic: 'Damage',
+    text: 'Identify the broken mounting tab. Check whether the catalogue lists a bracket repair kit for that housing.',
+  },
+  {
+    topic: 'Lamp version',
+    text: 'Read the reference on the lamp and note which characters are unclear. Check it against the lighting equipment fitted to the vehicle.',
+  },
+  {
+    topic: 'What comes in the box',
+    text: 'Ask whether the bulb, control unit and mounting hardware are supplied with the housing or transferred from the original.',
+  },
+];
+---
+
+<Layout
+  title="The headlamp still works. Its mounting tab is broken. | Parts Relay"
+  description="Use a headlamp checklist to distinguish a failed bulb, a damaged bracket and a complete housing before requesting a replacement."
+>
+  <article class="team-page team-story">
+    <div class="team-story-col team-story-head">
+      <div class="team-story-tag">
+        <img src="/assets/symbol.svg" alt="" /> At the counter
+      </div>
+      <h1 tabindex="-1">The headlamp still works. Its mounting tab is broken.</h1>
+      <p class="team-story-dek">
+        “Left headlamp” on a repair order could mean a bulb, a bracket or a complete assembly. When
+        the lamp still lights but the housing moves, start with the mounting point.
+      </p>
+      <dl class="team-facts">
+        <div>
+          <dt>Assembly</dt>
+          <dd>Left headlamp</dd>
+        </div>
+        <div>
+          <dt>Damage</dt>
+          <dd>Broken mounting tab</dd>
+        </div>
+        <div>
+          <dt>Electrical check</dt>
+          <dd>Bulb still lights</dd>
+        </div>
+      </dl>
+      <figure class="team-story-photo">
+        <img
+          src="/assets/counter.webp"
+          alt="An adviser points to the broken mounting tab on a headlamp while a parts specialist steadies the housing."
+          width="768"
+          height="432"
+        />
+        <button
+          type="button"
+          class="team-cover-open"
+          data-team-open
+          aria-expanded="false"
+          aria-controls="team-counter-exchange"
+        >
+          <span aria-hidden="true">▶</span> Open the headlamp checklist
+        </button>
+        <div
+          class="team-exchange"
+          id="team-counter-exchange"
+          role="region"
+          aria-label="Headlamp checklist"
+          data-checks={JSON.stringify(checks)}
+          hidden
+        >
+          <button
+            type="button"
+            class="team-exchange-close"
+            data-team-close
+            aria-label="Close checklist"
+          >
+            ×
+          </button>
+          <div aria-live="polite" class="team-exchange-copy">
+            <small></small>
+            <blockquote></blockquote>
+          </div>
+          <div class="team-exchange-controls">
+            <button type="button" data-team-prev aria-label="Previous check">
+              ←
+            </button>
+            <span></span>
+            <button type="button" data-team-next aria-label="Next check">
+              →
+            </button>
+          </div>
+        </div>
+      </figure>
+      <p class="team-lede">
+        Call the distributor with two details from the bay. Describe what the lamp still does and
+        where it has broken. Those details help the counter decide which parts drawing to open.
+      </p>
+      <div class="team-story-block">
+        <h2>A loose housing</h2>
+        <p>
+          Record which fixing has failed. The parts catalogue may list a bracket repair kit for that
+          version of the lamp. Check the repair procedure for the vehicle before deciding that the
+          entire housing needs replacing.
+        </p>
+      </div>
+      <div class="team-story-block">
+        <h2>Which listing to open?</h2>
+        <p>
+          If the repair calls for the complete housing, say so on the enquiry. Ask the counter to
+          identify the assembly for the left side and confirm which components the technician can
+          transfer.
+        </p>
+      </div>
+    </div>
+    <section class="team-story-quote">
+      <div>
+        <blockquote>Which characters on the lamp label can the technician read?</blockquote>
+        <p>Ask before quoting a replacement housing.</p>
+      </div>
+    </section>
+    <div class="team-story-col team-story-after">
+      <div class="team-story-block">
+        <h2>Reading the label</h2>
+        <p>
+          A model may have several lighting packages. Read the manufacturer’s number directly from
+          the lamp. Where the label is scuffed, leave a gap and tell the counter which end of the
+          number is missing.
+        </p>
+        <p>
+          The counter can use those characters to narrow the search. A complete label reading or the
+          corresponding equipment detail is still needed to identify the replacement.
+        </p>
+      </div>
+      <div class="team-story-block">
+        <h2>The estimate stays open</h2>
+        <p>
+          Once the reference is clear, the distributor can say which housing it covers and what
+          comes with it. Until then the adviser has a job to follow up, but no part number or
+          delivery date to put on the estimate.
+        </p>
+      </div>
+      <section class="team-record">
+        <h3>Shift note for the headlamp job</h3>
+        <dl>
+          <div>
+            <dt>Confirmed by the shop</dt>
+            <dd>Complete left housing requested. Bulb checked and working.</dd>
+          </div>
+          <div>
+            <dt>Still open</dt>
+            <dd>
+              Unreadable suffix on the original lamp. Check the lighting package and the contents of
+              the replacement assembly.
+            </dd>
+          </div>
+          <div>
+            <dt>Next action</dt>
+            <dd>
+              Workshop to confirm the suffix or equipment fitted. Distributor to compare it with the
+              catalogue.
+            </dd>
+          </div>
+          <div>
+            <dt>Before quoting</dt>
+            <dd>
+              Ask the supplier for its price and lead time once the counter has the right entry.
+            </dd>
+          </div>
+        </dl>
+      </section>
+      <aside class="team-story-next">
+        <div>
+          <h2>Write the note for the next shift</h2>
+          <p>
+            The handoff workshop includes a worksheet for recording what the shop confirmed and who
+            owes the next call.
+          </p>
+        </div>
+        <div class="team-actions">
+          <a class="team-btn" href="/workshops/handoff/">
+            Open the handoff worksheet
+          </a>
+          <a class="team-btn team-secondary" href="/repair-shops/">
+            Shop intake guide
+          </a>
+        </div>
+      </aside>
+    </div>
+    <div class="team-story-float">
+      <span>Have a part to identify?</span>
+      <a class="team-btn" href="/tools/enquiry-builder/">
+        Write an enquiry
+      </a>
+    </div>
+    <section class="team-cta">
+      <div class="team-frame">
+        <h2 class="team-h2">Ask about a headlamp</h2>
+        <p>
+          Copy the original lamp number into your enquiry. If part of it is unreadable, mark where
+          the lettering wears off.
+        </p>
+        <div class="team-actions">
+          <a class="team-btn" href="/tools/enquiry-builder/">
+            <img src="/assets/symbol.svg" alt="" />
+            Prepare a headlamp enquiry
+          </a>
+          <a class="team-btn team-secondary" href="/tools/vin-check/">
+            Check the vehicle identifier
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<script>
+  import '../../scripts/counter.js';
+</script>

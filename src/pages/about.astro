@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactBand from '../components/ContactBand.astro';
+---
+
+<Layout
+  title="About Parts Relay | Find car parts from a plate or VIN"
+  description="Parts Relay is a web app for parts distributors and the repair shops they supply. See how plate and VIN searches, WhatsApp contacts, roles and the search queue work."
+  structuredData
+>
+  <div class="team-page team-about">
+    <section class="team-hero">
+      <div class="team-frame">
+        <p class="team-label">Parts Relay</p>
+        <h1 tabindex="-1">About Parts Relay</h1>
+        <p class="team-hero-note">
+          Parts Relay is a web app for parts distributors and the repair shops they supply. Staff
+          enter a registration plate or VIN and the part they need, and get back the vehicle, the
+          original parts and any aftermarket matches. Workshops you add as contacts run the same
+          search by WhatsApp. Parts Relay does not sell parts. The supplying branch still quotes the
+          price and checks stock.
+        </p>
+        <div class="team-actions">
+          <a
+            class="team-btn"
+            href="mailto:contact@reasonandrender.com?subject=Parts%20Relay%20for%20my%20business"
+          >
+            <img src="/assets/symbol-white.svg" alt="" />
+            Talk to our team
+          </a>
+          <a class="team-btn team-secondary" href="/distributors/">
+            For distributors
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="team-manifesto">
+      <div>
+        <section class="team-chapter">
+          <p class="team-label">The people using it</p>
+          <h2 class="team-h2">From the service desk to the parts counter</h2>
+          <p>
+            A customer describes what happened to the car. The technician sees what broke. A
+            distributor may have neither the car nor the repair order in front of them. Parts Relay
+            gives the people answering parts enquiries a company record of the vehicle and the
+            component somebody asked them to find.
+          </p>
+          <ol class="team-numbered">
+            <li>
+              <span aria-hidden="true">01</span>
+              <div>
+                <strong>At the repair shop</strong>A workshop whose WhatsApp number has been added
+                as a contact searches parts by sending a message. Any other number gets a reply
+                asking it to contact the company.
+              </div>
+            </li>
+            <li>
+              <span aria-hidden="true">02</span>
+              <div>
+                <strong>At the distributor</strong>Staff choose New search and enter a registration
+                plate or VIN and the part needed. Searches from the counter and from WhatsApp share
+                one queue.
+              </div>
+            </li>
+          </ol>
+        </section>
+        <section class="team-chapter">
+          <p class="team-label">Catalogue coverage</p>
+          <h2 class="team-h2">Which parts appear in a search?</h2>
+          <p>
+            The vehicle catalogue determines the results. An entry can include the manufacturer’s
+            reference, a description and an exploded view. Some entries also carry aftermarket
+            cross-references.
+          </p>
+          <ol class="team-numbered">
+            <li>
+              <span aria-hidden="true">01</span>
+              <div>
+                <strong>Identification</strong>The counter uses the vehicle, equipment and markings
+                from the old part to choose between entries.
+              </div>
+            </li>
+            <li>
+              <span aria-hidden="true">02</span>
+              <div>
+                <strong>Availability</strong>The branch supplying the part quotes its price and
+                checks stock and lead time.
+              </div>
+            </li>
+          </ol>
+        </section>
+        <section class="team-chapter">
+          <p class="team-label">Working together</p>
+          <h2 class="team-h2">A company account across shifts</h2>
+          <p>
+            A colleague taking over a job can reopen an earlier search, see its progress and read
+            the references it found. An unresolved plate or part description stays visible to the
+            team.
+          </p>
+          <ol class="team-numbered">
+            <li>
+              <span aria-hidden="true">01</span>
+              <div>
+                <strong>Access</strong>There are three roles. The owner manages the company and the
+                team. Admins manage WhatsApp contacts and can invite or remove viewers. Viewers run
+                searches and see contacts. Everyone signs in with Google or a link sent by email.
+              </div>
+            </li>
+            <li>
+              <span aria-hidden="true">02</span>
+              <div>
+                <strong>Language and country</strong>Parts Relay is available in English and
+                Italian, chosen on each device. The owner sets the company’s country, and plates are
+                searched in that country.
+              </div>
+            </li>
+          </ol>
+        </section>
+        <section class="team-chapter">
+          <p class="team-label">Before you get in touch</p>
+          <h2 class="team-h2">Questions buyers ask first</h2>
+          <dl class="team-qa">
+            <div>
+              <dt>What is Parts Relay?</dt>
+              <dd>
+                A web app for parts distributors and the repair shops they supply. It finds original
+                and aftermarket car parts from a registration plate or VIN, lets workshops search by
+                WhatsApp, and keeps every search in one company queue.
+              </dd>
+            </div>
+            <div>
+              <dt>How would my parts counter use it?</dt>
+              <dd>
+                Staff choose New search, pick Plate or VIN, and enter it with the part needed. The
+                result shows the vehicle the catalogue identified, the original parts with their OEM
+                codes and exploded views, and any aftermarket matches. Anyone on the team can reopen
+                that search later from the search queue.
+              </dd>
+            </div>
+            <div>
+              <dt>Can my shop request any part?</dt>
+              <dd>
+                A search returns what the vehicle catalogue lists for that plate or VIN. If the
+                status is No category matched, try a more specific part name or its position. The
+                free enquiry builder on this site is different. It writes a message for any part,
+                and you send that message to your own supplier.
+              </dd>
+            </div>
+            <div>
+              <dt>How do I find out whether it covers my vehicles?</dt>
+              <dd>
+                Plates are searched in the country set for your company, and 33 countries are
+                available: the EU and EEA countries, Switzerland, the United Kingdom and the United
+                States. To check your own work, email two recent enquiries to
+                contact@reasonandrender.com.
+              </dd>
+            </div>
+            <div>
+              <dt>Does Parts Relay sell parts or quote prices?</dt>
+              <dd>
+                No. Results are identification guidance. The supplying branch quotes the price and
+                checks stock and lead time, and fitment should be confirmed before purchase.
+              </dd>
+            </div>
+          </dl>
+        </section>
+        <section class="team-chapter team-chapter-close">
+          <p class="team-label">Evaluating Parts Relay</p>
+          <h2 class="team-h2">Would it cover the jobs you see?</h2>
+          <p>
+            For a discussion about your shop, bring two recent enquiries. Pick one you answered
+            easily and one that took another phone call. They give the team a way to check catalogue
+            coverage against your own work and identify any follow-up you would still do with a
+            supplier.
+          </p>
+          <p>
+            Tell us which country your vehicles are registered in and which shop software you use.
+            We can discuss coverage and the workflow your team needs.
+          </p>
+          <a class="team-contact" href="mailto:contact@reasonandrender.com">
+            Contact the Parts Relay team <span>contact@reasonandrender.com</span>
+          </a>
+        </section>
+      </div>
+    </section>
+    <ContactBand />
+  </div>
+</Layout>

@@ -1,0 +1,439 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClosingBand from '../../components/ClosingBand.astro';
+---
+
+<Layout
+  title="Check a VIN’s format | Parts Relay"
+  description="Check the length and characters of a 17-character VIN before you send it to a distributor. This is a format check: your supplier confirms the vehicle."
+>
+  <div class="tool tool-lookup">
+    <section class="tool-hero">
+      <div class="tool-bound">
+        <div class="tool-title">
+          <p class="tool-label">VIN format check</p>
+          <h1 tabindex="-1">Check a VIN’s format</h1>
+          <p class="tool-intro">
+            A mistyped character can send a parts search to the wrong vehicle. Check the VIN on your
+            repair order before you pass it to the distributor.
+          </p>
+          <div class="page-actions">
+            <button type="button" class="page-btn" data-tool-action="jump">
+              Check a VIN
+            </button>
+            <a class="page-btn page-secondary" href="/tools/enquiry-builder/">
+              Prepare an enquiry
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div aria-hidden="true" class="tool-ticker is-badges">
+      <div class="tool-track">
+        <div>
+          <span class="tool-tick tool-tick-0">BRAKE PADS</span>
+          <span class="tool-tick tool-tick-1">TAIL LAMP</span>
+          <span class="tool-tick tool-tick-2">WHEEL HUB</span>
+          <span class="tool-tick tool-tick-3">STARTER</span>
+          <span class="tool-tick tool-tick-4">CONTROL ARM</span>
+          <span class="tool-tick tool-tick-5">DOOR LATCH</span>
+          <span class="tool-tick tool-tick-0">FAN MOTOR</span>
+          <span class="tool-tick tool-tick-1">ALTERNATOR</span>
+          <span class="tool-tick tool-tick-2">MIRROR GLASS</span>
+          <span class="tool-tick tool-tick-3">HOSE</span>
+          <span class="tool-tick tool-tick-4">BELT</span>
+          <span class="tool-tick tool-tick-5">SENSOR</span>
+        </div>
+        <div>
+          <span class="tool-tick tool-tick-0">BRAKE PADS</span>
+          <span class="tool-tick tool-tick-1">TAIL LAMP</span>
+          <span class="tool-tick tool-tick-2">WHEEL HUB</span>
+          <span class="tool-tick tool-tick-3">STARTER</span>
+          <span class="tool-tick tool-tick-4">CONTROL ARM</span>
+          <span class="tool-tick tool-tick-5">DOOR LATCH</span>
+          <span class="tool-tick tool-tick-0">FAN MOTOR</span>
+          <span class="tool-tick tool-tick-1">ALTERNATOR</span>
+          <span class="tool-tick tool-tick-2">MIRROR GLASS</span>
+          <span class="tool-tick tool-tick-3">HOSE</span>
+          <span class="tool-tick tool-tick-4">BELT</span>
+          <span class="tool-tick tool-tick-5">SENSOR</span>
+        </div>
+      </div>
+    </div>
+    <section id="page-workspace" class="page-scene tool-workspace" aria-label="Workshop tool">
+      <noscript>
+        Enable JavaScript to use this tool. You can also email contact@reasonandrender.com with
+        questions about Parts Relay.
+      </noscript>
+      <div class="page-wrap page-panel page-split">
+        <div class="page-text" data-tool-view="form">
+          <p class="page-overline">Vehicle identification</p>
+          <h2 tabindex="-1" class="page-heading">
+            Check a VIN before you share it
+          </h2>
+          <p class="page-desc">
+            Copy the number from the vehicle or repair order. This checks its length and characters.
+            Your distributor can check the vehicle and its parts in their catalogue.
+          </p>
+          <form class="page-part-form" data-tool-form="vin" autocomplete="off" novalidate>
+            <div class="page-field">
+              <label for="page-field-vin">Vehicle identification number (VIN)</label>
+              <input
+                id="page-field-vin"
+                name="vin"
+                value=""
+                type="text"
+                spellcheck="false"
+                autocapitalize="characters"
+                maxlength="64"
+                required
+                disabled
+              />
+            </div>
+            <div class="page-field">
+              <label for="page-field-vehicle">Vehicle description (optional)</label>
+              <input
+                id="page-field-vehicle"
+                name="vehicle"
+                value=""
+                type="text"
+                maxlength="180"
+                disabled
+              />
+            </div>
+            <div class="page-ctrls">
+              <button class="page-btn" type="submit" disabled>
+                Check VIN format
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="page-text" data-tool-view="result" hidden>
+          <p class="page-overline">Format check</p>
+          <h2 tabindex="-1" class="page-heading">
+            The VIN has the expected format
+          </h2>
+          <p class="page-desc">
+            It contains 17 permitted characters. Confirm the number against the vehicle before
+            asking the counter to check fit.
+          </p>
+          <div class="page-field">
+            <label for="page-checked-vin">VIN as entered</label>
+            <input id="page-checked-vin" value="" readonly />
+          </div>
+          <div class="page-ctrls">
+            <a class="page-btn" data-tool-action="use-vehicle" href="/tools/enquiry-builder/">
+              Use vehicle in enquiry
+            </a>
+            <button type="button" class="page-btn page-secondary" data-tool-action="edit-vin">
+              Edit vehicle details
+            </button>
+          </div>
+        </div>
+        <figure class="page-vehicle-panel">
+          <svg
+            viewBox="0 0 140 60"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              fill="#fff"
+              stroke-width="1.8"
+              d="m9 32 4-10 25-3L50 6q2-2 6-2h27q5 0 11 8l13 11 14 3 7 8-2 4h-12a12 12 0 0 0-23 0H41a12 12 0 0 0-24 0h-7z"
+            />
+            <path d="m44 19 10-11h11v11zm25 0V8h13l12 11zM42 24h42m-17 1v7" />
+            <g fill="#fff" stroke-width="1.8">
+              <circle cx="29" cy="38" r="8" />
+              <circle cx="103" cy="38" r="8" />
+            </g>
+          </svg>
+          <figcaption>
+            Vehicle identification<strong>17 characters</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">In the Parts Relay web app</p>
+            <h2>Searching by plate or VIN</h2>
+            <p class="tool-copy">
+              In Parts Relay, choose New search and pick Plate or VIN. Enter it with the part you’re
+              looking for. If the catalogue identifies the vehicle, you’ll see its description and,
+              when available, its VIN.
+            </p>
+          </div>
+          <dl class="tool-field-notes">
+            <div>
+              <dt>A vehicle comes back</dt>
+              <dd>
+                Do the make and model match the repair order? If the description is for a different
+                car, check the letters and numbers on the plate.
+              </dd>
+            </div>
+            <div>
+              <dt>The catalogue lists parts</dt>
+              <dd>
+                Read the manufacturer’s original equipment (OE) description in its catalogue
+                section. Two similar descriptions may refer to a whole assembly and a part inside
+                it.
+              </dd>
+            </div>
+            <div>
+              <dt>Vehicle not found</dt>
+              <dd>
+                If the plate is right and a second search still returns nothing, the catalogue may
+                have no record for that vehicle.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-center">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">Fitment details</p>
+          <h2>What the VIN leaves open</h2>
+        </div>
+        <div class="tool-tiles">
+          <article>
+            <div class="tool-tile-art is-vin">
+              <div class="tool-vin-card">
+                <span>VEHICLE IDENTIFICATION</span>
+                <strong>17 characters</strong>
+                <i></i>
+              </div>
+            </div>
+            <h3>Vehicle identity</h3>
+            <p>Read the VIN from the vehicle itself if the number on the job card is unclear.</p>
+          </article>
+          <article>
+            <div class="tool-tile-art is-pads">
+              <img
+                loading="lazy"
+                src="/assets/brake-pads.svg"
+                alt="Disc and two brake pads in an exploded view"
+              />
+            </div>
+            <h3>Size of the repair</h3>
+            <p>
+              A front axle diagram can show a disc and its pads together. Which of them did the
+              technician ask for?
+            </p>
+          </article>
+          <article>
+            <div class="tool-tile-art is-alternator">
+              <img
+                loading="lazy"
+                src="/assets/alternator.svg"
+                alt="Alternator with connector and mounting points"
+              />
+            </div>
+            <h3>Fitted equipment</h3>
+            <p>
+              If two alternators look alike, the plug or the markings on the housing can distinguish
+              them.
+            </p>
+          </article>
+          <article>
+            <div class="tool-tile-art is-route">
+              <div class="tool-routing">
+                <svg
+                  class="tool-icon"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.45"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M8 3h13l5 5v21H8zM21 3v6h5M12 14h10m-10 5h10m-10 5h6" />
+                </svg>
+                <b>→</b>
+                <svg
+                  class="tool-icon"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.45"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3 5h24v17H14l-8 5v-5H3zM8 11h14m-14 5h9" />
+                </svg>
+                <b>→</b>
+                <svg
+                  class="tool-icon"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.45"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m3 10 13-7 13 7v13l-13 7-13-7zm0 0 13 7 13-7M16 17v13M9 7l13 7" />
+                </svg>
+              </div>
+            </div>
+            <h3>Vehicle on the enquiry</h3>
+            <p>
+              Include the vehicle details in the message you give the counter. Keep the supplier’s
+              quoted reference with the same repair order.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">Reading a VIN</p>
+            <h2>When a character is hard to read</h2>
+          </div>
+          <ol class="tool-steps">
+            <li>
+              <span class="tool-stepno" aria-hidden="true">
+                1
+              </span>
+              <div>
+                <h3>Check the characters</h3>
+                <p>
+                  The 17-character VIN uses letters and numbers. A round character can be zero, and
+                  a straight one can be the number one. The letters I, O and Q are excluded.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="tool-stepno" aria-hidden="true">
+                2
+              </span>
+              <div>
+                <h3>Read it back in groups</h3>
+                <p>
+                  Have a colleague read from the vehicle while you follow the written number. Two
+                  valid characters in the wrong order can still pass a format check.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="tool-stepno" aria-hidden="true">
+                3
+              </span>
+              <div>
+                <h3>Look up the vehicle</h3>
+                <p>
+                  For a vehicle sold in the United States, the federal VIN decoder can help identify
+                  its make, model and engine. Enter the VIN directly on the agency’s site.
+                  <a class="tool-textlink" href="https://vpic.nhtsa.dot.gov/decoder/">
+                    Open NHTSA’s VIN decoder
+                  </a>
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-feature">
+          <div>
+            <div class="tool-head">
+              <p class="tool-label">At the parts counter</p>
+              <h2>Two entries called “pad set”</h2>
+              <p class="tool-copy">
+                The technician can tell you which axle they’re working on and which brakes are
+                fitted. Give those details to the counter so they can narrow down the set and quote
+                any accessories the job needs.
+              </p>
+            </div>
+            <a class="tool-textlink" href="/guides/counter/">
+              Read the counter guide
+            </a>
+          </div>
+          <img
+            loading="lazy"
+            src="/assets/counter.webp"
+            alt="A service adviser shows a distributor the damaged mounting tab on a headlamp."
+          />
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">Reference guides</p>
+          <h2>Vehicle records and catalogue drawings</h2>
+        </div>
+        <div class="tool-guides">
+          <a class="tool-textlink" href="/guides/vehicle-identification/">
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="7" width="26" height="18" rx="2" />
+              <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
+            </svg>
+            <span>Identify the vehicle</span>
+          </a>
+          <a class="tool-textlink" href="/tools/parts-diagrams/">
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m2 11 14-7 14 7-14 7zm1 6 13 7 13-7M3 23l13 7 13-7" />
+            </svg>
+            <span>Read a diagram</span>
+          </a>
+          <a class="tool-textlink" href="/tools/part-details/">
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 3h13l5 5v21H8zM21 3v6h5M12 14h10m-10 5h10m-10 5h6" />
+            </svg>
+            <span>Describe the part</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <ClosingBand
+      title="What does the workshop need?"
+      text="Add the part description and quantity to your vehicle details before contacting the distributor."
+      primary={{ href: '/tools/enquiry-builder/', label: 'Write your enquiry' }}
+      secondary={{ href: '/guides/vehicle-identification/', label: 'Read the vehicle guide' }}
+    />
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/tools.js';
+</script>

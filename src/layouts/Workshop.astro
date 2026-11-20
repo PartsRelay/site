@@ -1,0 +1,44 @@
+---
+import Layout from './Layout.astro';
+
+const { title, description, heading, audience, poster, posterAlt, prepare } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <article class="workshop workshop-lesson">
+    <div class="workshop-lesson-grid">
+      <aside class="workshop-session-info">
+        <div class="workshop-poster">
+          <div class="workshop-poster-top">
+            <img src="/assets/symbol-white.svg" alt="" />
+            <span>Parts Relay</span>
+          </div>
+          <span class="workshop-poster-title">Workshop</span>
+          <img class="workshop-poster-art" src={poster} alt={posterAlt} />
+        </div>
+        <dl class="workshop-prep">
+          {prepare.map((item) => (
+            <div>
+              <dt>{item.term}</dt>
+              <dd>{item.text}</dd>
+            </div>
+          ))}
+        </dl>
+      </aside>
+      <div class="workshop-story">
+        <a class="workshop-breadcrumb" href="/workshops/">
+          ← All workshops
+        </a>
+        <h1 tabindex="-1">{heading}</h1>
+        <p class="workshop-meta">{audience}</p>
+        <p class="workshop-intro">
+          <slot name="intro" />
+        </p>
+        <slot />
+        <a class="workshop-breadcrumb" href="/workshops/">
+          ← All workshops
+        </a>
+      </div>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,27 @@
+{
+  "name": "parts-relay-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketing site for Parts Relay",
+  "author": "Ryan Wynn",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^1.1.2"
+  }
+}

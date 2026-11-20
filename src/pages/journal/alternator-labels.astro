@@ -1,0 +1,105 @@
+---
+import Article from '../../layouts/Article.astro';
+
+const related = [
+  { href: '/journal/brake-pad-sets/', label: 'What comes in a brake pad set?' },
+  { href: '/journal/mirror-glass/', label: 'Mirror glass or the whole assembly?' },
+  { href: '/journal/', label: 'All articles' },
+];
+---
+
+<Article
+  title="Reading the label on an alternator | Parts Relay"
+  description="Identify the alternator markings a supplier needs when a label is worn or only part of the reference is legible."
+  heading="Reading the label on an alternator"
+  topic="Distributor counter"
+  topicHref="/journal/"
+  readTime="3 min read"
+  relatedHeading="Other identification problems"
+  related={related}
+>
+  <Fragment slot="intro">
+    Two alternators can have a similar housing and pulley. If both appear against the same vehicle,
+    a legible marking on the old unit can narrow the search. First ask the counter which marking it
+    needs.
+  </Fragment>
+  <div
+    slot="cover"
+    class="lib-art lib-art-alt"
+    aria-label="Technical illustration of an alternator"
+    role="img"
+  >
+    <span>Electrical</span>
+    <img src="/assets/alternator.svg" alt="" />
+    <b>ALTERNATOR</b>
+  </div>
+  <section class="lib-case">
+    <h2>What to record from a worn label</h2>
+    <p>
+      Write the rating and the part number on separate lines. A partial number is still useful if
+      the counter can tell where it stops.
+    </p>
+    <dl class="lib-evidence">
+      <div>
+        <dt>Output rating</dt>
+        <dd>
+          Copy the amperage as printed, including the unit. The rating belongs in its own field,
+          even when the manufacturer’s number is illegible.
+        </dd>
+      </div>
+      <div>
+        <dt>Part number</dt>
+        <dd>
+          Read the characters in order and mark anything you couldn’t make out. A cropped photo can
+          help the counter see whether a character is worn away or hidden at the edge.
+        </dd>
+      </div>
+      <div>
+        <dt>Outstanding check</dt>
+        <dd>
+          Ask the supplier which remaining detail would settle the match. Write down the question in
+          their words so the technician can check it in one visit.
+        </dd>
+      </div>
+    </dl>
+  </section>
+  <section>
+    <h2>Which number do you need?</h2>
+    <p>
+      The output rating and the manufacturer’s reference answer different questions. If the counter
+      asks for the reference, copy the whole string, including letters, leading zeroes and the
+      suffix. If one character is unclear, mark its position and leave it open.
+    </p>
+  </section>
+  <section>
+    <h2>The plug can help</h2>
+    <p>
+      When the label is damaged, ask whether the connector shape distinguishes the remaining units.
+      The counter person can tell the technician what to look for before anyone goes back to the
+      vehicle.
+    </p>
+  </section>
+  <p>
+    <a class="lib-inline-link" href="/distributors/">
+      How a distributor handles an open enquiry
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.55"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 12h15m-6-6 6 6-6 6" />
+      </svg>
+    </a>
+  </p>
+  <p class="lib-product-note">
+    Parts Relay finds the parts from a plate or VIN and keeps each search in one queue the whole
+    counter can see.
+    <a class="lib-inline-link" href="/about/">
+      How Parts Relay works
+    </a>
+  </p>
+</Article>

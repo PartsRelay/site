@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="title desc">
+  <title id="title">Disc brake assembly</title>
+  <desc id="desc">An outer brake pad, ventilated disc and inner brake pad, separated along the axle to show how the two pads face the disc.</desc>
+  <defs><style>@font-face{font-family:'Source Sans 3';src:url(data:font/woff;base64,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) format('woff');font-style:normal;font-weight:400}</style>
+    <path id="backing" d="M-60 3v-10h12c6-12 22-24 43-30 22-6 44-3 56 4l6 10h9v13h-9l-4 13-8 4C29 0 11 0-5 5c-16 5-28 13-37 23l-9-2-2-20Z"/>
+    <path id="lining" d="M-45-7c10-9 24-19 43-24 18-5 36-4 48 2l5 14-7 11C25-10 10-8-9-2c-15 5-27 12-34 19l-5-10Z"/>
+    <path id="slot" d="M-18-88q12-2 24-1" fill="none" stroke="#8ea9a1" stroke-width="3" stroke-linecap="round"/>
+    <g id="pad" stroke="#254950" stroke-width="2.5" stroke-linejoin="round">
+      <use href="#backing" transform="translate(8 3)" fill="#a3b9b0"/>
+      <use href="#backing" fill="#d6e4d9"/>
+      <use href="#lining" fill="#6e8c83"/>
+      <path d="m-1-28 2 18" stroke="#d6e4d9" stroke-width="4"/>
+    </g>
+  </defs>
+  <g fill="none" stroke="#849c94" stroke-width="1.5" stroke-dasharray="6 6">
+    <path d="m60 138 502 44"/>
+    <path d="m101 112 453 39"/>
+  </g>
+  <!-- Rear pad, rotor, front pad, viewed along the same exploded axis. -->
+  <g transform="matrix(.94 -.20 0 1.08 123 137)" stroke="#254950" stroke-width="2.5" stroke-linejoin="round">
+    <use href="#lining" transform="translate(10 4)" fill="#6e8c83"/>
+    <use href="#backing" fill="#c6d8cc"/>
+    <path d="M-38-2q11-14 36-20t42-2l4 9Q26-18 7-13T-37 7Z" fill="#e5eddf" stroke-width="1.4"/>
+    <circle cx="-47" cy="11" r="3" fill="#728e83" stroke="none"/><circle cx="46" cy="-12" r="3" fill="#728e83" stroke="none"/>
+  </g>
+  <g transform="matrix(.75 -.20 0 1.03 307 161)" stroke="#254950" stroke-width="2.5" stroke-linejoin="round">
+    <circle cx="17" cy="5" r="96" fill="#aac0b5"/>
+    <path d="m64-67 14 5m-2 5 14 5m-6 6 14 5m-8 7 14 4m-9 9 14 4m-11 10 14 4m-12 10 14 4m-14 10 14 4m-17 10 13 4m-18 8 12 4m-18 8 11 3m-21 7 10 3m-25 5 10 3" fill="none" stroke="#42605b" stroke-width="3" stroke-linecap="round"/>
+    <circle r="96" fill="#eff3e7"/>
+    <circle r="79" fill="none" stroke="#b4c7bd" stroke-width="1.3"/>
+    <circle r="65" fill="none" stroke="#b4c7bd" stroke-width="1.3"/>
+    <use href="#slot"/><use href="#slot" transform="rotate(60)"/><use href="#slot" transform="rotate(120)"/><use href="#slot" transform="rotate(180)"/><use href="#slot" transform="rotate(240)"/><use href="#slot" transform="rotate(300)"/>
+    <circle r="49" fill="#adbbb0"/>
+    <circle cx="-8" cy="-2" r="44" fill="#ccddd1"/>
+    <g transform="translate(-8 -2)" fill="#fcfaf0">
+      <circle r="16" stroke-width="3"/>
+      <circle cy="-29" r="4.7"/><circle cx="27.6" cy="-9" r="4.7"/><circle cx="17" cy="23.5" r="4.7"/><circle cx="-17" cy="23.5" r="4.7"/><circle cx="-27.6" cy="-9" r="4.7"/>
+    </g>
+  </g>
+  <use href="#pad" transform="matrix(.94 -.20 0 1.08 493 168)"/>
+  <g fill="none" stroke="#63837e" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M126 94V65l-13-10H65m218 199v16l17 11h39m146-151V94l17-13h56"/>
+  </g>
+  <g fill="#375d5e" font-family="'Source Sans 3'" font-size="12" letter-spacing="1">
+    <text x="65" y="48">OUTER PAD</text><text x="346" y="285">BRAKE DISC</text><text x="501" y="74">INNER PAD</text>
+  </g>
+</svg>

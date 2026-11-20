@@ -1,0 +1,222 @@
+---
+import { contactLink, privacyPolicy } from '../site';
+
+const menu = [
+  {
+    id: 'site-solutions',
+    label: 'Solutions',
+    items: [
+      {
+        href: '/tools/vin-check/',
+        title: 'VIN format check',
+        text: 'Check a 17-character VIN for typing errors.',
+        icon: ['M8 4a6 6 0 1 1 0 12A6 6 0 0 1 8 4Zm5 10 7 7', 'M5 10h1', 'M8 9h1', 'M11 10h1'],
+      },
+      {
+        href: '/tools/parts-diagrams/',
+        title: 'Parts diagrams',
+        text: 'Identify a piece in an exploded view.',
+        icon: ['m12 4 8 4-8 4-8-4Z', 'm4 12 8 4 8-4', 'm4 16 8 4 8-4'],
+      },
+      {
+        href: '/tools/part-details/',
+        title: 'Part details',
+        text: 'Compare part numbers and descriptions.',
+        icon: ['M6 3h9l4 4v14H6ZM14 3v5h5M9 12h7M9 16h6'],
+      },
+      {
+        href: '/tools/enquiry-builder/',
+        title: 'Parts enquiry builder',
+        text: 'Write a parts enquiry for your supplier.',
+        icon: ['M3 4h13v11H8l-4 3v-3H3Z', 'M18 8h3v10h-3v3l-4-3h-3', 'M6.5 9.5h1', 'M11 9.5h1'],
+      },
+    ],
+  },
+  {
+    id: 'site-teams',
+    label: 'Teams',
+    items: [
+      {
+        href: '/repair-shops/',
+        title: 'Repair shops',
+        text: 'Turn a repair order into an enquiry.',
+        icon: ['M3 10l2-6h14l2 6H3Zm2 0v10h14V10', 'M8 20v-6h5v6'],
+      },
+      {
+        href: '/distributors/',
+        title: 'Distributors',
+        text: 'Work through your company’s search queue.',
+        icon: ['m12 3 9 5v10l-9 4-9-4V8l9-5Z', 'm3 8 9 5 9-5', 'M12 13v9', 'm7 5.8 9 5'],
+      },
+    ],
+  },
+  {
+    id: 'site-workflow',
+    label: 'Workflow',
+    items: [
+      {
+        href: '/#workflow',
+        title: 'How it works',
+        text: 'See what goes into a supplier enquiry.',
+        icon: ['M3 6h12v5h6', 'm17 7 4 4-4 4', 'M21 18H9v-5H3', 'm7 9-4 4 4 4'],
+      },
+      {
+        href: '/guides/guidebook/',
+        title: 'Prepare a supplier enquiry',
+        text: 'Get a parts enquiry ready to send.',
+        icon: ['M3 4h17v12H9l-4 4v-4H3Z', 'M7 11v-1', 'M11 11V8', 'M15 11V6'],
+      },
+      {
+        href: '/workshops/',
+        title: 'Workshops',
+        text: 'Use a worksheet on the job.',
+        icon: ['M3 3h18v13H3ZM8 21l4-5 4 5M8 8h8m-8 4h5'],
+      },
+    ],
+  },
+  {
+    id: 'site-resources',
+    label: 'Resources',
+    items: [
+      {
+        href: '/library/',
+        title: 'All guides',
+        text: 'Find a guide for the job at hand.',
+        icon: ['M3 4h5v16H3ZM10 4h4v16h-4Z', 'm16 5 4-1 3 15-4 1Z'],
+      },
+      {
+        href: '/guides/guidebook/',
+        title: 'Parts guidebook',
+        text: 'Get a parts enquiry ready to send.',
+        icon: [
+          'M3 5h6q2 0 3 2q1-2 3-2h6v14h-6q-2 0-3 2q-1-2-3-2H3ZM12 7v14',
+          'M5.5 9H9',
+          'M15 9h3.5',
+        ],
+      },
+      {
+        href: '/guides/vehicle-identification/',
+        title: 'Vehicle identification',
+        text: 'Check a vehicle that doesn’t look right.',
+        icon: ['M3 10l2-5h14l2 5v8H3Z', 'M3 11h18', 'M6 15h2m8 0h2'],
+      },
+      {
+        href: '/about/',
+        title: 'About Parts Relay',
+        text: 'Learn who Parts Relay is for.',
+        icon: ['M3 4h18v13h-9l-5 4v-4H3Z', 'M7 12h4V8h6'],
+      },
+      {
+        href: privacyPolicy,
+        external: true,
+        title: 'Privacy Policy',
+        text: 'How this site handles personal data.',
+        icon: ['m12 3 8 3v5q0 6-8 10-8-4-8-10V6Z', 'm8 12 3 3 5-6'],
+      },
+      {
+        href: '/journal/',
+        title: 'Journal',
+        text: 'Read about the parts behind the enquiry.',
+        icon: ['M4 3h16v18H4ZM7 7h10M7 11h10m-10 4h6'],
+      },
+      {
+        href: '/guides/counter/',
+        title: 'Counter guide',
+        text: 'Work out which headlamp parts to quote.',
+        icon: ['M4 8h16v4H4ZM6 12v7m12-7v7M9 8V4h6v4'],
+      },
+      {
+        href: '/brand/',
+        title: 'Brand assets',
+        text: 'Get the logo files and type specifications.',
+        icon: ['M3 5h18v14H3ZM7 14l4-5 3 3 2-2 2 4'],
+      },
+    ],
+  },
+];
+---
+
+<header class="site-chrome" id="site-chrome">
+  <div class="site-banner" aria-label="Announcement">
+    <span class="site-ann-wide">For repair shops and distributors</span>
+    <span class="site-ann-short">For your parts desk</span>
+    <span class="site-ann-divider" aria-hidden="true"></span>
+    <a href="/tools/enquiry-builder/">
+      Prepare an enquiry <i class="site-right" aria-hidden="true"></i>
+    </a>
+    <button class="site-dismiss" type="button" aria-label="Dismiss announcement">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="site-nav-shell">
+    <div class="site-nav">
+      <a class="site-mark" href="/" aria-label="Parts Relay home">
+        <img src="/assets/symbol.svg" width="39" height="35" alt="" />
+      </a>
+      <nav class="site-menu" id="site-menu" aria-label="Main navigation">
+        {menu.map((group) => (
+          <div class="site-group">
+            <button
+              type="button"
+              class="site-trigger"
+              aria-expanded="false"
+              aria-controls={group.id}
+            >
+              {group.label} <i />
+            </button>
+            <div class="site-dropdown" id={group.id} hidden>
+              {group.items.map((item, index) => (
+                <a
+                  href={item.href}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener' : undefined}
+                  aria-label={item.title}
+                  data-position={index + 1}
+                >
+                  <span class="site-item-icon" aria-hidden="true">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.65"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      {item.icon.map((d) => (
+                        <path d={d} />
+                      ))}
+                    </svg>
+                  </span>
+                  <span class="site-item-labels">
+                    <strong>{item.title}</strong>
+                    <span>{item.text}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+        <a class="site-mobile-contact" href={contactLink}>
+          Contact the Parts Relay team
+        </a>
+      </nav>
+      <div class="site-nav-side">
+        <a class="site-get" href={contactLink}>
+          Contact us <i class="site-right" aria-hidden="true"></i>
+        </a>
+        <button
+          type="button"
+          class="site-mobile"
+          aria-controls="site-menu"
+          aria-expanded="false"
+          aria-label="Open navigation"
+        >
+          <i></i>
+          <i></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

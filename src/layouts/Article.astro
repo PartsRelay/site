@@ -1,0 +1,42 @@
+---
+import Layout from './Layout.astro';
+import Arrow from '../components/Arrow.astro';
+
+const { title, description, heading, topic, topicHref, readTime, relatedHeading, related } =
+  Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <div class="lib-page lib-article">
+    <article class="lib-reading">
+      <header>
+        <a class="lib-topic" href={topicHref}>
+          {topic}
+        </a>
+        <h1 tabindex="-1">{heading}</h1>
+        <div class="lib-byline">
+          <img src="/assets/symbol.svg" alt="" />
+          <span>Parts Relay</span>
+          <i></i>
+          <span>{readTime}</span>
+        </div>
+        <p class="lib-article-intro">
+          <slot name="intro" />
+        </p>
+      </header>
+      <slot name="cover" />
+      <div class="lib-prose">
+        <slot />
+      </div>
+      <aside class="lib-reader-related">
+        <h2>{relatedHeading}</h2>
+        {related.map((link) => (
+          <a href={link.href}>
+            <span>{link.label}</span>
+            <Arrow />
+          </a>
+        ))}
+      </aside>
+    </article>
+  </div>
+</Layout>
