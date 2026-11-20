@@ -2,8 +2,11 @@
 .site-chrome.fx-ready {
   transform: translateY(var(--fx-header-y, 0px));
 }
+/* The bar's background follows the scroll position only. Opening a dropdown must not change it,
+   or the bar flashes white on pages with a tinted or dark background. */
 .site-chrome.fx-ready .site-nav-shell,
-.site-chrome.fx-ready.site-scrolled .site-nav-shell {
+.site-chrome.fx-ready.site-scrolled .site-nav-shell,
+.site-chrome.fx-ready:has(.site-trigger[aria-expanded='true']) .site-nav-shell {
   transition: none;
   background: rgb(255 255 255 / var(--fx-header-alpha, 0));
   box-shadow: none;

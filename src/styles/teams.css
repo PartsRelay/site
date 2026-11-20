@@ -923,6 +923,22 @@ body:has(#main .team-about) .site-trigger:hover {
 body:has(#main .team-about) :is(.site-dropdown, .site-open .site-menu, .fx-mobile-exit .site-menu) {
   color: #142b3a;
 }
+@media (min-width: 768px) {
+  body:has(#main .team-about) .site-chrome .site-dropdown {
+    background: #1b3440;
+    border-color: #39525d;
+    color: #f4fbfa;
+  }
+  body:has(#main .team-about) .site-chrome .site-dropdown a:hover,
+  body:has(#main .team-about) .site-chrome .site-dropdown a:focus-visible,
+  body:has(#main .team-about) .fx-menu-pill {
+    background: #2c4750;
+  }
+  body:has(#main .team-about) .site-item-icon,
+  body:has(#main .team-about) .site-item-labels > span {
+    color: #b9ccca;
+  }
+}
 body:has(#main .team-about) .base-footer {
   background: #142b3a;
   color: #bcd0cf;
