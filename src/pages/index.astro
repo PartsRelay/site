@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { contactLink } from '../site';
 ---
 
 <Layout
@@ -24,10 +25,7 @@ import Layout from '../layouts/Layout.astro';
             queue.
           </p>
           <div class="site-actions">
-            <a
-              class="site-action-primary"
-              href="mailto:contact@reasonandrender.com?subject=Parts%20Relay%20for%20my%20business"
-            >
+            <a class="site-action-primary" href={contactLink}>
               <img src="/assets/symbol.svg" alt="" />
               Talk to our team
             </a>
@@ -393,10 +391,7 @@ import Layout from '../layouts/Layout.astro';
         check them against catalogue coverage.
       </p>
       <div class="base-actions">
-        <a
-          class="base-button base-light"
-          href="mailto:contact@reasonandrender.com?subject=Parts%20Relay%20for%20my%20business"
-        >
+        <a class="base-button base-light" href={contactLink}>
           <img alt="" src="/assets/symbol.svg" />
           Email the Parts Relay team
         </a>

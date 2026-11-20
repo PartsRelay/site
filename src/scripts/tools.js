@@ -155,6 +155,8 @@ document.addEventListener('click', (event) => {
       focusIn(formView.hidden ? resultView : formView, 'h2');
       break;
     case 'use-vehicle':
+      // A modified click opens the builder in another tab, so this tab should not jump there later.
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) break;
       remember({ startAtPart: true });
       break;
     case 'edit-vin':

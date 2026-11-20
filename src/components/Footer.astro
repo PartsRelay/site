@@ -1,3 +1,9 @@
+---
+import { contactEmail, cookiePolicy, privacyPolicy } from '../site';
+
+const year = new Date().getFullYear();
+---
+
 <div class="base-bound base-footer-rule">
   <hr />
 </div>
@@ -9,8 +15,8 @@
           <span aria-hidden="true"></span>VIN format check
         </a>
         <p>Product enquiries</p>
-        <a class="base-contact" href="mailto:contact@reasonandrender.com">
-          contact@reasonandrender.com
+        <a class="base-contact" href={`mailto:${contactEmail}`}>
+          {contactEmail}
         </a>
         <div class="base-utilities">
           <a
@@ -69,7 +75,7 @@
         <a href="/journal/">Parts Relay Journal</a>
         <a href="/brand/">Brand assets</a>
         <a href="/about/">About Parts Relay</a>
-        <a href="https://www.iubenda.com/privacy-policy/71817193" target="_blank" rel="noopener">
+        <a href={privacyPolicy} target="_blank" rel="noopener">
           Privacy Policy
         </a>
       </div>
@@ -129,19 +135,15 @@
       </svg>
     </div>
     <div class="base-legal">
-      <span>© 2026 Parts Relay</span>
+      <span>© {year} Parts Relay</span>
       <div>
         <a href="/about/">About</a>
         <span aria-hidden="true">·</span>
-        <a href="https://www.iubenda.com/privacy-policy/71817193" target="_blank" rel="noopener">
+        <a href={privacyPolicy} target="_blank" rel="noopener">
           Privacy
         </a>
         <span aria-hidden="true">·</span>
-        <a
-          href="https://www.iubenda.com/privacy-policy/71817193/cookie-policy"
-          target="_blank"
-          rel="noopener"
-        >
+        <a href={cookiePolicy} target="_blank" rel="noopener">
           Cookies
         </a>
       </div>

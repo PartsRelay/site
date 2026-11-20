@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { contactLink } from '../site';
 import ContactBand from '../components/ContactBand.astro';
 ---
 
@@ -18,10 +19,7 @@ import ContactBand from '../components/ContactBand.astro';
           part they need. Below is what to put in that request so the counter can answer it.
         </p>
         <div class="team-actions">
-          <a
-            class="team-btn"
-            href="mailto:contact@reasonandrender.com?subject=Parts%20Relay%20for%20my%20business"
-          >
+          <a class="team-btn" href={contactLink}>
             Talk to our team
           </a>
           <a class="team-btn team-secondary" href="/tools/enquiry-builder/">

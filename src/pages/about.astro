@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { contactEmail, contactLink } from '../site';
 import ContactBand from '../components/ContactBand.astro';
 ---
 
@@ -21,10 +22,7 @@ import ContactBand from '../components/ContactBand.astro';
           price and checks stock.
         </p>
         <div class="team-actions">
-          <a
-            class="team-btn"
-            href="mailto:contact@reasonandrender.com?subject=Parts%20Relay%20for%20my%20business"
-          >
+          <a class="team-btn" href={contactLink}>
             <img src="/assets/symbol-white.svg" alt="" />
             Talk to our team
           </a>
@@ -177,8 +175,8 @@ import ContactBand from '../components/ContactBand.astro';
             Tell us which country your vehicles are registered in and which shop software you use.
             We can discuss coverage and the workflow your team needs.
           </p>
-          <a class="team-contact" href="mailto:contact@reasonandrender.com">
-            Contact the Parts Relay team <span>contact@reasonandrender.com</span>
+          <a class="team-contact" href={`mailto:${contactEmail}`}>
+            Contact the Parts Relay team <span>{contactEmail}</span>
           </a>
         </section>
       </div>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { contactLink } from '../site';
 import ContactBand from '../components/ContactBand.astro';
 
 const questions = [
@@ -26,10 +27,7 @@ const questions = [
           who ran the search and where the last person got to.
         </p>
         <div class="team-actions">
-          <a
-            class="team-btn"
-            href="mailto:contact@reasonandrender.com?subject=Parts%20Relay%20for%20my%20business"
-          >
+          <a class="team-btn" href={contactLink}>
             Talk to our team
           </a>
           <button type="button" class="team-btn team-secondary" data-jump="team-directory">
