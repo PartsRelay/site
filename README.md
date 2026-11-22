@@ -50,6 +50,21 @@ npm run format
 
 `npm run format:check` reports files that need it.
 
+## Checks
+
+Every pull request to `main` runs the workflow in `.github/workflows/checks.yml`. To run the same checks locally:
+
+```
+npm run format:check
+npm run check
+npm run build
+npm run check:links
+```
+
+`npm run check` runs `astro check` for type errors in components and scripts. `npm run check:links` looks through the built site in `dist/` for links, images and fonts that point at a missing file or a missing `#id`. It doesn't fetch external links.
+
+Dependabot opens pull requests for npm and GitHub Actions updates (`.github/dependabot.yml`). They run the same checks.
+
 ## Notes
 
 - Privacy Policy, Cookie Policy and the cookie banner come from iubenda. The embed script has to stay the first tag in `<head>` (see `src/layouts/Layout.astro`).
