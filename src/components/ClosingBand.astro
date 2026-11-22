@@ -1,4 +1,15 @@
 ---
+interface Link {
+  href: string;
+  label: string;
+}
+interface Props {
+  title: string;
+  text: string;
+  primary: Link;
+  secondary: Link;
+}
+
 const { title, text, primary, secondary } = Astro.props;
 ---
 

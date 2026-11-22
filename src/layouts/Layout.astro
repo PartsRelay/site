@@ -13,6 +13,14 @@ import '../styles/brand.css';
 import '../styles/workshops.css';
 import '../styles/header-motion.css';
 
+interface Props {
+  title: string;
+  description: string;
+  home?: boolean;
+  structuredData?: boolean;
+  noindex?: boolean;
+}
+
 const { title, description, home = false, structuredData = false, noindex = false } = Astro.props;
 
 const origin = Astro.site?.href;

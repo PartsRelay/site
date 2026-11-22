@@ -1,6 +1,16 @@
 ---
 import Layout from './Layout.astro';
 
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  audience: string;
+  poster: string;
+  posterAlt: string;
+  prepare: { term: string; text: string }[];
+}
+
 const { title, description, heading, audience, poster, posterAlt, prepare } = Astro.props;
 ---
 

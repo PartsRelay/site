@@ -1,4 +1,12 @@
 ---
+interface Props {
+  figure: {
+    name: string;
+    text: string;
+    notes: string[][];
+  };
+}
+
 const { figure } = Astro.props;
 ---
 
