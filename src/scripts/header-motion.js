@@ -64,53 +64,6 @@ if (!scrollY && !banner.hidden) {
     { delay: 300, fill: 'backwards' }
   );
 }
-const wide = message.querySelector('.site-ann-wide'),
-  short = message.querySelector('.site-ann-short'),
-  link = message.querySelector('a');
-const notices = [
-  [wide.textContent, short.textContent, link.firstChild.textContent, link.getAttribute('href')],
-  [
-    'Have the vehicle identification number?',
-    'Have the VIN?',
-    'Check its format ',
-    '/tools/vin-check/',
-  ],
-];
-let notice = 0;
-function changeNotice() {
-  if (banner.hidden || document.hidden || message.matches(':focus-within')) return;
-  let alt = notices[(notice = 1 - notice)];
-  const write = () => {
-    wide.textContent = alt[0];
-    short.textContent = alt[1];
-    link.firstChild.textContent = alt[2];
-    link.setAttribute('href', alt[3]);
-    animate(
-      message,
-      [
-        { opacity: 0, transform: 'translateY(6px)' },
-        { opacity: 1, transform: 'translateY(0)' },
-      ],
-      300,
-      'ease-out'
-    );
-  };
-  const effect = animate(
-    message,
-    [
-      { opacity: 1, transform: 'translateY(0)' },
-      { opacity: 0, transform: 'translateY(-6px)' },
-    ],
-    300,
-    'ease-out'
-  );
-  if (effect) effect.onfinish = write;
-  else write();
-}
-const timer = setInterval(changeNotice, 5000);
-banner
-  .querySelector('button')
-  .addEventListener('click', () => clearInterval(timer), { once: true });
 
 const menu = head.querySelector('.site-menu'),
   panels = [...menu.querySelectorAll('.site-dropdown')];

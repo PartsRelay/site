@@ -1,4 +1,4 @@
-/* VIN check, enquiry builder, parts diagrams and part details. */
+/* VIN check, parts diagrams and part details. */
 .tool {
   --tool-ink: #142b3a;
   --tool-grey: #52676d;
@@ -184,26 +184,6 @@
 .tool .is-badges .tool-tick-5 {
   background: #142b3a;
 }
-.tool .is-words {
-  padding-block: 36px;
-  mask-image: linear-gradient(90deg, transparent, #000 12% 88%, transparent);
-}
-.tool .is-words .tool-track > div {
-  gap: 64px;
-  padding-right: 64px;
-}
-.tool .is-words .tool-tick {
-  font: 650 25px/44px var(--heading-font);
-  letter-spacing: -0.055em;
-}
-.tool .is-words .tool-tick-1,
-.tool .is-words .tool-tick-4 {
-  font-weight: 450;
-  font-style: italic;
-}
-.tool .is-words .tool-tick-2 {
-  font-weight: 800;
-}
 @keyframes tool-ticker-scroll {
   to {
     transform: translateX(-50%);
@@ -388,7 +368,6 @@
   padding: 19px 28px;
 }
 .tool .tool-vin-card span,
-.tool .tool-queue-title,
 .tool .tool-terminal-bar,
 .tool .tool-terminal-foot,
 .tool .tool-browser-art > span {
@@ -467,10 +446,6 @@
   margin-bottom: 23px;
   color: var(--tool-accent);
 }
-.tool-request .tool-hero {
-  background: white;
-}
-.tool-request .tool-hero > .tool-bound,
 .tool-diagrams .tool-hero > .tool-bound {
   min-height: 537px;
   display: grid;
@@ -478,73 +453,12 @@
   gap: clamp(38px, 7vw, 110px);
   padding-block: 52px 80px;
 }
-.tool-request .tool-title,
 .tool-diagrams .tool-title {
   text-align: left;
   max-width: 480px;
 }
-.tool-request .page-actions,
 .tool-diagrams .page-actions {
   justify-content: flex-start;
-}
-.tool .tool-queue {
-  height: 390px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--tool-line);
-  border-radius: 10px;
-  background: #fff;
-  mask-image: linear-gradient(to bottom, transparent 0, #000 7% 93%, transparent);
-}
-.tool .tool-queue-title,
-.tool .tool-queue-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 12px 16px;
-  min-height: 42px;
-  border-bottom: 1px solid var(--tool-line);
-  white-space: nowrap;
-}
-.tool .tool-queue-title {
-  color: var(--tool-grey);
-  background: var(--tool-soft);
-}
-.tool .tool-queue-title b {
-  color: var(--tool-accent);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.tool .tool-queue-title i {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--tool-accent);
-}
-.tool .tool-queue-row {
-  font-size: 13px;
-  color: var(--tool-grey);
-  animation: tool-row-pulse 5.5s infinite;
-}
-.tool .tool-queue-row b {
-  margin-left: auto;
-  color: var(--tool-ink);
-  font-weight: 600;
-}
-.tool .tool-queue-row span:last-child {
-  min-width: 80px;
-  text-align: right;
-}
-.tool .tool-queue-row:nth-child(2n) {
-  animation-delay: 0.65s;
-}
-.tool .tool-queue-row:nth-child(3n) {
-  animation-delay: 1.3s;
-}
-.tool .tool-queue-row:nth-child(4n) {
-  animation-delay: 2s;
 }
 @keyframes tool-row-pulse {
   0%,
@@ -555,33 +469,6 @@
   7% {
     background: #e7f4ef;
   }
-}
-.tool-request .tool-workspace {
-  background: #fff;
-  border: 0;
-  padding-top: 20px;
-}
-.tool .tool-record > div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  padding-block: 17px;
-  border-top: 1px solid var(--tool-line);
-  align-items: center;
-}
-.tool .tool-record dt {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  font: 550 20px var(--heading-font);
-}
-.tool .tool-record dd {
-  color: var(--tool-grey);
-}
-.tool .tool-record .tool-icon {
-  color: var(--tool-accent);
-  width: 29px;
-  height: 29px;
 }
 .tool-diagrams {
   --tool-surface: #102531;
@@ -857,7 +744,6 @@
   .tool-part-details .tool-cards {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .tool-request .tool-hero > .tool-bound,
   .tool-diagrams .tool-hero > .tool-bound {
     gap: 30px;
   }
@@ -944,24 +830,6 @@
   .tool .tool-guides a::after {
     position: static;
     margin-left: auto;
-  }
-  .tool-request .tool-hero > .tool-bound {
-    min-height: 372px;
-    display: flex;
-    padding-block: 60px 42px;
-  }
-  .tool .tool-queue {
-    display: none;
-  }
-  .tool .is-words {
-    padding-block: 16px;
-  }
-  .tool .tool-record > div {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  .tool .tool-record dd {
-    padding-left: 48px;
   }
   .tool-diagrams .tool-hero > .tool-bound {
     min-height: 0;
@@ -1118,22 +986,6 @@ body:has(#main .tool-diagrams) .base-art {
     background: #102531;
   }
 }
-.tool .tool-request-examples {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-.tool .tool-request-examples article {
-  border-top: 1px solid var(--tool-line);
-  padding: 25px 0;
-}
-.tool .tool-request-examples svg {
-  color: var(--tool-accent);
-  margin-bottom: 27px;
-}
-.tool .tool-request-examples a {
-  margin-top: 12px;
-}
 .tool .tool-spec {
   margin: 22px 0 9px;
   border-top: 1px solid var(--tool-line);
@@ -1198,28 +1050,19 @@ body:has(#main .tool-diagrams) .base-art {
 }
 @media (max-width: 700px) {
   .tool-lookup .tool-hero > .tool-bound,
-  .tool-part-details .tool-hero > .tool-bound,
-  .tool-request .tool-hero > .tool-bound {
+  .tool-part-details .tool-hero > .tool-bound {
     align-items: flex-start;
     justify-content: center;
     padding-top: 66px;
   }
-  .tool-request .tool-hero > .tool-bound {
-    padding-top: 28px;
-  }
-  .tool-lookup .tool-title,
-  .tool-request .tool-title {
+  .tool-lookup .tool-title {
     text-align: center;
   }
-  .tool-lookup .page-actions,
-  .tool-request .page-actions {
+  .tool-lookup .page-actions {
     justify-content: center;
   }
   .tool-diagrams .tool-hero > .tool-bound {
     padding-top: 66px;
-  }
-  .tool .tool-request-examples {
-    grid-template-columns: 1fr;
   }
   .tool .tool-lineart {
     height: 110px;
@@ -1305,8 +1148,7 @@ body:has(#main .tool-diagrams) .base-footer .base-business .base-contact {
 
 @media (max-width: 700px) {
   .tool-lookup .tool-hero > .tool-bound,
-  .tool-part-details .tool-hero > .tool-bound,
-  .tool-request .tool-hero > .tool-bound {
+  .tool-part-details .tool-hero > .tool-bound {
     min-height: 0;
     padding-bottom: 44px;
   }
