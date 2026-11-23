@@ -8,6 +8,12 @@ const site = process.env.SITE_ORIGIN?.replace(/\/+$/, '');
 export default defineConfig({
   site,
   trailingSlash: 'always',
+  // English pages stay at the root. Translated pages live under /de/, /fr/, /es/ and /it/.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'de', 'fr', 'es', 'it'],
+    routing: { prefixDefaultLocale: false },
+  },
   compressHTML: false,
   integrations: site ? [sitemap()] : [],
 });

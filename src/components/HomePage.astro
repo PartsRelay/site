@@ -1,0 +1,298 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { contactEmail, contactLink } from '../site';
+import { home } from '../i18n/home';
+import { localizedPath } from '../i18n/ui';
+
+interface Props {
+  locale: keyof typeof home;
+}
+
+const { locale } = Astro.props;
+const t = home[locale];
+const link = (href: string) => localizedPath(locale, href);
+const [ctaBefore, ctaAfter] = t.ctaText.split('{email}');
+const toolLinks = ['/tools/vin-check/', '/tools/parts-diagrams/', '/tools/part-details/'];
+const featureLinks = [
+  '/tools/vin-check/',
+  '/tools/parts-diagrams/',
+  '/repair-shops/',
+  '/distributors/',
+];
+const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
+---
+
+<Layout title={t.title} description={t.description} home structuredData>
+  <div class="site-home-intro">
+    <section class="site-hero" aria-labelledby="site-title">
+      <div class="site-traces" aria-hidden="true"></div>
+      <div class="site-hero-inner">
+        <div class="site-hero-copy">
+          <h1 id="site-title">
+            {t.heroTitle[0]}
+            <br />
+            {t.heroTitle[1]}
+          </h1>
+          <p>{t.heroText}</p>
+          <div class="site-actions">
+            <a class="site-action-primary" href={contactLink}>
+              <img src="/assets/symbol.svg" alt="" />
+              {t.talk}
+            </a>
+            <a class="site-action-secondary" href={link('/about/')}>
+              {t.how}
+            </a>
+          </div>
+          <aside class="site-sample" aria-label={t.sampleLabel}>
+            <div class="site-sample-record">
+              <span>{t.enter}</span>
+              <strong>{t.plate}</strong>
+              <small>{t.partNeeded}</small>
+            </div>
+            <div class="site-sample-question">
+              <span>{t.getBack}</span>
+              <p>{t.getBackText}</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="site-marquee" aria-label={t.marqueeLabel}>
+      <p>{t.marquee}</p>
+    </section>
+  </div>
+  <div class="home">
+    <section class="home-app" aria-labelledby="home-app-title">
+      <div class="home-wrap home-app-grid">
+        <div class="home-app-intro">
+          <h2 id="home-app-title">{t.appTitle}</h2>
+          <p>{t.appText}</p>
+          <dl>
+            {t.appFacts.map(([term, detail]) => (
+              <div>
+                <dt>{term}</dt>
+                <dd>{detail}</dd>
+              </div>
+            ))}
+          </dl>
+          <a href={link('/about/')} class="home-pill">
+            {t.how} <span class="home-arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+        <figure>
+          <img
+            src="/assets/app-new-search.png"
+            width="509"
+            height="519"
+            loading="lazy"
+            alt={t.screenshotAlt}
+          />
+          <figcaption>{t.screenshotCaption}</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="home-wrap home-solutions" aria-label={t.toolsLabel}>
+      <a class="home-solution" href={link(toolLinks[0])}>
+        <span class="home-tip" aria-hidden="true"></span>
+        <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M10 5H5v6m21-6h5v6M10 31H5v-6m21 6h5v-6" />
+          <g class="home-scan-a">
+            <path d="M10 13v10m3-8v7" />
+          </g>
+          <g class="home-scan-b">
+            <path d="M17 14v9m3-11v12" />
+          </g>
+          <g class="home-scan-c">
+            <path d="M24 15v7m3-9v10" />
+          </g>
+        </svg>
+        <span class="home-s-title">{t.tools[0][0]}</span>
+        <span class="home-copy">{t.tools[0][1]}</span>
+      </a>
+      <a class="home-solution" href={link(toolLinks[1])}>
+        <span class="home-tip" aria-hidden="true"></span>
+        <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path class="home-layer-top" d="m18 4 13 7-13 7-13-7z" />
+          <g class="home-lower">
+            <path d="m5 18 13 7 13-7M5 25l13 7 13-7" />
+          </g>
+        </svg>
+        <span class="home-s-title">{t.tools[1][0]}</span>
+        <span class="home-copy">{t.tools[1][1]}</span>
+      </a>
+      <a class="home-solution" href={link(toolLinks[2])}>
+        <span class="home-tip" aria-hidden="true"></span>
+        <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+          <path d="M9 4h13l6 6v22H9Z" />
+          <path d="M21 4v7h7" />
+          <path d="M13 18h11m-11 5h9m-9 5h6" />
+        </svg>
+        <span class="home-s-title">{t.tools[2][0]}</span>
+        <span class="home-copy">{t.tools[2][1]}</span>
+      </a>
+    </section>
+    <section class="home-metrics" id="workflow" aria-labelledby="home-metric-title">
+      <div class="home-wrap">
+        <div class="home-stat-content">
+          <h2 id="home-metric-title">{t.stepsTitle}</h2>
+          <p class="home-copy">{t.stepsText}</p>
+          <dl class="home-counts">
+            {t.steps.map((step, index) => (
+              <div>
+                <dt>{step}</dt>
+                <dd>
+                  <span class="home-count-value">{String(index + 1).padStart(2, '0')}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="home-wrap home-features" aria-labelledby="home-feature-title">
+      <div class="home-feature-head">
+        {/* prettier-ignore */}
+        <h2 id="home-feature-title">
+          {t.featureTitle[0]}<br class="home-wide-break" />
+          {t.featureTitle[1]}
+        </h2>
+        <a class="home-pill" href={link('/tools/vin-check/')}>
+          {t.checkVin} <span class="home-arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="home-fgrid">
+        {t.features.map(([title, text], index) => (
+          <a class="home-feature" href={link(featureLinks[index])}>
+            <div class="home-fig" data-home-art={featureArt[index]} aria-hidden="true" />
+            <h3>{title}</h3>
+            <p class="home-copy">{text}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+    <section class="home-desk" aria-labelledby="home-desk-title">
+      <div class="home-wrap home-desk-grid">
+        <div class="home-desk-intro">
+          <h2 id="home-desk-title">{t.deskTitle}</h2>
+          {t.deskText.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+          <a href={link('/distributors/')} class="home-pill">
+            {t.forDistributors} <span class="home-arrow" aria-hidden="true"></span>
+          </a>
+        </div>
+        <div class="home-desk-record">
+          <h3>{t.recordTitle}</h3>
+          <dl>
+            {t.record.map(([term, detail]) => (
+              <div>
+                <dt>{term}</dt>
+                <dd>{detail}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+    <div class="home-divider home-wrap" aria-hidden="true"></div>
+    <section id="guides" class="home-guides" aria-labelledby="home-guides-title">
+      <div class="home-wrap home-news-head">
+        <h2 id="home-guides-title">{t.guidesTitle}</h2>
+        <a class="home-pill home-view" href={link('/library/')}>
+          {t.viewAll} <span class="home-arrow" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="home-slider">
+        <button type="button" class="home-scroll home-prev" aria-label={t.previousGuide} disabled>
+          ‹
+        </button>
+        <div
+          class="home-track"
+          id="home-story-track"
+          tabindex="0"
+          role="region"
+          aria-label={t.guideCards}
+        >
+          <a class="home-item" href={link('/tools/vin-check/')}>
+            <div class="home-cover home-cover-dark">
+              <span class="home-cover-scan">VIN</span>
+            </div>
+            <div class="home-itemtext">
+              <h3>{t.guides.vin[0]}</h3>
+              <p>{t.guides.vin[1]}</p>
+              <small>{t.guides.vin[2]}</small>
+            </div>
+          </a>
+          <a class="home-item" href={link('/tools/parts-diagrams/')}>
+            <div class="home-cover home-cover-plate">
+              <img src="/assets/brake-pads.svg" alt={t.guides.brakesAlt} loading="lazy" />
+            </div>
+            <div class="home-itemtext">
+              <h3>{t.guides.brakes[0]}</h3>
+              <p>{t.guides.brakes[1]}</p>
+              <small>{t.guides.brakes[2]}</small>
+            </div>
+          </a>
+          <a class="home-item" href={link('/guides/guidebook/')}>
+            <div class="home-cover home-cover-thread">
+              <span class="home-cover-id">RFQ</span>
+            </div>
+            <div class="home-itemtext">
+              <h3>{t.guides.supplier[0]}</h3>
+              <p>{t.guides.supplier[1]}</p>
+              <small>{t.guides.supplier[2]}</small>
+            </div>
+          </a>
+          <a class="home-item" href={link('/repair-shops/')}>
+            <div class="home-cover home-cover-photo">
+              <img src="/assets/workshop.webp" alt={t.guides.shopsAlt} loading="lazy" />
+            </div>
+            <div class="home-itemtext">
+              <h3>{t.guides.shops[0]}</h3>
+              <p>{t.guides.shops[1]}</p>
+              <small>{t.guides.shops[2]}</small>
+            </div>
+          </a>
+          <a class="home-item" href={link('/distributors/')}>
+            <div class="home-cover home-cover-photo">
+              <img src="/assets/counter.webp" alt={t.guides.distributorsAlt} loading="lazy" />
+            </div>
+            <div class="home-itemtext">
+              <h3>{t.guides.distributors[0]}</h3>
+              <p>{t.guides.distributors[1]}</p>
+              <small>{t.guides.distributors[2]}</small>
+            </div>
+          </a>
+        </div>
+        <button type="button" class="home-scroll home-next" aria-label={t.nextGuide}>
+          ›
+        </button>
+      </div>
+    </section>
+    <div class="home-divider home-wrap" aria-hidden="true"></div>
+  </div>
+  <section class="base-cta" aria-labelledby="base-cta-title">
+    <div class="base-motion" aria-hidden="true"></div>
+    <div class="base-bound base-cta-inner">
+      <h2 id="base-cta-title">{t.ctaTitle}</h2>
+      <p>
+        {ctaBefore}
+        {contactEmail}
+        {ctaAfter}
+      </p>
+      <div class="base-actions">
+        <a class="base-button base-light" href={contactLink}>
+          <img alt="" src="/assets/symbol.svg" />
+          {t.ctaEmail}
+        </a>
+        <a class="base-button base-tint" href={link('/about/')}>
+          {t.ctaAbout}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  import '../scripts/home.js';
+</script>
