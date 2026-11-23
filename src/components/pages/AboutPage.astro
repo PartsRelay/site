@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { contactEmail, contactLink } from '../../site';
+import { contactEmail, trialDays, trialLink } from '../../site';
 import ContactBand from '../ContactBand.astro';
 import { about } from '../../i18n/pages/about';
 import { localizedPath, ui } from '../../i18n/ui';
@@ -23,12 +23,12 @@ const number = (index: number) => String(index + 1).padStart(2, '0');
         <h1 tabindex="-1">{t.heading}</h1>
         <p class="team-hero-note">{t.heroText}</p>
         <div class="team-actions">
-          <a class="team-btn" href={contactLink}>
+          <a class="team-btn" href={trialLink}>
             <img src="/assets/symbol-white.svg" alt="" />
-            {t.talk}
+            {t.trial}
           </a>
-          <a class="team-btn team-secondary" href={link('/repair-shops/')}>
-            {ui[locale].items.shops[0]}
+          <a class="team-btn team-secondary" href={link('/pricing/')}>
+            {t.pricing}
           </a>
         </div>
       </div>
@@ -66,7 +66,7 @@ const number = (index: number) => String(index + 1).padStart(2, '0');
         <section class="team-chapter team-chapter-close">
           <p class="team-label">{t.closeLabel}</p>
           <h2 class="team-h2">{t.closeTitle}</h2>
-          <p>{t.closeText[0]}</p>
+          <p>{t.closeText[0].replace('{days}', String(trialDays))}</p>
           <p>{t.closeText[1]}</p>
           <a class="team-contact" href={`mailto:${contactEmail}`}>
             {t.contact} <span>{contactEmail}</span>
