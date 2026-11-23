@@ -847,3 +847,60 @@ html.site-no-banner .site-home-intro {
   line-height: 24px;
   padding-bottom: 8px;
 }
+
+/* Pricing sits in the menu as a plain link, and Log in sits beside the trial button. */
+.site-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  transition: background-color 0.16s;
+}
+.site-link:hover {
+  background: #eff5f3;
+}
+.site-login {
+  padding: 6px 4px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.site-login:hover {
+  color: var(--site-teal);
+}
+.site-mobile-login {
+  display: none;
+}
+@media (max-width: 767px) {
+  .site-login {
+    display: none;
+  }
+  .site-link {
+    display: flex;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 0;
+  }
+  .site-link:hover {
+    background: transparent;
+    color: var(--site-teal);
+  }
+  .site-open .site-mobile-login {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 24px;
+  }
+}
+/* On narrow desktops the logo and the buttons take only the room they need, so longer
+   translated labels still fit beside the menu. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .site-nav {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 16px;
+  }
+  .site-menu {
+    justify-self: center;
+  }
+}

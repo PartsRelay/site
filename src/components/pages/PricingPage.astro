@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PricingCards from '../PricingCards.astro';
+import { bookCallLink, trialDays } from '../../site';
+import { comparison, plans } from '../../plans';
+import { pricing } from '../../i18n/pricing';
+
+interface Props {
+  locale: keyof typeof pricing;
+}
+
+const { locale } = Astro.props;
+const t = pricing[locale];
+const fill = (text: string) => text.replace('{days}', String(trialDays));
+const number = new Intl.NumberFormat(locale);
+type Value = boolean | number | string;
+const names = plans.map((plan) => t.plans[plan.id as keyof typeof t.plans].name);
+const label = (key: string) => t.compare.rows[key as keyof typeof t.compare.rows];
+const word = (value: string) => (value === 'unlimited' ? t.compare.unlimited : t.custom);
+---
+
+<Layout title={t.title} description={fill(t.description)}>
+  <div class="price">
+    <section class="price-hero">
+      <p class="price-label">{t.label}</p>
+      <h1 tabindex="-1">{t.heading}</h1>
+      <p class="price-intro">{t.intro}</p>
+    </section>
+    <section class="price-wrap" aria-label={t.label}>
+      <PricingCards locale={locale} />
+    </section>
+    <section class="price-wrap price-compare" aria-labelledby="price-compare-title">
+      <p class="price-label">{t.compare.label}</p>
+      <h2 id="price-compare-title">{t.compare.title}</h2>
+      <p class="price-text">{t.compare.text}</p>
+      <div class="price-table" role="region" aria-labelledby="price-compare-title" tabindex="0">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">
+                <span class="plan-sr">{t.compare.feature}</span>
+              </th>
+              {names.map((name) => (
+                <th scope="col">{name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.map(([key, ...values]) => (
+              <tr>
+                <th scope="row">{label(key as string)}</th>
+                {(values as Value[]).map((value) => (
+                  <td>
+                    {value === true ? (
+                      <span class="price-yes" role="img" aria-label={t.compare.included} />
+                    ) : value === false ? (
+                      <span class="price-no" role="img" aria-label={t.compare.notIncluded} />
+                    ) : typeof value === 'number' ? (
+                      number.format(value)
+                    ) : (
+                      word(value)
+                    )}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="price-wrap price-faq" aria-labelledby="price-faq-title">
+      <div class="price-faq-side">
+        <p class="price-label">{t.faq.label}</p>
+        <h2 id="price-faq-title">{t.faq.title}</h2>
+        <div class="price-talk">
+          <h3>{t.faq.talkTitle}</h3>
+          <p>{t.faq.talkText}</p>
+          <a href={bookCallLink}>{t.callCta}</a>
+        </div>
+      </div>
+      <div class="price-faq-list">
+        {t.faq.items.map(([question, answer], index) => (
+          <details open={index === 0}>
+            <summary>{question}</summary>
+            <p>{fill(answer)}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>

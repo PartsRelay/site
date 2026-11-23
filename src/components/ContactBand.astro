@@ -1,28 +1,23 @@
 ---
-import { contactEmail, contactLink } from '../site';
+import { bookCallLink, trialDays, trialLink } from '../site';
 import { home } from '../i18n/home';
-import { localeOf, localizedPath } from '../i18n/ui';
+import { localeOf } from '../i18n/ui';
 
 const locale = localeOf(Astro.url) as keyof typeof home;
 const t = home[locale];
-const [before, after] = t.ctaText.split('{email}');
 ---
 
 <section class="team-cta">
   <div class="team-frame">
     <h2 class="team-h2">{t.ctaTitle}</h2>
-    <p>
-      {before}
-      {contactEmail}
-      {after}
-    </p>
+    <p>{t.ctaText.replace('{days}', String(trialDays))}</p>
     <div class="team-actions">
-      <a class="team-btn" href={contactLink}>
+      <a class="team-btn" href={trialLink}>
         <img src="/assets/symbol.svg" alt="" />
-        {t.ctaEmail}
+        {t.trial}
       </a>
-      <a class="team-btn team-secondary" href={localizedPath(locale, '/about/')}>
-        {t.how}
+      <a class="team-btn team-secondary" href={bookCallLink}>
+        {t.bookCall}
       </a>
     </div>
   </div>

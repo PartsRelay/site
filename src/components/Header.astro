@@ -1,5 +1,5 @@
 ---
-import { contactLink, privacyPolicy } from '../site';
+import { loginLink, privacyPolicy, trialDays, trialLink } from '../site';
 import { localizedPath, ui } from '../i18n/ui';
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = ui[locale];
 const item = (key: string) => t.items[key as keyof typeof t.items];
+const days = (text: string) => text.replace('{days}', String(trialDays));
 
 const menu = [
   {
@@ -74,10 +75,10 @@ const menu = [
 
 <header class="site-chrome" id="site-chrome">
   <div class="site-banner" aria-label={t.banner.region}>
-    <span class="site-ann-wide">{t.banner.wide}</span>
-    <span class="site-ann-short">{t.banner.short}</span>
+    <span class="site-ann-wide">{days(t.banner.wide)}</span>
+    <span class="site-ann-short">{days(t.banner.short)}</span>
     <span class="site-ann-divider" aria-hidden="true"></span>
-    <a href={localizedPath(locale, '/tools/vin-check/')}>
+    <a href={trialLink}>
       {t.banner.link} <i class="site-right" aria-hidden="true"></i>
     </a>
     <button class="site-dismiss" type="button" aria-label={t.banner.dismiss}>
@@ -134,13 +135,22 @@ const menu = [
             </div>
           </div>
         ))}
-        <a class="site-mobile-contact" href={contactLink}>
-          {t.nav.mobileContact}
+        <a class="site-link" href={localizedPath(locale, '/pricing/')}>
+          {t.nav.pricing}
+        </a>
+        <a class="site-mobile-login" href={loginLink}>
+          {t.nav.login}
+        </a>
+        <a class="site-mobile-contact" href={trialLink}>
+          {t.nav.trial}
         </a>
       </nav>
       <div class="site-nav-side">
-        <a class="site-get" href={contactLink}>
-          {t.nav.contact} <i class="site-right" aria-hidden="true"></i>
+        <a class="site-login" href={loginLink}>
+          {t.nav.login}
+        </a>
+        <a class="site-get" href={trialLink}>
+          {t.nav.trial} <i class="site-right" aria-hidden="true"></i>
         </a>
         <button
           type="button"

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { contactEmail, contactLink } from '../site';
+import PricingCards from './PricingCards.astro';
+import { bookCallLink, trialDays, trialLink } from '../site';
 import { home } from '../i18n/home';
 import { localizedPath } from '../i18n/ui';
 
@@ -11,17 +12,11 @@ interface Props {
 const { locale } = Astro.props;
 const t = home[locale];
 const link = (href: string) => localizedPath(locale, href);
-const [ctaBefore, ctaAfter] = t.ctaText.split('{email}');
-const featureLinks = [
-  '/tools/vin-check/',
-  '/journal/mirror-glass/',
-  '/repair-shops/',
-  '/journal/alternator-labels/',
-];
+const fill = (text: string) => text.replace('{days}', String(trialDays));
 const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
 ---
 
-<Layout title={t.title} description={t.description} home structuredData>
+<Layout title={t.title} description={fill(t.description)} home structuredData>
   <div class="site-home-intro">
     <section class="site-hero" aria-labelledby="site-title">
       <div class="site-traces" aria-hidden="true"></div>
@@ -34,12 +29,12 @@ const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
           </h1>
           <p>{t.heroText}</p>
           <div class="site-actions">
-            <a class="site-action-primary" href={contactLink}>
+            <a class="site-action-primary" href={trialLink}>
               <img src="/assets/symbol.svg" alt="" />
-              {t.talk}
+              {t.trial}
             </a>
-            <a class="site-action-secondary" href={link('/about/')}>
-              {t.how}
+            <a class="site-action-secondary" href={link('/pricing/')}>
+              {t.seePricing}
             </a>
           </div>
           <aside class="site-sample" aria-label={t.sampleLabel}>
@@ -115,17 +110,17 @@ const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
           {t.featureTitle[0]}<br class="home-wide-break" />
           {t.featureTitle[1]}
         </h2>
-        <a class="home-pill" href={link('/tools/vin-check/')}>
-          {t.checkVin} <span class="home-arrow" aria-hidden="true"></span>
+        <a class="home-pill" href={link('/pricing/')}>
+          {t.seePricing} <span class="home-arrow" aria-hidden="true"></span>
         </a>
       </div>
       <div class="home-fgrid">
         {t.features.map(([title, text], index) => (
-          <a class="home-feature" href={link(featureLinks[index])}>
+          <article class="home-feature">
             <div class="home-fig" data-home-art={featureArt[index]} aria-hidden="true" />
             <h3>{title}</h3>
             <p class="home-copy">{text}</p>
-          </a>
+          </article>
         ))}
       </div>
     </section>
@@ -148,6 +143,21 @@ const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
             ))}
           </dl>
         </div>
+      </div>
+    </section>
+    <section class="home-plans" id="pricing" aria-labelledby="home-plans-title">
+      <div class="home-wrap">
+        <div class="home-plans-head">
+          <p class="home-plans-label">{t.plansLabel}</p>
+          <h2 id="home-plans-title">{t.plansTitle}</h2>
+          <p class="home-copy">{fill(t.plansText)}</p>
+        </div>
+        <PricingCards locale={locale} />
+        <p class="home-plans-more">
+          <a class="home-pill" href={link('/pricing/')}>
+            {t.comparePlans} <span class="home-arrow" aria-hidden="true"></span>
+          </a>
+        </p>
       </div>
     </section>
     <div class="home-divider home-wrap" aria-hidden="true"></div>
@@ -189,6 +199,16 @@ const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
               <small>{t.guides.shops[2]}</small>
             </div>
           </a>
+          <a class="home-item" href={link('/guides/counter/')}>
+            <div class="home-cover home-cover-photo">
+              <img src="/assets/counter.webp" alt={t.guides.counterAlt} loading="lazy" />
+            </div>
+            <div class="home-itemtext">
+              <h3>{t.guides.counter[0]}</h3>
+              <p>{t.guides.counter[1]}</p>
+              <small>{t.guides.counter[2]}</small>
+            </div>
+          </a>
         </div>
         <button type="button" class="home-scroll home-next" aria-label={t.nextGuide}>
           ›
@@ -201,18 +221,14 @@ const featureArt = ['vehicle', 'filter', 'ticket', 'relay'];
     <div class="base-motion" aria-hidden="true"></div>
     <div class="base-bound base-cta-inner">
       <h2 id="base-cta-title">{t.ctaTitle}</h2>
-      <p>
-        {ctaBefore}
-        {contactEmail}
-        {ctaAfter}
-      </p>
+      <p>{fill(t.ctaText)}</p>
       <div class="base-actions">
-        <a class="base-button base-light" href={contactLink}>
+        <a class="base-button base-light" href={trialLink}>
           <img alt="" src="/assets/symbol.svg" />
-          {t.ctaEmail}
+          {t.trial}
         </a>
-        <a class="base-button base-tint" href={link('/about/')}>
-          {t.ctaAbout}
+        <a class="base-button base-tint" href={bookCallLink}>
+          {t.bookCall}
         </a>
       </div>
     </div>
