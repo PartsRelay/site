@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { contactEmail, contactLink } from '../../site';
+import ContactBand from '../ContactBand.astro';
+import { about } from '../../i18n/pages/about';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = about[locale];
+const link = (href: string) => localizedPath(locale, href);
+const number = (index: number) => String(index + 1).padStart(2, '0');
+---
+
+<Layout title={t.title} description={t.description} structuredData>
+  <div class="team-page team-about">
+    <section class="team-hero">
+      <div class="team-frame">
+        <p class="team-label">Parts Relay</p>
+        <h1 tabindex="-1">{t.heading}</h1>
+        <p class="team-hero-note">{t.heroText}</p>
+        <div class="team-actions">
+          <a class="team-btn" href={contactLink}>
+            <img src="/assets/symbol-white.svg" alt="" />
+            {t.talk}
+          </a>
+          <a class="team-btn team-secondary" href={link('/distributors/')}>
+            {t.forDistributors}
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="team-manifesto">
+      <div>
+        {t.chapters.map((chapter) => (
+          <section class="team-chapter">
+            <p class="team-label">{chapter.label}</p>
+            <h2 class="team-h2">{chapter.title}</h2>
+            <p>{chapter.text}</p>
+            <ol class="team-numbered">
+              {chapter.points.map(([term, detail], index) => (
+                <li>
+                  <span aria-hidden="true">{number(index)}</span>
+                  {/* prettier-ignore */}
+                  <div><strong>{term}</strong>{detail}</div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
+        <section class="team-chapter">
+          <p class="team-label">{t.faqLabel}</p>
+          <h2 class="team-h2">{t.faqTitle}</h2>
+          <dl class="team-qa">
+            {t.faq.map(([question, answer]) => (
+              <div>
+                <dt>{question}</dt>
+                <dd>{answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+        <section class="team-chapter team-chapter-close">
+          <p class="team-label">{t.closeLabel}</p>
+          <h2 class="team-h2">{t.closeTitle}</h2>
+          <p>{t.closeText[0]}</p>
+          <p>{t.closeText[1]}</p>
+          <a class="team-contact" href={`mailto:${contactEmail}`}>
+            {t.contact} <span>{contactEmail}</span>
+          </a>
+        </section>
+      </div>
+    </section>
+    <ContactBand />
+  </div>
+</Layout>

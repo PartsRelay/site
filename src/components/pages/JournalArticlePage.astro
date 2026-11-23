@@ -1,0 +1,109 @@
+---
+import Article from '../../layouts/Article.astro';
+import JournalArt from './JournalArt.astro';
+import { articles } from '../../i18n/pages/articles';
+import { journal } from '../../i18n/pages/journal';
+import { localizedPath, ui } from '../../i18n/ui';
+
+type Slug = 'alternator-labels' | 'brake-pad-sets' | 'mirror-glass';
+
+interface Props {
+  locale: keyof typeof ui;
+  article: Slug;
+}
+
+const { locale, article } = Astro.props;
+const t = articles[locale];
+const a = t[article];
+const j = journal[locale];
+const link = (href: string) => localizedPath(locale, href);
+
+// What differs between the articles apart from their text.
+const setup = {
+  'alternator-labels': {
+    topic: 'Distributor counter',
+    art: 'alt',
+    related: ['brake-pad-sets', 'mirror-glass'],
+    next: '/distributors/',
+  },
+  'brake-pad-sets': {
+    topic: 'Repair shops',
+    art: 'pads',
+    related: ['alternator-labels', 'mirror-glass'],
+    next: '/tools/part-details/',
+  },
+  'mirror-glass': {
+    topic: 'Parts identification',
+    art: 'mirror',
+    related: ['brake-pad-sets', 'alternator-labels'],
+    next: '/tools/parts-diagrams/',
+  },
+} as const;
+const { topic, art, next } = setup[article];
+
+const related = [
+  ...setup[article].related.map((slug) => ({
+    href: link(`/journal/${slug}/`),
+    label: t[slug].heading,
+  })),
+  { href: link('/journal/'), label: t.allArticles },
+];
+const sections = a.sections as [string, string, [string, string][]?][];
+---
+
+<Article
+  title={`${a.heading} | Parts Relay`}
+  description={a.description}
+  heading={a.heading}
+  topic={j.topics[topic]}
+  topicHref={link('/journal/')}
+  readTime={j.readTime}
+  relatedHeading={a.relatedHeading}
+  related={related}
+>
+  <Fragment slot="intro">{a.intro}</Fragment>
+  <JournalArt slot="cover" locale={locale} art={art} />
+  {sections.map(([heading, text, evidence]) =>
+    evidence ? (
+      <section class="lib-case">
+        <h2>{heading}</h2>
+        <p>{text}</p>
+        <dl class="lib-evidence">
+          {evidence.map(([term, detail]) => (
+            <div>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    ) : (
+      <section>
+        <h2>{heading}</h2>
+        <p>{text}</p>
+      </section>
+    )
+  )}
+  <p>
+    <a class="lib-inline-link" href={link(next)}>
+      {a.next}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.55"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 12h15m-6-6 6 6-6 6"></path>
+      </svg>
+    </a>
+  </p>
+  <p class="lib-product-note">
+    {t.productNote}
+    <a class="lib-inline-link" href={link('/about/')}>
+      {t.how}
+    </a>
+  </p>
+</Article>

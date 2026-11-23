@@ -1,6 +1,6 @@
 // Languages the site is published in, and the text shared by every page:
 // the header, the footer and the language suggestion bar.
-// Only the pages listed in translatedPaths exist in every language. Every other
+// Only the pages listed in translatedPaths exist in every language. Any other
 // page is English only, and links to it stay English from any language.
 
 export const defaultLocale = 'en';
@@ -13,7 +13,28 @@ export const locales = {
   it: { name: 'Italiano' },
 };
 
-export const translatedPaths = ['/'];
+export const translatedPaths = [
+  '/',
+  '/about/',
+  '/brand/',
+  '/distributors/',
+  '/repair-shops/',
+  '/guides/counter/',
+  '/guides/guidebook/',
+  '/guides/vehicle-identification/',
+  '/library/',
+  '/journal/',
+  '/journal/alternator-labels/',
+  '/journal/brake-pad-sets/',
+  '/journal/mirror-glass/',
+  '/tools/vin-check/',
+  '/tools/part-details/',
+  '/tools/parts-diagrams/',
+  '/workshops/',
+  '/workshops/first-request/',
+  '/workshops/fit-check/',
+  '/workshops/handoff/',
+];
 
 /** Splits a URL path into its language and the English path it matches. */
 export function splitLocale(pathname) {

@@ -10,7 +10,7 @@ function showQuestion(index, chosenByVisitor) {
   current = index;
   body.setAttribute('aria-live', chosenByVisitor ? 'polite' : 'off');
   body.querySelector('blockquote').textContent = questions[index].text;
-  body.querySelector('p').textContent = 'Ask the workshop about the ' + questions[index].part;
+  body.querySelector('p').textContent = slider.dataset.ask.replace('{part}', questions[index].part);
   dots.forEach((dot, i) => dot.setAttribute('aria-pressed', String(i === index)));
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     body.animate(
@@ -32,7 +32,7 @@ slider.addEventListener('animationend', (event) => {
 dots.forEach((dot, index) => dot.addEventListener('click', () => showQuestion(index, true)));
 pause.addEventListener('click', () => {
   const paused = slider.toggleAttribute('data-team-paused');
-  pause.setAttribute('aria-label', paused ? 'Play rotating questions' : 'Pause rotating questions');
+  pause.setAttribute('aria-label', paused ? pause.dataset.playLabel : pause.dataset.pauseLabel);
   pause.setAttribute('aria-pressed', String(paused));
   pause.textContent = paused ? '▶' : 'Ⅱ';
 });
@@ -48,6 +48,7 @@ filters.forEach((filter) =>
       card.hidden = category !== 'All' && card.dataset.teamCategory !== category;
       if (!card.hidden) shown++;
     });
-    page.querySelector('[data-team-count]').textContent = shown + ' part checks shown.';
+    const count = page.querySelector('[data-team-count]');
+    count.textContent = count.dataset.count.replace('{count}', shown);
   })
 );

@@ -1,0 +1,125 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Arrow from '../Arrow.astro';
+import JournalArt from './JournalArt.astro';
+import { journal } from '../../i18n/pages/journal';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = journal[locale];
+const link = (href: string) => localizedPath(locale, href);
+
+type Topic = keyof typeof t.topics;
+const topics = Object.keys(t.topics) as Topic[];
+const stories: { key: keyof typeof t.stories; topic: Topic; href: string }[] = [
+  { key: 'pads', topic: 'Repair shops', href: '/journal/brake-pad-sets/' },
+  { key: 'alt', topic: 'Distributor counter', href: '/journal/alternator-labels/' },
+  { key: 'mirror', topic: 'Parts identification', href: '/journal/mirror-glass/' },
+];
+---
+
+<Layout title={t.title} description={t.description}>
+  <div class="lib-page lib-journal" data-lib-list>
+    <div class="lib-bound">
+      <header class="lib-journal-intro">
+        <h1 tabindex="-1">{t.heading}</h1>
+        <p>{t.intro}</p>
+      </header>
+      <div class="lib-controls">
+        <div class="lib-tabs" role="group" aria-label={t.filterLabel}>
+          <button type="button" data-lib-filter="All" aria-pressed="true">
+            {t.all}
+          </button>
+          {topics.map((topic) => (
+            <button type="button" data-lib-filter={topic} aria-pressed="false">
+              {t.topics[topic]}
+            </button>
+          ))}
+        </div>
+        <label class="lib-search">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.55"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="10.5" cy="10.5" r="6.5" />
+            <path d="m16 16 5 5" />
+          </svg>
+          <span class="lib-visually-hidden">{t.searchLabel}</span>
+          <input
+            type="search"
+            placeholder={t.searchPlaceholder}
+            autocomplete="off"
+            data-lib-search
+          />
+        </label>
+      </div>
+      <ul class="lib-story-grid" data-lib-results>
+        {stories.map((story) => (
+          <li data-lib-item data-lib-topic={story.topic}>
+            <a class="lib-story-card" href={link(story.href)}>
+              <JournalArt locale={locale} art={story.key} />
+              <div>
+                <h2>{t.stories[story.key][0]}</h2>
+                <p>{t.stories[story.key][1]}</p>
+                <small>
+                  {t.topics[story.topic]}, {t.readTime}
+                </small>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p
+        class="lib-visually-hidden"
+        aria-live="polite"
+        data-lib-count
+        data-lib-count-one={t.count[0]}
+        data-lib-count-other={t.count[1]}
+      ></p>
+      <div class="lib-empty" data-lib-empty hidden>
+        <h2>{t.emptyTitle}</h2>
+        <p>{t.emptyText}</p>
+        <button type="button" data-lib-reset>
+          {t.reset}
+        </button>
+      </div>
+      <section class="lib-desk-note">
+        <div>
+          <h2>{t.noteTitle}</h2>
+          <p>{t.noteText}</p>
+        </div>
+        <dl>
+          {t.noteItems.map(([term, detail]) => (
+            <div>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+        <a class="lib-inline-link" href={link('/workshops/fit-check/')}>
+          {t.exercise}
+          <Arrow />
+        </a>
+        <p class="lib-product-note">
+          {t.longerRead}
+          <a class="lib-inline-link" href={link('/guides/counter/')}>
+            {t.longerReadLink}
+          </a>
+        </p>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/library.js';
+</script>

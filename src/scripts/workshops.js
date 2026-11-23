@@ -1,6 +1,8 @@
-// Role filter on the workshops directory.
+// Role filter on the workshops directory. The status text comes from the page
+// so it reads in the page language; {count} is replaced with the number shown.
 const directory = document.querySelector('.workshop-directory');
 const filters = directory.querySelectorAll('[data-workshop-filter]');
+const status = directory.querySelector('.workshop-status');
 
 directory.addEventListener('click', (event) => {
   const filter = event.target.closest('[data-workshop-filter]');
@@ -12,6 +14,6 @@ directory.addEventListener('click', (event) => {
     row.hidden = role !== 'All' && row.dataset.workshopRole !== role;
     if (!row.hidden) shown++;
   });
-  directory.querySelector('.workshop-status').textContent =
-    shown + (shown === 1 ? ' workshop' : ' workshops');
+  const text = shown === 1 ? status.dataset.statusOne : status.dataset.statusOther;
+  status.textContent = text.replace('{count}', String(shown));
 });

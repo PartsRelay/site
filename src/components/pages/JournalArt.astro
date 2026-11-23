@@ -1,0 +1,27 @@
+---
+import { journal } from '../../i18n/pages/journal';
+import { ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+  art: 'pads' | 'alt' | 'mirror';
+}
+
+// The illustration on a journal card, repeated as the cover of its article.
+const { locale, art } = Astro.props;
+const [label, tag, mark] = journal[locale].art[art];
+const images = { pads: '/assets/brake-pads.svg', alt: '/assets/alternator.svg' };
+---
+
+<div class={`lib-art lib-art-${art}`} aria-label={label} role="img">
+  <span>{tag}</span>
+  {art === 'mirror' ? (
+    <>
+      <i class="lib-shell-shape" />
+      <i class="lib-glass-shape" />
+    </>
+  ) : (
+    <img src={images[art]} alt="" />
+  )}
+  <b>{mark}</b>
+</div>

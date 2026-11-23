@@ -12,7 +12,7 @@ Built with [Astro](https://astro.build). The output is static HTML, CSS and a sm
 - `src/styles/` stylesheets, loaded in the order listed in `Layout.astro`. Class names start with the area they belong to: `site-`, `home-`, `tool-`, `team-`, `lib-`, `workshop-`, `brand-`
 - `src/scripts/` browser scripts for the menu, the home page drawings, the VIN check and the filters
 - `src/site.js` contact address and policy links used in more than one place
-- `src/i18n/` the languages the site is published in and the translated text. `ui.js` holds the header, footer and language bar text and lists which pages are translated; `home.js` holds the home page in each language. English pages stay at the root, translations live under `/de/`, `/fr/`, `/es/` and `/it/`
+- `src/i18n/` the languages the site is published in and the translated text. `ui.js` holds the header, footer and language bar text and lists which pages are translated; `home.js` holds the home page and `pages/` every other page, one file per page with each language. The markup each page shares across languages is in `src/components/pages/`. English pages stay at the root, translations live under `/de/`, `/fr/`, `/es/` and `/it/`
 - `public/assets/` images, video, fonts and the brand kit download, copied as they are
 - `public/worksheets/` the Markdown worksheets linked from the workshop pages
 

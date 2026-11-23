@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { brand } from '../../i18n/pages/brand';
+import { ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = brand[locale];
+const [intro, marks, placement, colors, type, files] = t.menu;
+const [logo, logoWhite, symbol, symbolWhite] = t.assets;
+const [navy, teal, mist, canvas, slate, white] = t.swatches;
+const [headings, body] = t.specs;
+---
+
+<Layout title={t.title} description={t.description}>
+  <div class="brand">
+    <aside class="brand-side">
+      <div class="brand-side-inner">
+        <img class="brand-symbol" src="/assets/symbol.svg" alt={t.symbolAlt} />
+        <nav aria-label={t.menuLabel}>
+          <button type="button" data-jump="brand-intro">
+            {intro}
+          </button>
+          <button type="button" data-jump="brand-marks">
+            {marks}
+          </button>
+          <button type="button" data-jump="brand-placement">
+            {placement}
+          </button>
+          <button type="button" data-jump="brand-colors">
+            {colors}
+          </button>
+          <button type="button" data-jump="brand-type">
+            {type}
+          </button>
+          <button type="button" data-jump="brand-files">
+            {files}
+          </button>
+        </nav>
+        <a
+          href="/assets/parts-relay-brand-kit.zip"
+          download="Parts-Relay-Brand-Kit.zip"
+          class="brand-download"
+        >
+          {t.download}
+        </a>
+      </div>
+    </aside>
+    <div class="brand-main">
+      <header class="brand-hero" id="brand-intro">
+        <div class="brand-hero-copy">
+          <h1 tabindex="-1">
+            {t.heroTitle[0]}
+            <br />
+            {t.heroTitle[1]}
+          </h1>
+          <p>{t.heroText}</p>
+        </div>
+        <img class="brand-rotor" src="/assets/rotor-print.svg" alt={t.rotorAlt} />
+      </header>
+      <p class="brand-lede">{t.lede}</p>
+      <section class="brand-chapter" id="brand-marks" tabindex="-1">
+        <h2>{t.marksTitle}</h2>
+        <p>{t.marksText}</p>
+        <div class="brand-assets">
+          <div class="brand-asset">
+            <div class="brand-preview">
+              <img src="/assets/logo.svg" alt={logo[0]} />
+            </div>
+            <a download="parts-relay-logo.svg" href="/assets/logo.svg">
+              {logo[1]} <span>SVG ↓</span>
+            </a>
+          </div>
+          <div class="brand-asset">
+            <div class="brand-preview brand-dark">
+              <img src="/assets/logo-white.svg" alt={logoWhite[0]} />
+            </div>
+            <a download="parts-relay-logo-white.svg" href="/assets/logo-white.svg">
+              {logoWhite[1]} <span>SVG ↓</span>
+            </a>
+          </div>
+          <div class="brand-asset">
+            <div class="brand-preview">
+              <img src="/assets/symbol.svg" alt={symbol[0]} />
+            </div>
+            <a download="parts-relay-symbol.svg" href="/assets/symbol.svg">
+              {symbol[1]} <span>SVG ↓</span>
+            </a>
+          </div>
+          <div class="brand-asset">
+            <div class="brand-preview brand-dark">
+              <img src="/assets/symbol-white.svg" alt={symbolWhite[0]} />
+            </div>
+            <a download="parts-relay-symbol-white.svg" href="/assets/symbol-white.svg">
+              {symbolWhite[1]} <span>SVG ↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="brand-chapter" id="brand-placement" tabindex="-1">
+        <h2>{t.placementTitle}</h2>
+        <dl class="brand-guidance">
+          {t.placement.map(([term, detail]) => (
+            <div>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      <section class="brand-chapter" id="brand-colors" tabindex="-1">
+        <h2>{t.colorTitle}</h2>
+        <p>{t.colorText}</p>
+        <div class="brand-swatches">
+          <div class="brand-swatch" style="--swatch: #142b3a">
+            <b>{navy[0]}</b>
+            <span>{navy[1]}</span>
+            <strong>#142B3A</strong>
+          </div>
+          <div class="brand-swatch" style="--swatch: #087781">
+            <b>{teal[0]}</b>
+            <span>{teal[1]}</span>
+            <strong>#087781</strong>
+          </div>
+          <div class="brand-swatch brand-ink" style="--swatch: #dff3ef">
+            <b>{mist[0]}</b>
+            <span>{mist[1]}</span>
+            <strong>#DFF3EF</strong>
+          </div>
+          <div class="brand-swatch brand-ink" style="--swatch: #f5f7f8">
+            <b>{canvas[0]}</b>
+            <span>{canvas[1]}</span>
+            <strong>#F5F7F8</strong>
+          </div>
+          <div class="brand-swatch" style="--swatch: #455a64">
+            <b>{slate[0]}</b>
+            <span>{slate[1]}</span>
+            <strong>#455A64</strong>
+          </div>
+          <div class="brand-swatch brand-ink" style="--swatch: #ffffff">
+            <b>{white[0]}</b>
+            <span>{white[1]}</span>
+            <strong>#FFFFFF</strong>
+          </div>
+        </div>
+      </section>
+      <section class="brand-chapter" id="brand-type" tabindex="-1">
+        <h2>{t.typeTitle}</h2>
+        <p>{t.typeText}</p>
+        <div class="brand-spec">
+          <div>
+            <span>{headings[0]}</span>
+            <h3 class="brand-manrope">Manrope</h3>
+            <p>{headings[1]}</p>
+          </div>
+          <div>
+            <span>{body[0]}</span>
+            <h3 class="brand-source">Source Sans 3</h3>
+            <p>{body[1]}</p>
+          </div>
+        </div>
+      </section>
+      <section class="brand-chapter" id="brand-files" tabindex="-1">
+        <h2>{t.filesTitle}</h2>
+        <dl class="brand-guidance">
+          {t.files.map(([term, detail]) => (
+            <div>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+        <a
+          href="/assets/parts-relay-brand-kit.zip"
+          download="Parts-Relay-Brand-Kit.zip"
+          class="brand-download"
+        >
+          {t.download}
+        </a>
+      </section>
+    </div>
+  </div>
+</Layout>
