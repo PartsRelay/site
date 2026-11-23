@@ -367,8 +367,9 @@ svg {
 }
 .ask-ai-kicker {
   margin: 0;
-  color: #647376;
-  font: 500 17px/1.4 var(--body-font);
+  color: var(--relay);
+  font: 550 21px/1.2 var(--heading-font);
+  letter-spacing: -0.04em;
 }
 .ask-ai h2 {
   margin: 6px 0 0;
@@ -392,15 +393,12 @@ svg {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  background: linear-gradient(#fafcfc, #f2f6f5);
-  border: 1px solid #dbe4e2;
+  background: var(--relay);
   border-radius: 12px;
-  box-shadow:
-    0 1px 2px #142b3a0a,
-    inset 0 1px 0 #fff;
-  color: var(--relay-deep);
-  font: 500 16px/1.3 var(--body-font);
-  transition-property: border-color, box-shadow, translate;
+  box-shadow: 0 1px 2px #142b3a14;
+  color: #fff;
+  font: 600 16px/1.3 var(--body-font);
+  transition-property: background-color, box-shadow, translate, scale;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -410,11 +408,12 @@ svg {
   fill: currentColor;
 }
 .ask-ai-card:hover {
-  border-color: #9fc9c4;
-  box-shadow:
-    0 6px 18px #142b3a14,
-    inset 0 1px 0 #fff;
+  background: #075e68;
+  box-shadow: 0 6px 18px #142b3a24;
   translate: 0 -2px;
+}
+.ask-ai-card:active {
+  scale: 0.96;
 }
 .ask-ai-card:focus-visible {
   outline-offset: 3px;
@@ -424,7 +423,7 @@ svg {
     padding: 64px 0 56px;
   }
   .ask-ai-kicker {
-    font-size: 15px;
+    font-size: 17px;
   }
   .ask-ai-list {
     gap: 10px;
