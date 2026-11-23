@@ -106,13 +106,6 @@
 .page-detail .page-btn:hover {
   background: #065a62;
 }
-.page-detail .page-btn.page-secondary {
-  color: var(--page-ink) !important;
-  background: #e9eeee;
-}
-.page-detail .page-btn.page-secondary:hover {
-  background: #d9e6e3;
-}
 .page-detail .page-btn:disabled {
   opacity: 0.6;
   cursor: default;

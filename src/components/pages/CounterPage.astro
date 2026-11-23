@@ -114,20 +114,11 @@ const link = (href: string) => localizedPath(locale, href);
           <p>{t.nextText}</p>
         </div>
         <div class="team-actions">
-          <a class="team-btn" href={link('/workshops/handoff/')}>
-            {t.handoff}
-          </a>
-          <a class="team-btn team-secondary" href={link('/repair-shops/')}>
+          <a class="team-btn" href={link('/repair-shops/')}>
             {t.intake}
           </a>
         </div>
       </aside>
-    </div>
-    <div class="team-story-float">
-      <span>{t.floatText}</span>
-      <a class="team-btn" href={link('/tools/parts-diagrams/')}>
-        {t.floatAction}
-      </a>
     </div>
     <section class="team-cta">
       <div class="team-frame">
@@ -136,9 +127,6 @@ const link = (href: string) => localizedPath(locale, href);
         <div class="team-actions">
           <a class="team-btn" href={link('/tools/vin-check/')}>
             {t.ctaVin}
-          </a>
-          <a class="team-btn team-secondary" href={link('/tools/part-details/')}>
-            {t.ctaDetails}
           </a>
         </div>
       </div>

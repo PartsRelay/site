@@ -43,7 +43,6 @@ export const articles = {
           'When the label is damaged, ask whether the connector shape distinguishes the remaining units. The counter person can tell the technician what to look for before anyone goes back to the vehicle.',
         ],
       ],
-      next: 'How a distributor handles an open enquiry',
     },
     'brake-pad-sets': {
       heading: 'What comes in a brake pad set?',
@@ -77,7 +76,6 @@ export const articles = {
           ],
         ],
       ],
-      next: 'How to read a quoted part number',
     },
     'mirror-glass': {
       heading: 'Mirror glass or the whole assembly?',
@@ -114,7 +112,6 @@ export const articles = {
           'For cracked glass, find out whether the housing and adjuster survived. Note the heater connections and any warning indicator on the glass. For damage to the whole unit, the equipment to check may include a folding mechanism or a camera.',
         ],
       ],
-      next: 'Find a component in an exploded view',
     },
   },
   de: {
@@ -157,7 +154,6 @@ export const articles = {
           'Ist das Schild beschädigt, fragen Sie, ob die Steckerform die verbleibenden Varianten unterscheidet. Die Theke kann dem Mechaniker sagen, worauf er achten soll, bevor jemand noch einmal zum Fahrzeug geht.',
         ],
       ],
-      next: 'Wie ein Händler eine offene Anfrage bearbeitet',
     },
     'brake-pad-sets': {
       heading: 'Was gehört zu einem Bremsbelagsatz?',
@@ -194,7 +190,6 @@ export const articles = {
           ],
         ],
       ],
-      next: 'So lesen Sie eine angebotene Teilenummer',
     },
     'mirror-glass': {
       heading: 'Spiegelglas oder kompletter Spiegel?',
@@ -231,7 +226,6 @@ export const articles = {
           'Klären Sie bei gesprungenem Glas, ob Gehäuse und Verstellung heil geblieben sind. Notieren Sie die Heizungsanschlüsse und eine eventuelle Warnanzeige im Glas. Ist die ganze Einheit beschädigt, kann zur Ausstattung eine elektrische Anklappung oder eine Kamera gehören.',
         ],
       ],
-      next: 'Ein Bauteil in der Explosionszeichnung finden',
     },
   },
   fr: {
@@ -274,7 +268,6 @@ export const articles = {
           'Quand l’étiquette est abîmée, demandez si la forme du connecteur permet de départager les modèles restants. Le comptoir peut dire au mécanicien quoi regarder avant que quelqu’un retourne au véhicule.',
         ],
       ],
-      next: 'Comment un distributeur traite une demande en cours',
     },
     'brake-pad-sets': {
       heading: 'Que contient un jeu de plaquettes ?',
@@ -311,7 +304,6 @@ export const articles = {
           ],
         ],
       ],
-      next: 'Comment lire une référence chiffrée',
     },
     'mirror-glass': {
       heading: 'Glace seule ou rétroviseur complet ?',
@@ -348,7 +340,6 @@ export const articles = {
           'Pour une glace fissurée, vérifiez si le boîtier et le mécanisme de réglage ont tenu. Notez les connexions du dégivrage et tout voyant intégré à la glace. Si tout l’ensemble est endommagé, il peut falloir vérifier un rabattement électrique ou une caméra.',
         ],
       ],
-      next: 'Trouver un composant sur une vue éclatée',
     },
   },
   es: {
@@ -391,7 +382,6 @@ export const articles = {
           'Si la etiqueta está dañada, pregunte si la forma del conector distingue las unidades que quedan. El mostrador puede decirle al mecánico qué mirar antes de que nadie vuelva al vehículo.',
         ],
       ],
-      next: 'Cómo gestiona un distribuidor una consulta abierta',
     },
     'brake-pad-sets': {
       heading: '¿Qué incluye un juego de pastillas?',
@@ -425,7 +415,6 @@ export const articles = {
           ],
         ],
       ],
-      next: 'Cómo leer una referencia presupuestada',
     },
     'mirror-glass': {
       heading: '¿Solo el cristal o el retrovisor completo?',
@@ -462,7 +451,6 @@ export const articles = {
           'Con el cristal agrietado, averigüe si la carcasa y el reglaje han aguantado. Anote las conexiones de la calefacción y cualquier testigo de aviso en el cristal. Si está dañada toda la unidad, quizá haya que comprobar un plegado eléctrico o una cámara.',
         ],
       ],
-      next: 'Encontrar un componente en un despiece',
     },
   },
   it: {
@@ -505,7 +493,6 @@ export const articles = {
           'Quando l’etichetta è danneggiata, chieda se la forma del connettore distingue le versioni rimaste. Il banco può dire al meccanico cosa guardare prima che qualcuno torni al veicolo.',
         ],
       ],
-      next: 'Come un distributore gestisce una richiesta aperta',
     },
     'brake-pad-sets': {
       heading: 'Cosa c’è in un kit pastiglie?',
@@ -539,7 +526,6 @@ export const articles = {
           ],
         ],
       ],
-      next: 'Come leggere un codice quotato',
     },
     'mirror-glass': {
       heading: 'Solo il vetro o lo specchietto completo?',
@@ -576,7 +562,6 @@ export const articles = {
           'Con il vetro incrinato, verifichi se corpo e regolazione sono rimasti integri. Annoti i collegamenti del riscaldamento e l’eventuale spia integrata nel vetro. Se è danneggiata l’intera unità, l’equipaggiamento da controllare può includere la chiusura elettrica o una telecamera.',
         ],
       ],
-      next: 'Trovare un componente in un esploso',
     },
   },
 };

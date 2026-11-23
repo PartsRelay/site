@@ -11,7 +11,7 @@ const { locale } = Astro.props;
 const t = vehicleIdentification[locale];
 const link = (href: string) => localizedPath(locale, href);
 
-const relatedLinks = ['/journal/brake-pad-sets/', '/journal/alternator-labels/', '/library/'];
+const relatedLinks = ['/journal/brake-pad-sets/', '/journal/alternator-labels/', '/journal/'];
 const related = relatedLinks.map((href, index) => ({ href: link(href), label: t.related[index] }));
 ---
 
@@ -20,7 +20,7 @@ const related = relatedLinks.map((href, index) => ({ href: link(href), label: t.
   description={t.description}
   heading={t.heading}
   topic={t.topic}
-  topicHref={link('/library/')}
+  topicHref={link('/journal/')}
   readTime={t.readTime}
   relatedHeading={t.relatedHeading}
   related={related}

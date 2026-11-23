@@ -40,21 +40,6 @@ export const home = {
     screenshotAlt:
       'The New search panel in Parts Relay: a choice of Plate or VIN, a registration plate field, a Part needed field and search tips.',
     screenshotCaption: 'The New search panel in the Parts Relay web app.',
-    toolsLabel: 'Free tools',
-    tools: [
-      [
-        'VIN format check',
-        'Check the length and characters of a VIN before you pass it to the counter.',
-      ],
-      [
-        'Parts diagrams',
-        'A cartridge can sit inside a housing that has its own part number. Pull up the drawing to see how the pieces fit.',
-      ],
-      [
-        'Part details',
-        'Two catalogue rows can share a description. Check the position and equipment on the car.',
-      ],
-    ],
     stepsTitle: 'From repair order to supplier enquiry',
     stepsText:
       'Start with the car in the bay. Give the counter enough detail to identify the component and tell you what it can supply.',
@@ -89,7 +74,6 @@ export const home = {
       'At the distributor, staff can look up a part themselves or pick up a request a workshop sent to the company’s WhatsApp number. Searches from the counter and from WhatsApp share one queue, which shows who asked, on which channel, and what the catalogue found.',
       'Plates are searched in the country set for your company. If the returned vehicle doesn’t match the one in the bay, the counter can check the plate or VIN with the shop before quoting.',
     ],
-    forDistributors: 'For distributors',
     recordTitle: 'In Parts Relay: what comes back from a search',
     record: [
       [
@@ -120,29 +104,12 @@ export const home = {
         'Check what you copied from the vehicle before it goes on the enquiry.',
         'VIN format check',
       ],
-      brakes: [
-        'Read the brake drawing',
-        'Find the disc and the pads on either side of it.',
-        'Parts diagrams',
-      ],
-      brakesAlt: 'Exploded brake diagram showing the disc and two pads',
-      supplier: [
-        'Write to your supplier',
-        'Tell the counter what to price and which details you still need confirmed.',
-        'Enquiry guide',
-      ],
       shops: [
         'From the service desk',
         'Turn a technician’s note into a question the distributor can answer.',
         'For repair shops',
       ],
       shopsAlt: 'Service adviser inspecting a part at the workshop counter',
-      distributors: [
-        'At the distributor',
-        'Pick up a colleague’s search and see what the shop is waiting for.',
-        'For distributors',
-      ],
-      distributorsAlt: 'A parts specialist and a service adviser inspect a headlamp housing.',
     },
     ctaTitle: 'See whether it covers the jobs you get',
     ctaText:
@@ -188,21 +155,6 @@ export const home = {
     screenshotAlt:
       'Das Fenster „New search“ in Parts Relay: Auswahl zwischen Kennzeichen und FIN, ein Feld für das Kennzeichen, ein Feld für das benötigte Teil und Suchtipps.',
     screenshotCaption: 'Das Fenster „New search“ in der Web-App von Parts Relay.',
-    toolsLabel: 'Kostenlose Werkzeuge',
-    tools: [
-      [
-        'FIN-Formatprüfung',
-        'Prüfen Sie Länge und Zeichen einer FIN, bevor Sie sie an die Theke geben.',
-      ],
-      [
-        'Teilezeichnungen',
-        'Eine Patrone kann in einem Gehäuse mit eigener Teilenummer sitzen. Die Zeichnung zeigt, wie die Teile zusammenpassen.',
-      ],
-      [
-        'Teiledetails',
-        'Zwei Katalogzeilen können dieselbe Bezeichnung tragen. Prüfen Sie Position und Ausstattung am Fahrzeug.',
-      ],
-    ],
     stepsTitle: 'Vom Reparaturauftrag zur Lieferantenanfrage',
     stepsText:
       'Beginnen Sie mit dem Auto auf der Hebebühne. Geben Sie der Theke genug Details, um das Bauteil zu bestimmen und Ihnen zu sagen, was sie liefern kann.',
@@ -232,7 +184,6 @@ export const home = {
       'Beim Händler können Mitarbeiter selbst ein Teil suchen oder eine Anfrage übernehmen, die eine Werkstatt an die WhatsApp-Nummer des Unternehmens geschickt hat. Suchen von der Theke und per WhatsApp teilen sich eine Liste. Sie zeigt, wer gefragt hat, über welchen Kanal und was der Katalog gefunden hat.',
       'Kennzeichen werden in dem Land gesucht, das für Ihr Unternehmen festgelegt ist. Passt das gefundene Fahrzeug nicht zu dem in der Werkstatt, kann die Theke Kennzeichen oder FIN vor dem Angebot mit der Werkstatt abgleichen.',
     ],
-    forDistributors: 'Für Händler',
     recordTitle: 'In Parts Relay: was eine Suche liefert',
     record: [
       [
@@ -263,29 +214,12 @@ export const home = {
         'Prüfen Sie, was Sie vom Fahrzeug abgeschrieben haben, bevor es in die Anfrage kommt.',
         'FIN-Formatprüfung',
       ],
-      brakes: [
-        'Die Bremsenzeichnung lesen',
-        'Finden Sie die Scheibe und die Beläge auf beiden Seiten.',
-        'Teilezeichnungen',
-      ],
-      brakesAlt: 'Explosionszeichnung einer Bremse mit Scheibe und zwei Belägen',
-      supplier: [
-        'An den Lieferanten schreiben',
-        'Sagen Sie der Theke, was sie anbieten soll und welche Details noch zu bestätigen sind.',
-        'Ratgeber Anfragen',
-      ],
       shops: [
         'Aus der Serviceannahme',
         'Machen Sie aus der Notiz des Mechanikers eine Frage, die der Händler beantworten kann.',
         'Für Werkstätten',
       ],
       shopsAlt: 'Serviceberater prüft ein Teil an der Werkstatttheke',
-      distributors: [
-        'Beim Händler',
-        'Übernehmen Sie die Suche eines Kollegen und sehen Sie, worauf die Werkstatt wartet.',
-        'Für Händler',
-      ],
-      distributorsAlt: 'Ein Teilespezialist und ein Serviceberater prüfen ein Scheinwerfergehäuse.',
     },
     ctaTitle: 'Prüfen Sie, ob es Ihre Aufträge abdeckt',
     ctaText:
@@ -331,21 +265,6 @@ export const home = {
     screenshotAlt:
       'Le panneau « New search » de Parts Relay : choix entre plaque et VIN, un champ pour la plaque, un champ pour la pièce recherchée et des conseils de recherche.',
     screenshotCaption: 'Le panneau « New search » dans l’application web Parts Relay.',
-    toolsLabel: 'Outils gratuits',
-    tools: [
-      [
-        'Vérification du VIN',
-        'Vérifiez la longueur et les caractères d’un VIN avant de le transmettre au comptoir.',
-      ],
-      [
-        'Vues éclatées',
-        'Une cartouche peut se trouver dans un boîtier qui a sa propre référence. Le schéma montre comment les pièces s’assemblent.',
-      ],
-      [
-        'Détails des pièces',
-        'Deux lignes du catalogue peuvent avoir la même désignation. Vérifiez la position et l’équipement sur le véhicule.',
-      ],
-    ],
     stepsTitle: 'De l’ordre de réparation à la demande au fournisseur',
     stepsText:
       'Partez de la voiture à l’atelier. Donnez au comptoir assez de détails pour identifier la pièce et vous dire ce qu’il peut fournir.',
@@ -380,7 +299,6 @@ export const home = {
       'Chez le distributeur, le personnel peut chercher une pièce lui-même ou reprendre une demande qu’un garage a envoyée au numéro WhatsApp de l’entreprise. Les recherches du comptoir et de WhatsApp partagent une même file, qui montre qui a demandé, par quel canal et ce que le catalogue a trouvé.',
       'Les plaques sont recherchées dans le pays défini pour votre entreprise. Si le véhicule trouvé ne correspond pas à celui de l’atelier, le comptoir peut vérifier la plaque ou le VIN avec le garage avant de chiffrer.',
     ],
-    forDistributors: 'Pour les distributeurs',
     recordTitle: 'Dans Parts Relay : ce que renvoie une recherche',
     record: [
       [
@@ -411,30 +329,12 @@ export const home = {
         'Vérifiez ce que vous avez relevé sur le véhicule avant de l’ajouter à la demande.',
         'Vérification du VIN',
       ],
-      brakes: [
-        'Lire le schéma de frein',
-        'Repérez le disque et les plaquettes de chaque côté.',
-        'Vues éclatées',
-      ],
-      brakesAlt: 'Vue éclatée d’un frein montrant le disque et deux plaquettes',
-      supplier: [
-        'Écrire à votre fournisseur',
-        'Dites au comptoir quoi chiffrer et quels détails restent à confirmer.',
-        'Guide des demandes',
-      ],
       shops: [
         'Depuis la réception atelier',
         'Transformez la note d’un technicien en question à laquelle le distributeur peut répondre.',
         'Pour les garages',
       ],
       shopsAlt: 'Un conseiller service examine une pièce au comptoir de l’atelier',
-      distributors: [
-        'Chez le distributeur',
-        'Reprenez la recherche d’un collègue et voyez ce que le garage attend.',
-        'Pour les distributeurs',
-      ],
-      distributorsAlt:
-        'Un spécialiste pièces et un conseiller service examinent un boîtier de phare.',
     },
     ctaTitle: 'Vérifiez si cela couvre vos travaux',
     ctaText:
@@ -480,21 +380,6 @@ export const home = {
     screenshotAlt:
       'El panel «New search» de Parts Relay: elección entre matrícula y VIN, un campo para la matrícula, un campo para el recambio y consejos de búsqueda.',
     screenshotCaption: 'El panel «New search» en la aplicación web de Parts Relay.',
-    toolsLabel: 'Herramientas gratuitas',
-    tools: [
-      [
-        'Comprobación del VIN',
-        'Compruebe la longitud y los caracteres de un VIN antes de pasarlo al mostrador.',
-      ],
-      [
-        'Despieces',
-        'Un cartucho puede ir dentro de una carcasa con su propia referencia. El despiece muestra cómo encajan las piezas.',
-      ],
-      [
-        'Detalles del recambio',
-        'Dos líneas del catálogo pueden tener la misma descripción. Compruebe la posición y el equipamiento en el coche.',
-      ],
-    ],
     stepsTitle: 'De la orden de reparación a la consulta al proveedor',
     stepsText:
       'Empiece por el coche en el taller. Dé al mostrador detalles suficientes para identificar la pieza y decirle qué puede suministrar.',
@@ -529,7 +414,6 @@ export const home = {
       'En el distribuidor, el personal puede buscar un recambio por su cuenta o atender una consulta que un taller envió al número de WhatsApp de la empresa. Las búsquedas del mostrador y de WhatsApp comparten una cola, que muestra quién preguntó, por qué canal y qué encontró el catálogo.',
       'Las matrículas se buscan en el país fijado para su empresa. Si el vehículo encontrado no coincide con el del taller, el mostrador puede comprobar la matrícula o el VIN con el taller antes de presupuestar.',
     ],
-    forDistributors: 'Para distribuidores',
     recordTitle: 'En Parts Relay: qué devuelve una búsqueda',
     record: [
       [
@@ -560,30 +444,12 @@ export const home = {
         'Compruebe lo que copió del vehículo antes de añadirlo a la consulta.',
         'Comprobación del VIN',
       ],
-      brakes: [
-        'Leer el despiece del freno',
-        'Localice el disco y las pastillas a cada lado.',
-        'Despieces',
-      ],
-      brakesAlt: 'Despiece de un freno con el disco y dos pastillas',
-      supplier: [
-        'Escribir a su proveedor',
-        'Diga al mostrador qué presupuestar y qué detalles faltan por confirmar.',
-        'Guía de consultas',
-      ],
       shops: [
         'Desde la recepción del taller',
         'Convierta la nota del mecánico en una pregunta que el distribuidor pueda responder.',
         'Para talleres',
       ],
       shopsAlt: 'Un asesor de servicio revisa una pieza en el mostrador del taller',
-      distributors: [
-        'En el distribuidor',
-        'Retome la búsqueda de un compañero y vea qué espera el taller.',
-        'Para distribuidores',
-      ],
-      distributorsAlt:
-        'Un especialista en recambios y un asesor de servicio revisan la carcasa de un faro.',
     },
     ctaTitle: 'Compruebe si cubre los trabajos que recibe',
     ctaText:
@@ -628,21 +494,6 @@ export const home = {
     screenshotAlt:
       'Il pannello «New search» di Parts Relay: scelta tra targa e VIN, un campo per la targa, un campo per il ricambio e suggerimenti di ricerca.',
     screenshotCaption: 'Il pannello «New search» nell’app web di Parts Relay.',
-    toolsLabel: 'Strumenti gratuiti',
-    tools: [
-      [
-        'Controllo del VIN',
-        'Controlli lunghezza e caratteri di un VIN prima di passarlo al banco.',
-      ],
-      [
-        'Esplosi ricambi',
-        'Una cartuccia può stare dentro un alloggiamento con un proprio codice. Il disegno mostra come si montano i pezzi.',
-      ],
-      [
-        'Dettagli ricambio',
-        'Due righe di catalogo possono avere la stessa descrizione. Controlli posizione ed equipaggiamento sull’auto.',
-      ],
-    ],
     stepsTitle: 'Dall’ordine di riparazione alla richiesta al fornitore',
     stepsText:
       'Parta dall’auto in officina. Dia al banco abbastanza dettagli per identificare il componente e dirle cosa può fornire.',
@@ -677,7 +528,6 @@ export const home = {
       'Dal distributore, il personale può cercare un ricambio in autonomia o prendere in carico una richiesta che un’officina ha inviato al numero WhatsApp dell’azienda. Le ricerche dal banco e da WhatsApp condividono un’unica coda, che mostra chi ha chiesto, da quale canale e cosa ha trovato il catalogo.',
       'Le targhe vengono cercate nel paese impostato per la sua azienda. Se il veicolo trovato non corrisponde a quello in officina, il banco può verificare targa o VIN con l’officina prima di fare il preventivo.',
     ],
-    forDistributors: 'Per i distributori',
     recordTitle: 'In Parts Relay: cosa restituisce una ricerca',
     record: [
       [
@@ -708,30 +558,12 @@ export const home = {
         'Controlli ciò che ha copiato dal veicolo prima di inserirlo nella richiesta.',
         'Controllo del VIN',
       ],
-      brakes: [
-        'Leggere l’esploso del freno',
-        'Trovi il disco e le pastiglie ai due lati.',
-        'Esplosi ricambi',
-      ],
-      brakesAlt: 'Esploso di un freno con il disco e due pastiglie',
-      supplier: [
-        'Scrivere al fornitore',
-        'Dica al banco cosa quotare e quali dettagli vanno ancora confermati.',
-        'Guida alle richieste',
-      ],
       shops: [
         'Dall’accettazione',
         'Trasformi la nota del meccanico in una domanda a cui il distributore può rispondere.',
         'Per le officine',
       ],
       shopsAlt: 'Un consulente di servizio esamina un pezzo al banco dell’officina',
-      distributors: [
-        'Dal distributore',
-        'Riprenda la ricerca di un collega e veda cosa aspetta l’officina.',
-        'Per i distributori',
-      ],
-      distributorsAlt:
-        'Uno specialista ricambi e un consulente di servizio esaminano il corpo di un faro.',
     },
     ctaTitle: 'Verifichi se copre i lavori che riceve',
     ctaText:
