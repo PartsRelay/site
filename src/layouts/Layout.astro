@@ -57,7 +57,17 @@ const schema = {
 <!doctype html>
 <html lang="en" class={home ? undefined : 'page-interior'}>
   <head>
-    <!-- The iubenda embed has to be the first tag in the head. -->
+    <!--
+      The iubenda embed has to be the first tag in the head, after its own settings.
+      By default iubenda saves consent on the parent of the current host (www.example.com
+      becomes example.com). On hosts like example.co.uk or a *.pages.dev preview that parent
+      is a public suffix, the browser rejects the cookie, and the banner returns on every
+      page. Saving consent on the exact host the page is served from avoids that.
+    -->
+    <script is:inline>
+      window._iub = window._iub || [];
+      _iub.csConfiguration = { localConsentDomain: location.hostname };
+    </script>
     <script
       is:inline
       type="text/javascript"
