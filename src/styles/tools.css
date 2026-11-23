@@ -1081,6 +1081,18 @@ body:has(#main .tool-diagrams) .site-item-icon,
 body:has(#main .tool-diagrams) .site-item-labels > span {
   color: #b9ccca;
 }
+body:has(#main .tool-diagrams) .site-item-icon {
+  border-color: #39525d;
+}
+body:has(#main .tool-diagrams) .fx-row-hover {
+  background: #2c4750;
+  box-shadow: none;
+}
+body:has(#main .tool-diagrams) .site-dropdown a:is(:hover, :focus-visible) .site-item-icon {
+  color: #8ad8ca;
+  background: #1b3440;
+  border-color: #4a6570;
+}
 body:has(#main .tool-diagrams) .base-footer,
 body:has(#main .tool-diagrams) .base-footer-rule {
   background: #102531;

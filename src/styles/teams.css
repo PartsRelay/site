@@ -921,6 +921,7 @@ body:has(#main .team-about) .site-trigger:hover {
   color: #a5dbd2;
 }
 body:has(#main .team-about) .site-chrome .site-dropdown {
+  --site-ink: #f4fbfa;
   background: #1b3440;
   border-color: #39525d;
   color: #f4fbfa;
@@ -933,6 +934,18 @@ body:has(#main .team-about) .fx-menu-pill {
 body:has(#main .team-about) .site-item-icon,
 body:has(#main .team-about) .site-item-labels > span {
   color: #b9ccca;
+}
+body:has(#main .team-about) .site-item-icon {
+  border-color: #39525d;
+}
+body:has(#main .team-about) .fx-row-hover {
+  background: #2c4750;
+  box-shadow: none;
+}
+body:has(#main .team-about) .site-dropdown a:is(:hover, :focus-visible) .site-item-icon {
+  color: #a5dbd2;
+  background: #1b3440;
+  border-color: #4a6570;
 }
 @media (max-width: 767px) {
   body:has(#main .team-about) .site-chrome .site-menu {
