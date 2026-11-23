@@ -1,5 +1,6 @@
 ---
 import Layout from './Layout.astro';
+import { localeOf, localizedPath, ui } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -12,6 +13,9 @@ interface Props {
 }
 
 const { title, description, heading, audience, poster, posterAlt, prepare } = Astro.props;
+const locale = localeOf(Astro.url) as keyof typeof ui;
+const t = ui[locale].workshop;
+const allWorkshops = localizedPath(locale, '/workshops/');
 ---
 
 <Layout title={title} description={description}>
@@ -23,7 +27,7 @@ const { title, description, heading, audience, poster, posterAlt, prepare } = As
             <img src="/assets/symbol-white.svg" alt="" />
             <span>Parts Relay</span>
           </div>
-          <span class="workshop-poster-title">Workshop</span>
+          <span class="workshop-poster-title">{t.poster}</span>
           <img class="workshop-poster-art" src={poster} alt={posterAlt} />
         </div>
         <dl class="workshop-prep">
@@ -36,8 +40,8 @@ const { title, description, heading, audience, poster, posterAlt, prepare } = As
         </dl>
       </aside>
       <div class="workshop-story">
-        <a class="workshop-breadcrumb" href="/workshops/">
-          ← All workshops
+        <a class="workshop-breadcrumb" href={allWorkshops}>
+          ← {t.back}
         </a>
         <h1 tabindex="-1">{heading}</h1>
         <p class="workshop-meta">{audience}</p>
@@ -45,8 +49,8 @@ const { title, description, heading, audience, poster, posterAlt, prepare } = As
           <slot name="intro" />
         </p>
         <slot />
-        <a class="workshop-breadcrumb" href="/workshops/">
-          ← All workshops
+        <a class="workshop-breadcrumb" href={allWorkshops}>
+          ← {t.back}
         </a>
       </div>
     </div>
