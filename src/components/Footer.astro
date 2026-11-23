@@ -40,11 +40,7 @@ const year = new Date().getFullYear();
               <path d="m15 15 6.5 6.5" />
             </svg>
           </a>
-          <a
-            href={localizedPath(locale, '/library/')}
-            title={f.openLibrary}
-            aria-label={f.openLibrary}
-          >
+          <a href={localizedPath(locale, '/journal/')} title={f.journal} aria-label={f.journal}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4.5h5.5c1.4 0 2.7.4 3.5 1.2.8-.8 2.1-1.2 3.5-1.2H21v14h-5.5c-1.5 0-2.6.4-3.5 1.2-.9-.8-2-1.2-3.5-1.2H3zM12 6v13" />
             </svg>
@@ -53,34 +49,20 @@ const year = new Date().getFullYear();
       </div>
       <div class="base-group">
         <h3>{t.groups.solutions}</h3>
+        <a href={localizedPath(locale, '/#workflow')}>{t.items.how[0]}</a>
+        <a href={localizedPath(locale, '/repair-shops/')}>{t.items.shops[0]}</a>
         <a href={localizedPath(locale, '/tools/vin-check/')}>{t.items.vin[0]}</a>
-        <a href={localizedPath(locale, '/tools/parts-diagrams/')}>{t.items.diagrams[0]}</a>
-        <a href={localizedPath(locale, '/tools/part-details/')}>{t.items.details[0]}</a>
-      </div>
-      <div>
-        <div class="base-group">
-          <h3>{f.atCounter}</h3>
-          <a href={localizedPath(locale, '/repair-shops/')}>{t.items.shops[0]}</a>
-          <a href={localizedPath(locale, '/distributors/')}>{t.items.distributors[0]}</a>
-          <a href={localizedPath(locale, '/guides/counter/')}>{t.items.counter[0]}</a>
-          <a href={localizedPath(locale, '/journal/')}>{t.items.journal[0]}</a>
-        </div>
-        <div class="base-group base-stack">
-          <h3>{f.onJob}</h3>
-          <a href={localizedPath(locale, '/#workflow')}>{f.process}</a>
-          <a href={localizedPath(locale, '/guides/vehicle-identification/')}>
-            {t.items.vehicle[0]}
-          </a>
-          <a href={localizedPath(locale, '/workshops/')}>{t.items.workshops[0]}</a>
-        </div>
       </div>
       <div class="base-group">
         <h3>{t.groups.resources}</h3>
-        <a href={localizedPath(locale, '/library/')}>{f.library}</a>
-        <a href={localizedPath(locale, '/guides/guidebook/')}>{t.items.guidebook[0]}</a>
         <a href={localizedPath(locale, '/journal/')}>{f.journal}</a>
-        <a href={localizedPath(locale, '/brand/')}>{t.items.brand[0]}</a>
+        <a href={localizedPath(locale, '/guides/vehicle-identification/')}>{t.items.vehicle[0]}</a>
+        <a href={localizedPath(locale, '/guides/counter/')}>{t.items.counter[0]}</a>
+      </div>
+      <div class="base-group">
+        <h3>{f.company}</h3>
         <a href={localizedPath(locale, '/about/')}>{t.items.about[0]}</a>
+        <a href={localizedPath(locale, '/brand/')}>{t.items.brand[0]}</a>
         <a href={privacyPolicy} target="_blank" rel="noopener">
           {t.items.privacy[0]}
         </a>

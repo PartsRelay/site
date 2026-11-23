@@ -10,7 +10,6 @@ export const about = {
     heroText:
       'Parts Relay is a web app for parts distributors and the repair shops they supply. Staff enter a registration plate or VIN and the part they need, and get back the vehicle, the original parts and any aftermarket matches. Workshops you add as contacts run the same search by WhatsApp. Parts Relay does not sell parts. The supplying branch still quotes the price and checks stock.',
     talk: 'Talk to our team',
-    forDistributors: 'For distributors',
     chapters: [
       {
         label: 'The people using it',
@@ -98,7 +97,6 @@ export const about = {
     heroText:
       'Parts Relay ist eine Web-App für Teilehändler und die Werkstätten, die sie beliefern. Mitarbeiter geben ein Kennzeichen oder eine FIN und das benötigte Teil ein und erhalten das Fahrzeug, die Originalteile und passende Aftermarket-Teile. Werkstätten, die Sie als Kontakte anlegen, starten dieselbe Suche per WhatsApp. Parts Relay verkauft keine Teile. Preis und Bestand prüft weiterhin die liefernde Filiale.',
     talk: 'Mit unserem Team sprechen',
-    forDistributors: 'Für Händler',
     chapters: [
       {
         label: 'Wer damit arbeitet',
@@ -186,7 +184,6 @@ export const about = {
     heroText:
       'Parts Relay est une application web pour les distributeurs de pièces et les garages qu’ils approvisionnent. Le personnel saisit une plaque d’immatriculation ou un VIN et la pièce recherchée, et obtient le véhicule, les pièces d’origine et les équivalences adaptables. Les garages que vous ajoutez comme contacts lancent la même recherche par WhatsApp. Parts Relay ne vend pas de pièces. C’est toujours l’agence qui fournit la pièce qui donne le prix et vérifie le stock.',
     talk: 'Parler à notre équipe',
-    forDistributors: 'Pour les distributeurs',
     chapters: [
       {
         label: 'Qui l’utilise',
@@ -274,7 +271,6 @@ export const about = {
     heroText:
       'Parts Relay es una aplicación web para distribuidores de recambios y los talleres a los que suministran. El personal introduce una matrícula o un VIN y el recambio que necesita, y obtiene el vehículo, las piezas originales y las equivalencias aftermarket. Los talleres que usted añade como contactos hacen la misma búsqueda por WhatsApp. Parts Relay no vende recambios. La sucursal que suministra la pieza sigue dando el precio y comprobando el stock.',
     talk: 'Hablar con nuestro equipo',
-    forDistributors: 'Para distribuidores',
     chapters: [
       {
         label: 'Quién lo usa',
@@ -362,7 +358,6 @@ export const about = {
     heroText:
       'Parts Relay è un’app web per i distributori di ricambi e le officine che riforniscono. Il personale inserisce una targa o un VIN e il ricambio che serve, e riceve il veicolo, i ricambi originali e le eventuali corrispondenze aftermarket. Le officine che Lei aggiunge come contatti fanno la stessa ricerca via WhatsApp. Parts Relay non vende ricambi. Prezzo e disponibilità restano compito della filiale che fornisce il pezzo.',
     talk: 'Parli con il nostro team',
-    forDistributors: 'Per i distributori',
     chapters: [
       {
         label: 'Chi lo usa',

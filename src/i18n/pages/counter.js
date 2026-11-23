@@ -77,15 +77,11 @@ export const counter = {
     nextTitle: 'Write the note for the next shift',
     nextText:
       'The handoff workshop includes a worksheet for recording what the shop confirmed and who owes the next call.',
-    handoff: 'Open the handoff worksheet',
     intake: 'Shop intake guide',
-    floatText: 'Have a part to identify?',
-    floatAction: 'Find it in a drawing',
     ctaTitle: 'Ask about a headlamp',
     ctaText:
       'Copy the original lamp number into your enquiry. If part of it is unreadable, mark where the lettering wears off.',
     ctaVin: 'Check the vehicle identifier',
-    ctaDetails: 'Compare part descriptions',
   },
   de: {
     title: 'Der Scheinwerfer funktioniert. Die Befestigungslasche ist gebrochen. | Parts Relay',
@@ -164,15 +160,11 @@ export const counter = {
     nextTitle: 'Die Notiz für die nächste Schicht schreiben',
     nextText:
       'Der Übergabe-Workshop enthält ein Arbeitsblatt, auf dem Sie festhalten, was die Werkstatt bestätigt hat und wer als Nächstes anruft.',
-    handoff: 'Übergabe-Arbeitsblatt öffnen',
     intake: 'Ratgeber Annahme',
-    floatText: 'Ein Teil bestimmen?',
-    floatAction: 'In der Zeichnung finden',
     ctaTitle: 'Nach einem Scheinwerfer fragen',
     ctaText:
       'Übernehmen Sie die Nummer des alten Scheinwerfers in Ihre Anfrage. Ist ein Teil davon unlesbar, markieren Sie, wo die Schrift abbricht.',
     ctaVin: 'Fahrzeug-Identnummer prüfen',
-    ctaDetails: 'Teilebeschreibungen vergleichen',
   },
   fr: {
     title: 'Le phare fonctionne. Sa patte de fixation est cassée. | Parts Relay',
@@ -251,15 +243,11 @@ export const counter = {
     nextTitle: 'Rédiger la note pour l’équipe suivante',
     nextText:
       'L’atelier pratique sur la relève comprend une fiche pour noter ce que le garage a confirmé et qui doit passer le prochain appel.',
-    handoff: 'Ouvrir la fiche de relève',
     intake: 'Guide de réception',
-    floatText: 'Une pièce à identifier ?',
-    floatAction: 'La trouver sur un schéma',
     ctaTitle: 'Demander un phare',
     ctaText:
       'Recopiez la référence du phare d’origine dans votre demande. Si une partie est illisible, indiquez où les caractères s’effacent.',
     ctaVin: 'Vérifier l’identifiant du véhicule',
-    ctaDetails: 'Comparer les désignations',
   },
   es: {
     title: 'El faro funciona. La pestaña de fijación está rota. | Parts Relay',
@@ -338,15 +326,11 @@ export const counter = {
     nextTitle: 'Escriba la nota para el siguiente turno',
     nextText:
       'La práctica de traspaso incluye una hoja de trabajo para anotar lo que ha confirmado el taller y a quién le toca la próxima llamada.',
-    handoff: 'Abrir la hoja de traspaso',
     intake: 'Guía de recepción',
-    floatText: '¿Tiene una pieza que identificar?',
-    floatAction: 'Búsquela en un despiece',
     ctaTitle: 'Consulte por un faro',
     ctaText:
       'Copie la referencia del faro original en su consulta. Si una parte no se lee, marque dónde se borran los caracteres.',
     ctaVin: 'Comprobar el identificador del vehículo',
-    ctaDetails: 'Comparar descripciones',
   },
   it: {
     title: 'Il faro funziona. La linguetta di fissaggio è rotta. | Parts Relay',
@@ -425,14 +409,10 @@ export const counter = {
     nextTitle: 'Scriva la nota per il turno successivo',
     nextText:
       'L’esercitazione sul passaggio di consegne include una scheda per annotare cosa ha confermato l’officina e a chi tocca la prossima chiamata.',
-    handoff: 'Apri la scheda di consegna',
     intake: 'Guida all’accettazione',
-    floatText: 'Un pezzo da identificare?',
-    floatAction: 'Lo trovi in un esploso',
     ctaTitle: 'Chieda un faro',
     ctaText:
       'Copi il codice del faro originale nella richiesta. Se una parte è illeggibile, segni dove i caratteri si cancellano.',
     ctaVin: 'Controlla l’identificativo del veicolo',
-    ctaDetails: 'Confronta le descrizioni',
   },
 };

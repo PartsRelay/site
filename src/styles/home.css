@@ -48,70 +48,6 @@
   font: 400 16px/140% var(--body-font);
   letter-spacing: normal;
 }
-.home-solutions {
-  padding-block: 72px 80px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-.home-solution {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 20px;
-  border: 1px solid var(--home-line);
-  border-radius: 12px;
-  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.home-solution:hover,
-.home-solution:focus-visible {
-  background: var(--home-surface);
-}
-.home-solution > svg {
-  width: 32px;
-  height: 32px;
-  stroke: var(--home-teal);
-  stroke-width: 2.1;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  margin-bottom: 16px;
-}
-.home-solution
-  :is(.home-scan-a, .home-scan-b, .home-scan-c, .home-lower, .home-layer-top, .home-tail) {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.home-solution:is(:hover, :focus-visible) .home-scan-a {
-  transform: translateY(1.8px);
-  transition-delay: 60ms;
-}
-.home-solution:is(:hover, :focus-visible) .home-scan-b {
-  transform: translateY(-2.5px);
-}
-.home-solution:is(:hover, :focus-visible) .home-scan-c {
-  transform: translateY(1.2px);
-  transition-delay: 90ms;
-}
-.home-solution:is(:hover, :focus-visible) .home-layer-top {
-  transform: rotate(90deg);
-  transition-duration: 600ms;
-  transition-delay: 40ms;
-}
-.home-solution:is(:hover, :focus-visible) .home-lower {
-  transform: translateY(-0.5px);
-  transition-delay: 80ms;
-}
-.home-solution:is(:hover, :focus-visible) .home-tail {
-  transform: scaleX(0.45);
-}
-.home-blink {
-  transform-origin: 16px 13px;
-}
-.home-solution:is(:hover, :focus-visible) .home-blink {
-  animation: home-message-blink 0.45s ease-in-out 0.08s;
-}
 @keyframes home-message-blink {
   0%,
   25%,
@@ -123,38 +59,19 @@
     transform: scaleY(0.05);
   }
 }
-.home-s-title,
 .home h3 {
   font: 400 18px/28px var(--heading-font);
   letter-spacing: -0.025em;
 }
-.home-s-title {
-  line-height: 28px;
-}
-.home-solution > .home-copy {
-  margin-top: 4px;
-  min-block-size: calc(var(--copy-lines, 1) * var(--home-copy-line-box));
-}
-.home-tip,
 .home-arrow {
   position: relative;
   display: inline-block;
   width: 13px;
   height: 14px;
 }
-.home-tip {
-  position: absolute;
-  right: 16px;
-  top: 19px;
-  color: #7b9697;
-}
-.home-tip {
-  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .home-arrow {
   transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
 }
-.home-tip::before,
 .home-arrow::before {
   content: '';
   position: absolute;
@@ -169,18 +86,13 @@
     transform 0.3s ease-out,
     opacity 0.05s linear;
 }
-.home-solution:is(:hover, :focus-visible) .home-tip {
-  transform: translateX(2px);
-}
 .home-pill:is(:hover, :focus-visible) .home-arrow {
   transform: translateX(3px);
 }
-.home-solution:is(:hover, :focus-visible) .home-tip::before,
 .home-pill:is(:hover, :focus-visible) .home-arrow::before {
   transform: scaleX(1);
   opacity: 1;
 }
-.home-tip::after,
 .home-arrow::after {
   content: '';
   position: absolute;
@@ -465,20 +377,11 @@
 .home-cover img.home-cover-loaded {
   opacity: 1;
 }
-.home-cover-plate {
-  background: #f3ead2;
-}
-.home-cover-plate img {
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-.home-cover-dark,
-.home-cover-thread {
+.home-cover-dark {
   background: #132d35;
   color: #d8f7e9;
 }
-.home-cover-dark::before,
-.home-cover-thread::before {
+.home-cover-dark::before {
   content: '';
   position: absolute;
   inset: -60%;
@@ -492,8 +395,7 @@
   transform: rotate(-22deg) scaleY(0.7);
   mask-image: repeating-conic-gradient(from 20deg, black 0 7deg, transparent 9deg 16deg);
 }
-.home-cover-scan,
-.home-cover-id {
+.home-cover-scan {
   font: 400 43px/1 var(--body-font);
   letter-spacing: -0.025em;
 }
@@ -501,18 +403,6 @@
   padding: 6px 12px;
   border: 1px solid #bce4d7;
   background: #122f37;
-}
-.home-cover-thread {
-  background: #0b595e;
-}
-.home-cover-thread::before {
-  background: repeating-linear-gradient(45deg, #46b5a6 0 2px, transparent 2px 15px);
-  transform: rotate(3deg);
-  mask-image: repeating-radial-gradient(ellipse, transparent 1px 16px, black 17px 25px);
-}
-.home-cover-id {
-  background: #0b595e;
-  padding: 5px;
 }
 .home-itemtext {
   padding: 16px 20px 20px;
@@ -573,14 +463,6 @@
   .home h2 {
     font-size: 24px;
     line-height: 32px;
-  }
-  .home-solutions {
-    grid-template-columns: 1fr;
-    padding-block: 40px 48px;
-  }
-  .home-s-title {
-    font-size: 16px;
-    line-height: 24px;
   }
   .home-metrics .home-wrap {
     padding-block: 96px;
@@ -686,21 +568,6 @@
 }
 /* Reserve caption lines at the widths where the grid changes height.
    The Parts Relay text remains free to grow under browser text zoom. */
-@media (min-width: 768px) {
-  .home-solution:first-child {
-    --copy-lines: 3;
-  }
-}
-@media (768px <= width < 978px) {
-  .home-solution:first-child {
-    --copy-lines: 4;
-  }
-}
-@media (768px <= width < 803px) {
-  .home-solution:first-child {
-    --copy-lines: 5;
-  }
-}
 @media (768px <= width < 833px) {
   .home-counts dt {
     min-block-size: 2lh;
@@ -733,19 +600,8 @@
   .home-counts dt {
     min-block-size: 1lh;
   }
-  .home-solution:first-child {
-    container: lookup-card / inline-size;
-  }
 }
 /* The longer shop-to-distributor sentence takes an extra line at these widths. */
-@media (331px <= width < 387px), (565px <= width < 617px) {
-  .home-solution:last-child {
-    padding-block: 14px 13px;
-  }
-  .home-solution:last-child > svg {
-    margin-bottom: 8px;
-  }
-}
 @media (width < 362px) {
   .home-news-head {
     gap: 6px;
@@ -759,42 +615,12 @@
     min-height: 64px;
   }
 }
-@media (width < 709px) {
-  .home-solution:nth-child(1) {
-    --copy-lines: 2;
-  }
-}
-@media (width < 603px) {
-  .home-solution:nth-child(2) {
-    --copy-lines: 2;
-  }
-}
-@media (width < 565px) {
-  .home-solution:nth-child(3) {
-    --copy-lines: 2;
-  }
-}
 /* Fractional device pixels change the space inside the card's two borders. */
 @media (326px <= width < 768px) {
   @container lookup-card (width < 323px) {
     .home-copy {
       --copy-lines: 3;
     }
-  }
-}
-@media (width < 351px) {
-  .home-solution:nth-child(2) {
-    --copy-lines: 3;
-  }
-}
-@media (width < 331px) {
-  .home-solution:nth-child(3) {
-    --copy-lines: 3;
-  }
-}
-@media (width < 326px) {
-  .home-solution:nth-child(1) {
-    --copy-lines: 4;
   }
 }
 @media (513px <= width < 526px) {

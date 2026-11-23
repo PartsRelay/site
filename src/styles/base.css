@@ -262,9 +262,6 @@ svg {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.base-stack {
-  margin-top: 24px;
-}
 .base-active {
   display: inline-flex;
   gap: 8px;

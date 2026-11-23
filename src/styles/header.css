@@ -823,25 +823,6 @@ html.site-no-banner .site-home-intro {
 }
 
 /* Hero: free-tool line under the buttons,and headline wrapping on narrow screens */
-.site-hero-copy p.site-hero-free {
-  font-size: 15px;
-  line-height: 22px;
-  letter-spacing: 0;
-  margin-top: 14px;
-  max-width: none;
-}
-.site-hero-copy p.site-hero-free a {
-  display: inline-block;
-  padding: 3px 12px;
-  border-radius: 100px;
-  background: #dff3ef;
-  color: #07636a;
-  font-weight: 500;
-  transition: background 0.18s;
-}
-.site-hero-copy p.site-hero-free a:hover {
-  background: #cdeae4;
-}
 #site-title {
   text-wrap: balance;
 }

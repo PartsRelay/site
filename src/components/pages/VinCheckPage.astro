@@ -12,11 +12,6 @@ interface Props {
 const { locale } = Astro.props;
 const t = vinCheck[locale];
 const link = (href: string) => localizedPath(locale, href);
-const guideLinks = [
-  '/guides/vehicle-identification/',
-  '/tools/parts-diagrams/',
-  '/tools/part-details/',
-];
 ---
 
 <Layout title={t.title} description={t.description}>
@@ -307,67 +302,10 @@ const guideLinks = [
         </div>
       </div>
     </section>
-    <section class="tool-section">
-      <div class="tool-bound">
-        <div class="tool-head">
-          <p class="tool-label">{t.guides.label}</p>
-          <h2>{t.guides.title}</h2>
-        </div>
-        <div class="tool-guides">
-          <a class="tool-textlink" href={link(guideLinks[0])}>
-            <svg
-              class="tool-icon"
-              viewBox="0 0 32 32"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.45"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <rect x="3" y="7" width="26" height="18" rx="2" />
-              <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
-            </svg>
-            <span>{t.guides.links[0]}</span>
-          </a>
-          <a class="tool-textlink" href={link(guideLinks[1])}>
-            <svg
-              class="tool-icon"
-              viewBox="0 0 32 32"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.45"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="m2 11 14-7 14 7-14 7zm1 6 13 7 13-7M3 23l13 7 13-7" />
-            </svg>
-            <span>{t.guides.links[1]}</span>
-          </a>
-          <a class="tool-textlink" href={link(guideLinks[2])}>
-            <svg
-              class="tool-icon"
-              viewBox="0 0 32 32"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.45"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M8 3h13l5 5v21H8zM21 3v6h5M12 14h10m-10 5h10m-10 5h6" />
-            </svg>
-            <span>{t.guides.links[2]}</span>
-          </a>
-        </div>
-      </div>
-    </section>
     <ClosingBand
       title={t.closing.title}
       text={t.closing.text}
       primary={{ href: link('/guides/vehicle-identification/'), label: t.closing.primary }}
-      secondary={{ href: link('/tools/part-details/'), label: t.closing.secondary }}
     />
   </div>
 </Layout>

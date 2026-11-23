@@ -24,22 +24,19 @@ const setup = {
     topic: 'Distributor counter',
     art: 'alt',
     related: ['brake-pad-sets', 'mirror-glass'],
-    next: '/distributors/',
   },
   'brake-pad-sets': {
     topic: 'Repair shops',
     art: 'pads',
     related: ['alternator-labels', 'mirror-glass'],
-    next: '/tools/part-details/',
   },
   'mirror-glass': {
     topic: 'Parts identification',
     art: 'mirror',
     related: ['brake-pad-sets', 'alternator-labels'],
-    next: '/tools/parts-diagrams/',
   },
 } as const;
-const { topic, art, next } = setup[article];
+const { topic, art } = setup[article];
 
 const related = [
   ...setup[article].related.map((slug) => ({
@@ -84,22 +81,6 @@ const sections = a.sections as [string, string, [string, string][]?][];
       </section>
     )
   )}
-  <p>
-    <a class="lib-inline-link" href={link(next)}>
-      {a.next}
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.55"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="M4 12h15m-6-6 6 6-6 6"></path>
-      </svg>
-    </a>
-  </p>
   <p class="lib-product-note">
     {t.productNote}
     <a class="lib-inline-link" href={link('/about/')}>

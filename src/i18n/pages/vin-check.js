@@ -118,16 +118,10 @@ export const vinCheck = {
       link: 'Read the counter guide',
       alt: 'A service adviser shows a distributor the damaged mounting tab on a headlamp.',
     },
-    guides: {
-      label: 'Reference guides',
-      title: 'Vehicle records and catalogue drawings',
-      links: ['Identify the vehicle', 'Read a diagram', 'Describe the part'],
-    },
     closing: {
       title: 'What does the workshop need?',
       text: 'Add the part description and quantity to your vehicle details before contacting the distributor.',
       primary: 'Read the vehicle guide',
-      secondary: 'Describe the part',
     },
   },
   de: {
@@ -244,16 +238,10 @@ export const vinCheck = {
       link: 'Theken-Ratgeber lesen',
       alt: 'Ein Serviceberater zeigt einem Händler die beschädigte Befestigungslasche an einem Scheinwerfer.',
     },
-    guides: {
-      label: 'Ratgeber',
-      title: 'Fahrzeugdaten und Katalogzeichnungen',
-      links: ['Fahrzeug identifizieren', 'Zeichnung lesen', 'Teil beschreiben'],
-    },
     closing: {
       title: 'Was braucht die Werkstatt?',
       text: 'Ergänzen Sie Ihre Fahrzeugdaten um Teilebezeichnung und Menge, bevor Sie den Händler kontaktieren.',
       primary: 'Fahrzeug-Ratgeber lesen',
-      secondary: 'Teil beschreiben',
     },
   },
   fr: {
@@ -370,16 +358,10 @@ export const vinCheck = {
       link: 'Lire le guide du comptoir',
       alt: 'Un réceptionnaire d’atelier montre à un distributeur la patte de fixation cassée d’un phare.',
     },
-    guides: {
-      label: 'Guides de référence',
-      title: 'Données véhicule et dessins du catalogue',
-      links: ['Identifier le véhicule', 'Lire une vue éclatée', 'Décrire la pièce'],
-    },
     closing: {
       title: 'De quoi le garage a-t-il besoin ?',
       text: 'Ajoutez la désignation de la pièce et la quantité aux données du véhicule avant de contacter le distributeur.',
       primary: 'Lire le guide véhicule',
-      secondary: 'Décrire la pièce',
     },
   },
   es: {
@@ -496,16 +478,10 @@ export const vinCheck = {
       link: 'Leer la guía del mostrador',
       alt: 'Un asesor de servicio muestra a un distribuidor la pestaña de fijación dañada de un faro.',
     },
-    guides: {
-      label: 'Guías de consulta',
-      title: 'Datos del vehículo y dibujos del catálogo',
-      links: ['Identificar el vehículo', 'Leer un despiece', 'Describir el recambio'],
-    },
     closing: {
       title: '¿Qué necesita el taller?',
       text: 'Añada la descripción del recambio y la cantidad a los datos del vehículo antes de contactar con el distribuidor.',
       primary: 'Leer la guía del vehículo',
-      secondary: 'Describir el recambio',
     },
   },
   it: {
@@ -622,16 +598,10 @@ export const vinCheck = {
       link: 'Leggi la guida al banco',
       alt: 'Un accettatore d’officina mostra a un distributore la linguetta di fissaggio danneggiata di un faro.',
     },
-    guides: {
-      label: 'Guide di riferimento',
-      title: 'Dati del veicolo e disegni di catalogo',
-      links: ['Identifica il veicolo', 'Leggi un esploso', 'Descrivi il ricambio'],
-    },
     closing: {
       title: 'Di cosa ha bisogno l’officina?',
       text: 'Aggiunga ai dati del veicolo la descrizione del ricambio e la quantità prima di contattare il distributore.',
       primary: 'Leggi la guida al veicolo',
-      secondary: 'Descrivi il ricambio',
     },
   },
 };
