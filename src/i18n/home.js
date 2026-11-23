@@ -1,16 +1,18 @@
 // Home page text in every language. Labels from the Parts Relay app itself
-// (New search, Vehicle not found) stay in English because the app is in English.
-// {email} is replaced with the contact address.
+// (New search) stay in English because the app is in English and Italian only.
+// {days} is replaced with the length of the free trial.
 
 export const home = {
   en: {
-    title: 'Parts Relay | Parts enquiry software for distributors and repair shops',
+    title: 'Parts Relay | Parts lookup software for repair shops',
     description:
-      'Parts Relay finds original and aftermarket car parts from a plate or VIN. Your counter searches on the web, workshops search by WhatsApp, and every search lands in one queue.',
-    heroTitle: ['Parts enquiry software', 'for the parts counter.'],
+      'Find the right car part from a registration plate or VIN. Parts Relay shows the vehicle, original part numbers with exploded views, and aftermarket matches. Free {days}-day trial.',
+    heroTitle: ['Find the right part', 'for the car in your bay.'],
     heroText:
-      'Find original and aftermarket parts from a registration plate or VIN. Your counter searches on the web, workshops search by WhatsApp, and every search lands in one company queue.',
-    talk: 'Talk to our team',
+      'Parts Relay is parts lookup software for repair shops. Enter a registration plate or VIN and the part you need, and get the vehicle, original part numbers with exploded views, and aftermarket matches.',
+    trial: 'Start free trial',
+    seePricing: 'See pricing',
+    bookCall: 'Book a call',
     how: 'How Parts Relay works',
     sampleLabel: 'What a search does',
     enter: 'You enter',
@@ -19,18 +21,18 @@ export const home = {
     getBack: 'You get back',
     getBackText: 'The vehicle, original part numbers with exploded views, and aftermarket matches.',
     marqueeLabel: 'Who uses Parts Relay',
-    marquee: 'For parts counters and the service desks that ring them.',
-    appTitle: 'Start with a plate or VIN',
+    marquee: 'For repair shops, their service desks and the technicians in the bay.',
+    appTitle: 'From plate to part number in one search',
     appText:
-      'Choose New search, enter the registration plate or the VIN and the part you need, and Parts Relay searches the catalogue. The result stays in the company search queue.',
+      'Choose New search, enter the plate or VIN and the part you need, and Parts Relay searches the catalogue for that vehicle. Every search is saved for your whole team.',
     appFacts: [
       [
         'What comes back',
         'The vehicle, original parts with their OEM codes and positions, exploded views, and aftermarket matches.',
       ],
       [
-        'From WhatsApp too',
-        'Workshops whose numbers you add as contacts search by sending a message. Their searches join the same queue.',
+        'Search from WhatsApp',
+        'Phone numbers you add as contacts can search by sending a WhatsApp message. Their searches are saved with the rest.',
       ],
       [
         'Where plates are searched',
@@ -40,59 +42,61 @@ export const home = {
     screenshotAlt:
       'The New search panel in Parts Relay: a choice of Plate or VIN, a registration plate field, a Part needed field and search tips.',
     screenshotCaption: 'The New search panel in the Parts Relay web app.',
-    stepsTitle: 'From repair order to supplier enquiry',
-    stepsText:
-      'Start with the car in the bay. Give the counter enough detail to identify the component and tell you what it can supply.',
+    stepsTitle: 'How it works',
+    stepsText: 'From the car in the bay to a part number you can order, in four steps.',
     steps: [
-      'Identify the vehicle',
-      'Name the component',
-      'Specify the quantity',
-      'Ask for a quote',
+      'Enter the plate or VIN',
+      'Name the part you need',
+      'Get the part numbers',
+      'Order from your supplier',
     ],
-    featureTitle: ['What can change', 'which part you order?'],
-    checkVin: 'Check a VIN',
+    featureTitle: ['Everything you need', 'to order the right part.'],
     features: [
       [
-        'The engine',
-        'Two cars with the same model badge can have different engines. Give the counter the vehicle details from the repair order.',
+        'The right vehicle',
+        'Parts Relay identifies the car from its plate or VIN, so you can check the model and engine against the repair order.',
       ],
       [
-        'The damaged piece',
-        'A cracked mirror can mean broken glass or a damaged housing. Point to the piece the technician wants replaced.',
+        'Exploded views',
+        'See where a part sits in its assembly, and tell a single piece from the complete unit before you order.',
       ],
       [
-        'The kit contents',
-        'If the right rear latch needs an actuator too, put that on the request. The counter can check whether they come together.',
+        'Original and aftermarket',
+        'Get the manufacturer’s part number and position, plus aftermarket references where the catalogue has them.',
       ],
       [
-        'The plug on the old unit',
-        'When two electrical parts look alike, the shape of the connector may tell the distributor which version the car takes.',
+        'One history for the team',
+        'Every search is saved. Anyone on your team can reopen it and see what was found.',
       ],
     ],
-    deskTitle: 'What the parts counter sees',
+    deskTitle: 'Built for your whole team',
     deskText: [
-      'At the distributor, staff can look up a part themselves or pick up a request a workshop sent to the company’s WhatsApp number. Searches from the counter and from WhatsApp share one queue, which shows who asked, on which channel, and what the catalogue found.',
-      'Plates are searched in the country set for your company. If the returned vehicle doesn’t match the one in the bay, the counter can check the plate or VIN with the shop before quoting.',
+      'Advisers, technicians and whoever orders parts all search in one company account. Filter past searches by person, status, date or channel, or look one up by plate or VIN.',
+      'The owner manages the team, admins invite people and manage WhatsApp contacts, and everyone signs in with Google or a link sent by email.',
     ],
-    recordTitle: 'In Parts Relay: what comes back from a search',
+    recordTitle: 'In every search',
     record: [
       [
         'Vehicle',
-        'The catalogue’s vehicle description gives the shop a chance to spot a mismatch. A status of Vehicle not found is a reason to check the plate or VIN.',
+        'The catalogue’s description of the car. If it doesn’t match the one in the bay, check the plate or VIN.',
       ],
       [
         'Original equipment',
-        'Original parts come with their OEM code and position. An exploded view, where the catalogue has one, helps tell the complete assembly from a piece inside it.',
+        'Original parts with their OEM code and position, and an exploded view where the catalogue has one.',
       ],
       [
         'Aftermarket',
-        'Some results include another manufacturer’s reference. Check the brand and specification before suggesting it as a replacement.',
+        'Other manufacturers’ references for the same part, where the catalogue lists them.',
       ],
       [
-        'Supplier check',
-        'Results are identification guidance. Ask the supplier to quote the reference and check stock, and confirm fitment and what the kit includes before you order.',
+        'Your supplier',
+        'Parts Relay doesn’t sell parts. Order from your usual supplier, who confirms the price, stock and fit.',
       ],
     ],
+    plansLabel: 'Pricing',
+    plansTitle: 'Plans for every repair shop',
+    plansText: 'Start with a free {days}-day trial. Book a call if your shop needs more.',
+    comparePlans: 'Compare plans',
     guidesTitle: 'Parts Relay guides',
     viewAll: 'View all',
     previousGuide: 'Previous guide',
@@ -100,31 +104,38 @@ export const home = {
     guideCards: 'Guide cards',
     guides: {
       vin: [
-        'Before you send a VIN',
-        'Check what you copied from the vehicle before it goes on the enquiry.',
+        'Before you search a VIN',
+        'Check what you copied from the vehicle before you run the search.',
         'VIN format check',
       ],
       shops: [
         'From the service desk',
-        'Turn a technician’s note into a question the distributor can answer.',
+        'What to put in a parts request so your supplier can answer it first time.',
         'For repair shops',
       ],
       shopsAlt: 'Service adviser inspecting a part at the workshop counter',
+      counter: [
+        'A headlamp with a broken tab',
+        'Work out whether the job needs a bracket, a bulb or the whole housing.',
+        'Counter guide',
+      ],
+      counterAlt:
+        'An adviser points to the broken mounting tab on a headlamp while a parts specialist steadies the housing.',
     },
-    ctaTitle: 'See whether it covers the jobs you get',
+    ctaTitle: 'Try Parts Relay on your next job',
     ctaText:
-      'Write to {email} with two recent enquiries, one you answered easily and one that took another phone call, and the country your vehicles are registered in. We can check them against catalogue coverage.',
-    ctaEmail: 'Email the Parts Relay team',
-    ctaAbout: 'About Parts Relay',
+      'Start a free {days}-day trial, or book a call if your shop needs more than one plan covers.',
   },
   de: {
-    title: 'Parts Relay | Software für Teileanfragen für Händler und Werkstätten',
+    title: 'Parts Relay | Software zur Teilesuche für Werkstätten',
     description:
-      'Parts Relay findet Original- und Aftermarket-Teile über Kennzeichen oder FIN. Ihre Theke sucht im Web, Werkstätten suchen per WhatsApp, und jede Suche landet in einer gemeinsamen Liste.',
-    heroTitle: ['Software für Teileanfragen', 'an der Teiletheke.'],
+      'Finden Sie das richtige Autoteil über Kennzeichen oder FIN. Parts Relay zeigt das Fahrzeug, Original-Teilenummern mit Explosionszeichnungen und passende Aftermarket-Teile. {days} Tage kostenlos testen.',
+    heroTitle: ['Das richtige Teil', 'für das Auto auf Ihrer Hebebühne.'],
     heroText:
-      'Finden Sie Original- und Aftermarket-Teile über das Kennzeichen oder die FIN. Ihre Theke sucht im Web, Werkstätten suchen per WhatsApp, und jede Suche landet in einer gemeinsamen Liste Ihres Unternehmens.',
-    talk: 'Mit unserem Team sprechen',
+      'Parts Relay ist Software zur Teilesuche für Werkstätten. Geben Sie Kennzeichen oder FIN und das benötigte Teil ein, und Sie erhalten das Fahrzeug, Original-Teilenummern mit Explosionszeichnungen und passende Aftermarket-Teile.',
+    trial: 'Kostenlos testen',
+    seePricing: 'Preise ansehen',
+    bookCall: 'Gespräch vereinbaren',
     how: 'So funktioniert Parts Relay',
     sampleLabel: 'Was eine Suche leistet',
     enter: 'Sie geben ein',
@@ -134,18 +145,18 @@ export const home = {
     getBackText:
       'Das Fahrzeug, Original-Teilenummern mit Explosionszeichnungen und passende Aftermarket-Teile.',
     marqueeLabel: 'Wer Parts Relay nutzt',
-    marquee: 'Für Teiletheken und die Serviceannahmen, die dort anrufen.',
-    appTitle: 'Mit Kennzeichen oder FIN beginnen',
+    marquee: 'Für Werkstätten, ihre Serviceannahme und die Mechaniker an der Hebebühne.',
+    appTitle: 'Vom Kennzeichen zur Teilenummer in einer Suche',
     appText:
-      'Wählen Sie „New search“, geben Sie Kennzeichen oder FIN und das benötigte Teil ein, und Parts Relay durchsucht den Katalog. Das Ergebnis bleibt in der Suchliste Ihres Unternehmens.',
+      'Wählen Sie „New search“, geben Sie Kennzeichen oder FIN und das benötigte Teil ein, und Parts Relay durchsucht den Katalog für dieses Fahrzeug. Jede Suche wird für Ihr ganzes Team gespeichert.',
     appFacts: [
       [
         'Was Sie erhalten',
         'Das Fahrzeug, Originalteile mit OE-Nummer und Einbauposition, Explosionszeichnungen und passende Aftermarket-Teile.',
       ],
       [
-        'Auch per WhatsApp',
-        'Werkstätten, deren Nummern Sie als Kontakte anlegen, suchen per Nachricht. Ihre Suchen landen in derselben Liste.',
+        'Suche per WhatsApp',
+        'Telefonnummern, die Sie als Kontakte anlegen, können per WhatsApp-Nachricht suchen. Ihre Suchen werden mit allen anderen gespeichert.',
       ],
       [
         'Wo Kennzeichen gesucht werden',
@@ -155,54 +166,62 @@ export const home = {
     screenshotAlt:
       'Das Fenster „New search“ in Parts Relay: Auswahl zwischen Kennzeichen und FIN, ein Feld für das Kennzeichen, ein Feld für das benötigte Teil und Suchtipps.',
     screenshotCaption: 'Das Fenster „New search“ in der Web-App von Parts Relay.',
-    stepsTitle: 'Vom Reparaturauftrag zur Lieferantenanfrage',
-    stepsText:
-      'Beginnen Sie mit dem Auto auf der Hebebühne. Geben Sie der Theke genug Details, um das Bauteil zu bestimmen und Ihnen zu sagen, was sie liefern kann.',
-    steps: ['Fahrzeug bestimmen', 'Bauteil benennen', 'Menge angeben', 'Angebot anfragen'],
-    featureTitle: ['Was entscheidet darüber,', 'welches Teil Sie bestellen?'],
-    checkVin: 'FIN prüfen',
+    stepsTitle: 'So funktioniert es',
+    stepsText: 'Vom Auto auf der Hebebühne zur bestellbaren Teilenummer in vier Schritten.',
+    steps: [
+      'Kennzeichen oder FIN eingeben',
+      'Benötigtes Teil nennen',
+      'Teilenummern erhalten',
+      'Beim Lieferanten bestellen',
+    ],
+    featureTitle: ['Alles, was Sie brauchen,', 'um das richtige Teil zu bestellen.'],
     features: [
       [
-        'Der Motor',
-        'Zwei Autos mit demselben Modellschriftzug können unterschiedliche Motoren haben. Geben Sie der Theke die Fahrzeugdaten aus dem Reparaturauftrag.',
+        'Das richtige Fahrzeug',
+        'Parts Relay erkennt das Auto an Kennzeichen oder FIN, damit Sie Modell und Motor mit dem Reparaturauftrag abgleichen können.',
       ],
       [
-        'Das beschädigte Teil',
-        'Ein gesprungener Spiegel kann Glasbruch oder ein beschädigtes Gehäuse bedeuten. Zeigen Sie auf das Teil, das der Mechaniker ersetzen will.',
+        'Explosionszeichnungen',
+        'Sehen Sie, wo ein Teil in seiner Baugruppe sitzt, und unterscheiden Sie vor der Bestellung ein Einzelteil von der kompletten Einheit.',
       ],
       [
-        'Der Lieferumfang',
-        'Braucht das hintere rechte Schloss auch einen Stellmotor, schreiben Sie das in die Anfrage. Die Theke kann prüfen, ob beides zusammen geliefert wird.',
+        'Original und Aftermarket',
+        'Erhalten Sie die Teilenummer und Einbauposition des Herstellers, dazu Aftermarket-Nummern, sofern der Katalog sie enthält.',
       ],
       [
-        'Der Stecker am alten Teil',
-        'Wenn zwei Elektroteile gleich aussehen, verrät die Form des Steckers dem Händler oft, welche Ausführung das Auto braucht.',
+        'Ein Verlauf für das ganze Team',
+        'Jede Suche wird gespeichert. Alle in Ihrem Team können sie wieder öffnen und sehen, was gefunden wurde.',
       ],
     ],
-    deskTitle: 'Was die Teiletheke sieht',
+    deskTitle: 'Für Ihr ganzes Team gemacht',
     deskText: [
-      'Beim Händler können Mitarbeiter selbst ein Teil suchen oder eine Anfrage übernehmen, die eine Werkstatt an die WhatsApp-Nummer des Unternehmens geschickt hat. Suchen von der Theke und per WhatsApp teilen sich eine Liste. Sie zeigt, wer gefragt hat, über welchen Kanal und was der Katalog gefunden hat.',
-      'Kennzeichen werden in dem Land gesucht, das für Ihr Unternehmen festgelegt ist. Passt das gefundene Fahrzeug nicht zu dem in der Werkstatt, kann die Theke Kennzeichen oder FIN vor dem Angebot mit der Werkstatt abgleichen.',
+      'Serviceberater, Mechaniker und wer immer die Teile bestellt, suchen alle in einem gemeinsamen Firmenkonto. Filtern Sie frühere Suchen nach Person, Status, Datum oder Kanal, oder finden Sie eine über Kennzeichen oder FIN.',
+      'Der Inhaber verwaltet das Team, Admins laden Personen ein und verwalten die WhatsApp-Kontakte, und alle melden sich mit Google oder über einen Link per E-Mail an.',
     ],
-    recordTitle: 'In Parts Relay: was eine Suche liefert',
+    recordTitle: 'In jeder Suche',
     record: [
       [
         'Fahrzeug',
-        'Die Fahrzeugbeschreibung aus dem Katalog hilft der Werkstatt, Abweichungen zu erkennen. Der Status „Vehicle not found“ ist ein Grund, Kennzeichen oder FIN zu prüfen.',
+        'Die Fahrzeugbeschreibung aus dem Katalog. Passt sie nicht zum Auto auf der Hebebühne, prüfen Sie Kennzeichen oder FIN.',
       ],
       [
         'Erstausrüstung',
-        'Originalteile kommen mit OE-Nummer und Einbauposition. Eine Explosionszeichnung, sofern der Katalog eine hat, hilft, die komplette Baugruppe von einem Einzelteil darin zu unterscheiden.',
+        'Originalteile mit OE-Nummer und Einbauposition sowie eine Explosionszeichnung, sofern der Katalog eine hat.',
       ],
       [
         'Aftermarket',
-        'Manche Ergebnisse enthalten die Nummer eines anderen Herstellers. Prüfen Sie Marke und Spezifikation, bevor Sie sie als Ersatz vorschlagen.',
+        'Nummern anderer Hersteller für dasselbe Teil, sofern der Katalog sie führt.',
       ],
       [
-        'Prüfung durch den Lieferanten',
-        'Die Ergebnisse sind eine Hilfe zur Identifizierung. Lassen Sie den Lieferanten die Nummer anbieten und den Bestand prüfen, und klären Sie Passform und Lieferumfang vor der Bestellung.',
+        'Ihr Lieferant',
+        'Parts Relay verkauft keine Teile. Bestellen Sie bei Ihrem gewohnten Lieferanten, der Preis, Bestand und Passform bestätigt.',
       ],
     ],
+    plansLabel: 'Preise',
+    plansTitle: 'Tarife für jede Werkstatt',
+    plansText:
+      'Starten Sie mit einem kostenlosen {days}-tägigen Test. Vereinbaren Sie ein Gespräch, wenn Ihre Werkstatt mehr braucht.',
+    comparePlans: 'Tarife vergleichen',
     guidesTitle: 'Ratgeber von Parts Relay',
     viewAll: 'Alle ansehen',
     previousGuide: 'Vorheriger Ratgeber',
@@ -210,31 +229,38 @@ export const home = {
     guideCards: 'Ratgeber-Karten',
     guides: {
       vin: [
-        'Bevor Sie eine FIN senden',
-        'Prüfen Sie, was Sie vom Fahrzeug abgeschrieben haben, bevor es in die Anfrage kommt.',
+        'Bevor Sie eine FIN suchen',
+        'Prüfen Sie, was Sie vom Fahrzeug abgeschrieben haben, bevor Sie die Suche starten.',
         'FIN-Formatprüfung',
       ],
       shops: [
         'Aus der Serviceannahme',
-        'Machen Sie aus der Notiz des Mechanikers eine Frage, die der Händler beantworten kann.',
+        'Was in eine Teileanfrage gehört, damit Ihr Lieferant sie gleich beim ersten Mal beantworten kann.',
         'Für Werkstätten',
       ],
       shopsAlt: 'Serviceberater prüft ein Teil an der Werkstatttheke',
+      counter: [
+        'Ein Scheinwerfer mit abgebrochener Lasche',
+        'Klären Sie, ob der Auftrag einen Halter, ein Leuchtmittel oder das ganze Gehäuse braucht.',
+        'Ratgeber für die Theke',
+      ],
+      counterAlt:
+        'Ein Serviceberater zeigt auf die abgebrochene Befestigungslasche eines Scheinwerfers, während ein Teilespezialist das Gehäuse festhält.',
     },
-    ctaTitle: 'Prüfen Sie, ob es Ihre Aufträge abdeckt',
+    ctaTitle: 'Testen Sie Parts Relay bei Ihrem nächsten Auftrag',
     ctaText:
-      'Schreiben Sie an {email} mit zwei aktuellen Anfragen, einer, die Sie leicht beantworten konnten, und einer, die einen weiteren Anruf brauchte, sowie dem Land, in dem Ihre Fahrzeuge zugelassen sind. Wir prüfen sie gegen die Katalogabdeckung.',
-    ctaEmail: 'Dem Parts Relay Team schreiben',
-    ctaAbout: 'Über Parts Relay',
+      'Starten Sie einen kostenlosen {days}-tägigen Test, oder vereinbaren Sie ein Gespräch, wenn Ihre Werkstatt mehr braucht, als ein Tarif abdeckt.',
   },
   fr: {
-    title: 'Parts Relay | Logiciel de demandes de pièces pour distributeurs et garages',
+    title: 'Parts Relay | Logiciel de recherche de pièces pour garages',
     description:
-      'Parts Relay trouve les pièces d’origine et adaptables à partir d’une plaque ou d’un VIN. Votre comptoir cherche sur le web, les garages cherchent par WhatsApp, et chaque recherche arrive dans une même file.',
-    heroTitle: ['Logiciel de demandes de pièces', 'pour le comptoir.'],
+      'Trouvez la bonne pièce auto à partir d’une plaque d’immatriculation ou d’un VIN. Parts Relay affiche le véhicule, les références d’origine avec vues éclatées et les équivalences adaptables. Essai gratuit de {days} jours.',
+    heroTitle: ['Trouvez la bonne pièce', 'pour la voiture sur votre pont.'],
     heroText:
-      'Trouvez les pièces d’origine et adaptables à partir d’une plaque d’immatriculation ou d’un VIN. Votre comptoir cherche sur le web, les garages cherchent par WhatsApp, et chaque recherche arrive dans une même file pour toute l’entreprise.',
-    talk: 'Parler à notre équipe',
+      'Parts Relay est un logiciel de recherche de pièces pour les garages. Saisissez une plaque d’immatriculation ou un VIN et la pièce recherchée, et obtenez le véhicule, les références d’origine avec vues éclatées et les équivalences adaptables.',
+    trial: 'Commencer l’essai gratuit',
+    seePricing: 'Voir les tarifs',
+    bookCall: 'Réserver un appel',
     how: 'Comment fonctionne Parts Relay',
     sampleLabel: 'Ce que fait une recherche',
     enter: 'Vous saisissez',
@@ -244,80 +270,83 @@ export const home = {
     getBackText:
       'Le véhicule, les références d’origine avec vues éclatées, et les équivalences adaptables.',
     marqueeLabel: 'Qui utilise Parts Relay',
-    marquee: 'Pour les comptoirs pièces et les réceptions atelier qui les appellent.',
-    appTitle: 'Commencez par une plaque ou un VIN',
+    marquee: 'Pour les garages, leurs réceptions atelier et les techniciens à l’atelier.',
+    appTitle: 'De la plaque à la référence en une seule recherche',
     appText:
-      'Choisissez « New search », saisissez la plaque ou le VIN et la pièce recherchée, et Parts Relay interroge le catalogue. Le résultat reste dans la file de recherches de l’entreprise.',
+      'Choisissez « New search », saisissez la plaque ou le VIN et la pièce recherchée, et Parts Relay interroge le catalogue pour ce véhicule. Chaque recherche est enregistrée pour toute votre équipe.',
     appFacts: [
       [
         'Ce que vous obtenez',
         'Le véhicule, les pièces d’origine avec leur référence OE et leur position, des vues éclatées et les équivalences adaptables.',
       ],
       [
-        'Aussi par WhatsApp',
-        'Les garages dont vous enregistrez le numéro comme contact cherchent en envoyant un message. Leurs recherches rejoignent la même file.',
+        'Recherche par WhatsApp',
+        'Les numéros de téléphone que vous ajoutez comme contacts peuvent lancer une recherche en envoyant un message WhatsApp. Leurs recherches sont enregistrées avec les autres.',
       ],
       [
         'Où les plaques sont recherchées',
-        'Dans le pays défini pour votre entreprise. 33 pays sont disponibles, en Europe et aux États-Unis.',
+        'Dans le pays défini pour votre entreprise. 33 pays sont disponibles, en Europe et aux États-Unis.',
       ],
     ],
     screenshotAlt:
-      'Le panneau « New search » de Parts Relay : choix entre plaque et VIN, un champ pour la plaque, un champ pour la pièce recherchée et des conseils de recherche.',
-    screenshotCaption: 'Le panneau « New search » dans l’application web Parts Relay.',
-    stepsTitle: 'De l’ordre de réparation à la demande au fournisseur',
-    stepsText:
-      'Partez de la voiture à l’atelier. Donnez au comptoir assez de détails pour identifier la pièce et vous dire ce qu’il peut fournir.',
+      'Le panneau « New search » de Parts Relay : choix entre plaque et VIN, un champ pour la plaque d’immatriculation, un champ pour la pièce recherchée et des conseils de recherche.',
+    screenshotCaption: 'Le panneau « New search » dans l’application web Parts Relay.',
+    stepsTitle: 'Comment ça marche',
+    stepsText: 'De la voiture sur le pont à une référence prête à commander, en quatre étapes.',
     steps: [
-      'Identifier le véhicule',
-      'Nommer la pièce',
-      'Indiquer la quantité',
-      'Demander un devis',
+      'Saisissez la plaque ou le VIN',
+      'Nommez la pièce recherchée',
+      'Obtenez les références',
+      'Commandez auprès de votre fournisseur',
     ],
-    featureTitle: ['Qu’est-ce qui change', 'la pièce à commander ?'],
-    checkVin: 'Vérifier un VIN',
+    featureTitle: ['Tout ce qu’il faut', 'pour commander la bonne pièce.'],
     features: [
       [
-        'Le moteur',
-        'Deux voitures avec le même badge peuvent avoir des moteurs différents. Donnez au comptoir les données du véhicule figurant sur l’ordre de réparation.',
+        'Le bon véhicule',
+        'Parts Relay identifie la voiture à partir de sa plaque ou de son VIN, pour que vous puissiez vérifier le modèle et le moteur par rapport à l’ordre de réparation.',
       ],
       [
-        'La pièce endommagée',
-        'Un rétroviseur fissuré peut vouloir dire une glace cassée ou un boîtier abîmé. Montrez la pièce que le technicien veut remplacer.',
+        'Vues éclatées',
+        'Voyez où se situe une pièce dans son assemblage, et distinguez la pièce seule de l’ensemble complet avant de commander.',
       ],
       [
-        'Le contenu du kit',
-        'Si la serrure arrière droite a aussi besoin d’un actionneur, indiquez-le dans la demande. Le comptoir peut vérifier s’ils sont livrés ensemble.',
+        'Origine et adaptable',
+        'Obtenez la référence et la position du constructeur, ainsi que les références adaptables quand le catalogue en propose.',
       ],
       [
-        'La prise de l’ancienne pièce',
-        'Quand deux pièces électriques se ressemblent, la forme du connecteur peut indiquer au distributeur la version qui convient.',
+        'Un historique pour toute l’équipe',
+        'Chaque recherche est enregistrée. Tout membre de votre équipe peut la rouvrir et voir ce qui a été trouvé.',
       ],
     ],
-    deskTitle: 'Ce que voit le comptoir pièces',
+    deskTitle: 'Conçu pour toute votre équipe',
     deskText: [
-      'Chez le distributeur, le personnel peut chercher une pièce lui-même ou reprendre une demande qu’un garage a envoyée au numéro WhatsApp de l’entreprise. Les recherches du comptoir et de WhatsApp partagent une même file, qui montre qui a demandé, par quel canal et ce que le catalogue a trouvé.',
-      'Les plaques sont recherchées dans le pays défini pour votre entreprise. Si le véhicule trouvé ne correspond pas à celui de l’atelier, le comptoir peut vérifier la plaque ou le VIN avec le garage avant de chiffrer.',
+      'Conseillers, techniciens et personnes chargées des commandes de pièces cherchent tous dans un même compte d’entreprise. Filtrez les recherches passées par personne, statut, date ou canal, ou retrouvez-en une par plaque ou VIN.',
+      'Le propriétaire gère l’équipe, les administrateurs invitent des personnes et gèrent les contacts WhatsApp, et chacun se connecte avec Google ou par un lien envoyé par e-mail.',
     ],
-    recordTitle: 'Dans Parts Relay : ce que renvoie une recherche',
+    recordTitle: 'Dans chaque recherche',
     record: [
       [
         'Véhicule',
-        'La description du véhicule tirée du catalogue permet au garage de repérer une erreur. Le statut « Vehicle not found » invite à vérifier la plaque ou le VIN.',
+        'La description de la voiture selon le catalogue. Si elle ne correspond pas à celle de l’atelier, vérifiez la plaque ou le VIN.',
       ],
       [
         'Première monte',
-        'Les pièces d’origine sont fournies avec leur référence OE et leur position. Une vue éclatée, quand le catalogue en a une, aide à distinguer l’ensemble complet d’une pièce qui le compose.',
+        'Les pièces d’origine avec leur référence OE et leur position, et une vue éclatée quand le catalogue en a une.',
       ],
       [
         'Adaptable',
-        'Certains résultats donnent la référence d’un autre fabricant. Vérifiez la marque et les caractéristiques avant de la proposer en remplacement.',
+        'Les références d’autres fabricants pour la même pièce, quand le catalogue les indique.',
       ],
       [
-        'Vérification fournisseur',
-        'Les résultats aident à identifier la pièce. Demandez au fournisseur de chiffrer la référence et de vérifier le stock, et confirmez la compatibilité et le contenu du kit avant de commander.',
+        'Votre fournisseur',
+        'Parts Relay ne vend pas de pièces. Commandez auprès de votre fournisseur habituel, qui confirme le prix, le stock et la compatibilité.',
       ],
     ],
+    plansLabel: 'Tarifs',
+    plansTitle: 'Des formules pour chaque garage',
+    plansText:
+      'Commencez par un essai gratuit de {days} jours. Réservez un appel si votre garage a besoin de plus.',
+    comparePlans: 'Comparer les formules',
     guidesTitle: 'Guides Parts Relay',
     viewAll: 'Tout voir',
     previousGuide: 'Guide précédent',
@@ -325,31 +354,38 @@ export const home = {
     guideCards: 'Fiches guides',
     guides: {
       vin: [
-        'Avant d’envoyer un VIN',
-        'Vérifiez ce que vous avez relevé sur le véhicule avant de l’ajouter à la demande.',
-        'Vérification du VIN',
+        'Avant de rechercher un VIN',
+        'Vérifiez ce que vous avez relevé sur le véhicule avant de lancer la recherche.',
+        'Vérification du format VIN',
       ],
       shops: [
         'Depuis la réception atelier',
-        'Transformez la note d’un technicien en question à laquelle le distributeur peut répondre.',
+        'Ce qu’il faut indiquer dans une demande de pièces pour que votre fournisseur y réponde du premier coup.',
         'Pour les garages',
       ],
       shopsAlt: 'Un conseiller service examine une pièce au comptoir de l’atelier',
+      counter: [
+        'Un phare à la patte cassée',
+        'Déterminez si l’intervention demande un support, une ampoule ou le boîtier complet.',
+        'Guide comptoir',
+      ],
+      counterAlt:
+        'Un conseiller montre la patte de fixation cassée d’un phare pendant qu’un spécialiste pièces maintient le boîtier.',
     },
-    ctaTitle: 'Vérifiez si cela couvre vos travaux',
+    ctaTitle: 'Essayez Parts Relay sur votre prochaine intervention',
     ctaText:
-      'Écrivez à {email} avec deux demandes récentes, l’une à laquelle vous avez répondu facilement et l’autre qui a demandé un appel de plus, ainsi que le pays d’immatriculation de vos véhicules. Nous les comparerons à la couverture du catalogue.',
-    ctaEmail: 'Écrire à l’équipe Parts Relay',
-    ctaAbout: 'À propos de Parts Relay',
+      'Commencez un essai gratuit de {days} jours, ou réservez un appel si votre garage a besoin de plus que ce que couvre une formule.',
   },
   es: {
-    title: 'Parts Relay | Software de consultas de recambios para distribuidores y talleres',
+    title: 'Parts Relay | Software de búsqueda de recambios para talleres',
     description:
-      'Parts Relay encuentra recambios originales y aftermarket a partir de una matrícula o un VIN. Su mostrador busca en la web, los talleres buscan por WhatsApp y cada búsqueda llega a una misma cola.',
-    heroTitle: ['Software de consultas de recambios', 'para el mostrador.'],
+      'Encuentre el recambio correcto a partir de una matrícula o un VIN. Parts Relay muestra el vehículo, las referencias originales con despieces y las equivalencias aftermarket. Prueba gratuita de {days} días.',
+    heroTitle: ['Encuentre el recambio correcto', 'para el coche de su elevador.'],
     heroText:
-      'Encuentre recambios originales y aftermarket a partir de la matrícula o el VIN. Su mostrador busca en la web, los talleres buscan por WhatsApp y cada búsqueda llega a una misma cola de la empresa.',
-    talk: 'Hablar con nuestro equipo',
+      'Parts Relay es un software de búsqueda de recambios para talleres. Introduzca una matrícula o un VIN y el recambio que necesita, y obtenga el vehículo, las referencias originales con despieces y las equivalencias aftermarket.',
+    trial: 'Empezar prueba gratuita',
+    seePricing: 'Ver precios',
+    bookCall: 'Reservar una llamada',
     how: 'Cómo funciona Parts Relay',
     sampleLabel: 'Qué hace una búsqueda',
     enter: 'Usted introduce',
@@ -359,18 +395,18 @@ export const home = {
     getBackText:
       'El vehículo, las referencias originales con despieces y las equivalencias aftermarket.',
     marqueeLabel: 'Quién usa Parts Relay',
-    marquee: 'Para los mostradores de recambios y las recepciones de taller que los llaman.',
-    appTitle: 'Empiece con una matrícula o un VIN',
+    marquee: 'Para talleres, sus recepciones y los mecánicos que trabajan en el coche.',
+    appTitle: 'De la matrícula a la referencia en una sola búsqueda',
     appText:
-      'Elija «New search», introduzca la matrícula o el VIN y el recambio que necesita, y Parts Relay busca en el catálogo. El resultado queda en la cola de búsquedas de la empresa.',
+      'Elija «New search», introduzca la matrícula o el VIN y el recambio que necesita, y Parts Relay busca en el catálogo de ese vehículo. Cada búsqueda queda guardada para todo su equipo.',
     appFacts: [
       [
         'Qué recibe',
         'El vehículo, los recambios originales con su referencia OE y su posición, despieces y equivalencias aftermarket.',
       ],
       [
-        'También por WhatsApp',
-        'Los talleres cuyos números añade como contactos buscan enviando un mensaje. Sus búsquedas se suman a la misma cola.',
+        'Busque desde WhatsApp',
+        'Los números de teléfono que añada como contactos pueden buscar enviando un mensaje de WhatsApp. Sus búsquedas se guardan con las demás.',
       ],
       [
         'Dónde se buscan las matrículas',
@@ -380,59 +416,62 @@ export const home = {
     screenshotAlt:
       'El panel «New search» de Parts Relay: elección entre matrícula y VIN, un campo para la matrícula, un campo para el recambio y consejos de búsqueda.',
     screenshotCaption: 'El panel «New search» en la aplicación web de Parts Relay.',
-    stepsTitle: 'De la orden de reparación a la consulta al proveedor',
-    stepsText:
-      'Empiece por el coche en el taller. Dé al mostrador detalles suficientes para identificar la pieza y decirle qué puede suministrar.',
+    stepsTitle: 'Cómo funciona',
+    stepsText: 'Del coche en el taller a una referencia que puede pedir, en cuatro pasos.',
     steps: [
-      'Identificar el vehículo',
-      'Nombrar la pieza',
-      'Indicar la cantidad',
-      'Pedir presupuesto',
+      'Introduzca la matrícula o el VIN',
+      'Indique el recambio que necesita',
+      'Obtenga las referencias',
+      'Pida a su proveedor',
     ],
-    featureTitle: ['¿Qué puede cambiar', 'el recambio que pide?'],
-    checkVin: 'Comprobar un VIN',
+    featureTitle: ['Todo lo que necesita', 'para pedir el recambio correcto.'],
     features: [
       [
-        'El motor',
-        'Dos coches con el mismo modelo pueden llevar motores distintos. Dé al mostrador los datos del vehículo de la orden de reparación.',
+        'El vehículo correcto',
+        'Parts Relay identifica el coche por su matrícula o su VIN, para que pueda comprobar el modelo y el motor con la orden de reparación.',
       ],
       [
-        'La pieza dañada',
-        'Un retrovisor agrietado puede ser el cristal roto o la carcasa dañada. Señale la pieza que el mecánico quiere cambiar.',
+        'Despieces',
+        'Vea dónde va una pieza dentro de su conjunto y distinga una pieza suelta del conjunto completo antes de pedir.',
       ],
       [
-        'El contenido del kit',
-        'Si la cerradura trasera derecha también necesita un actuador, inclúyalo en la consulta. El mostrador puede comprobar si se venden juntos.',
+        'Original y aftermarket',
+        'Obtenga la referencia y la posición del fabricante, además de referencias aftermarket cuando el catálogo las tiene.',
       ],
       [
-        'El conector de la pieza vieja',
-        'Cuando dos piezas eléctricas se parecen, la forma del conector puede indicar al distribuidor qué versión lleva el coche.',
+        'Un historial para todo el equipo',
+        'Cada búsqueda queda guardada. Cualquier persona de su equipo puede volver a abrirla y ver qué se encontró.',
       ],
     ],
-    deskTitle: 'Lo que ve el mostrador de recambios',
+    deskTitle: 'Pensado para todo su equipo',
     deskText: [
-      'En el distribuidor, el personal puede buscar un recambio por su cuenta o atender una consulta que un taller envió al número de WhatsApp de la empresa. Las búsquedas del mostrador y de WhatsApp comparten una cola, que muestra quién preguntó, por qué canal y qué encontró el catálogo.',
-      'Las matrículas se buscan en el país fijado para su empresa. Si el vehículo encontrado no coincide con el del taller, el mostrador puede comprobar la matrícula o el VIN con el taller antes de presupuestar.',
+      'Recepcionistas, mecánicos y quien pida los recambios buscan en una misma cuenta de empresa. Filtre las búsquedas anteriores por persona, estado, fecha o canal, o localice una por matrícula o VIN.',
+      'El propietario gestiona el equipo, los administradores invitan a personas y gestionan los contactos de WhatsApp, y todos inician sesión con Google o con un enlace enviado por correo electrónico.',
     ],
-    recordTitle: 'En Parts Relay: qué devuelve una búsqueda',
+    recordTitle: 'En cada búsqueda',
     record: [
       [
         'Vehículo',
-        'La descripción del vehículo según el catálogo permite al taller detectar un error. El estado «Vehicle not found» es motivo para revisar la matrícula o el VIN.',
+        'La descripción del coche según el catálogo. Si no coincide con el que tiene en el taller, compruebe la matrícula o el VIN.',
       ],
       [
         'Equipo original',
-        'Los recambios originales vienen con su referencia OE y su posición. Un despiece, si el catálogo lo tiene, ayuda a distinguir el conjunto completo de una pieza que forma parte de él.',
+        'Los recambios originales con su referencia OE y su posición, y un despiece cuando el catálogo lo tiene.',
       ],
       [
         'Aftermarket',
-        'Algunos resultados incluyen la referencia de otro fabricante. Compruebe la marca y las especificaciones antes de proponerla como sustituta.',
+        'Referencias de otros fabricantes para la misma pieza, cuando el catálogo las incluye.',
       ],
       [
-        'Confirmación del proveedor',
-        'Los resultados son una ayuda para identificar. Pida al proveedor que presupueste la referencia y compruebe el stock, y confirme la compatibilidad y el contenido del kit antes de pedir.',
+        'Su proveedor',
+        'Parts Relay no vende recambios. Pida a su proveedor habitual, que le confirmará el precio, el stock y la compatibilidad.',
       ],
     ],
+    plansLabel: 'Precios',
+    plansTitle: 'Planes para cada taller',
+    plansText:
+      'Empiece con una prueba gratuita de {days} días. Reserve una llamada si su taller necesita más.',
+    comparePlans: 'Comparar planes',
     guidesTitle: 'Guías de Parts Relay',
     viewAll: 'Ver todo',
     previousGuide: 'Guía anterior',
@@ -440,31 +479,38 @@ export const home = {
     guideCards: 'Fichas de guías',
     guides: {
       vin: [
-        'Antes de enviar un VIN',
-        'Compruebe lo que copió del vehículo antes de añadirlo a la consulta.',
+        'Antes de buscar un VIN',
+        'Compruebe lo que copió del vehículo antes de lanzar la búsqueda.',
         'Comprobación del VIN',
       ],
       shops: [
         'Desde la recepción del taller',
-        'Convierta la nota del mecánico en una pregunta que el distribuidor pueda responder.',
+        'Qué incluir en una consulta de recambios para que su proveedor pueda responderla a la primera.',
         'Para talleres',
       ],
       shopsAlt: 'Un asesor de servicio revisa una pieza en el mostrador del taller',
+      counter: [
+        'Un faro con una pestaña rota',
+        'Averigüe si el trabajo necesita un soporte, una bombilla o la carcasa completa.',
+        'Guía de mostrador',
+      ],
+      counterAlt:
+        'Un asesor señala la pestaña de fijación rota de un faro mientras un especialista en recambios sujeta la carcasa.',
     },
-    ctaTitle: 'Compruebe si cubre los trabajos que recibe',
+    ctaTitle: 'Pruebe Parts Relay en su próximo trabajo',
     ctaText:
-      'Escriba a {email} con dos consultas recientes, una que respondió fácilmente y otra que necesitó otra llamada, y el país en el que están matriculados sus vehículos. Las comprobaremos con la cobertura del catálogo.',
-    ctaEmail: 'Escribir al equipo de Parts Relay',
-    ctaAbout: 'Sobre Parts Relay',
+      'Empiece una prueba gratuita de {days} días o reserve una llamada si su taller necesita más de lo que cubre un plan.',
   },
   it: {
-    title: 'Parts Relay | Software per richieste ricambi per distributori e officine',
+    title: 'Parts Relay | Software di ricerca ricambi per officine',
     description:
-      'Parts Relay trova ricambi originali e aftermarket partendo da una targa o da un VIN. Il suo banco cerca sul web, le officine cercano via WhatsApp e ogni ricerca arriva in un’unica coda.',
-    heroTitle: ['Software per richieste ricambi', 'per il banco ricambi.'],
+      'Trovi il ricambio giusto partendo da una targa o da un VIN. Parts Relay mostra il veicolo, i codici originali con gli esplosi e le corrispondenze aftermarket. Prova gratuita di {days} giorni.',
+    heroTitle: ['Il ricambio giusto', 'per l’auto sul ponte.'],
     heroText:
-      'Trovi ricambi originali e aftermarket partendo dalla targa o dal VIN. Il suo banco cerca sul web, le officine cercano via WhatsApp e ogni ricerca arriva in un’unica coda aziendale.',
-    talk: 'Parli con il nostro team',
+      'Parts Relay è il software di ricerca ricambi per officine. Inserisca una targa o un VIN e il ricambio che serve, e ottenga il veicolo, i codici originali con gli esplosi e le corrispondenze aftermarket.',
+    trial: 'Inizi la prova gratuita',
+    seePricing: 'Vedi i prezzi',
+    bookCall: 'Prenoti una chiamata',
     how: 'Come funziona Parts Relay',
     sampleLabel: 'Cosa fa una ricerca',
     enter: 'Lei inserisce',
@@ -473,18 +519,18 @@ export const home = {
     getBack: 'Riceve',
     getBackText: 'Il veicolo, i codici originali con gli esplosi e le corrispondenze aftermarket.',
     marqueeLabel: 'Chi usa Parts Relay',
-    marquee: 'Per i banchi ricambi e le accettazioni d’officina che li chiamano.',
-    appTitle: 'Si parte da una targa o da un VIN',
+    marquee: 'Per le officine, le loro accettazioni e i meccanici al ponte.',
+    appTitle: 'Dalla targa al codice ricambio in una sola ricerca',
     appText:
-      'Scelga «New search», inserisca la targa o il VIN e il ricambio che serve, e Parts Relay cerca nel catalogo. Il risultato resta nella coda delle ricerche dell’azienda.',
+      'Scelga «New search», inserisca la targa o il VIN e il ricambio che serve, e Parts Relay cerca nel catalogo per quel veicolo. Ogni ricerca viene salvata per tutto il suo team.',
     appFacts: [
       [
         'Cosa riceve',
         'Il veicolo, i ricambi originali con codice OE e posizione, gli esplosi e le corrispondenze aftermarket.',
       ],
       [
-        'Anche via WhatsApp',
-        'Le officine i cui numeri aggiunge come contatti cercano inviando un messaggio. Le loro ricerche entrano nella stessa coda.',
+        'Ricerche da WhatsApp',
+        'I numeri di telefono che aggiunge come contatti possono cercare inviando un messaggio WhatsApp. Le loro ricerche vengono salvate insieme alle altre.',
       ],
       [
         'Dove vengono cercate le targhe',
@@ -494,59 +540,62 @@ export const home = {
     screenshotAlt:
       'Il pannello «New search» di Parts Relay: scelta tra targa e VIN, un campo per la targa, un campo per il ricambio e suggerimenti di ricerca.',
     screenshotCaption: 'Il pannello «New search» nell’app web di Parts Relay.',
-    stepsTitle: 'Dall’ordine di riparazione alla richiesta al fornitore',
-    stepsText:
-      'Parta dall’auto in officina. Dia al banco abbastanza dettagli per identificare il componente e dirle cosa può fornire.',
+    stepsTitle: 'Come funziona',
+    stepsText: 'Dall’auto sul ponte a un codice ricambio da ordinare, in quattro passaggi.',
     steps: [
-      'Identificare il veicolo',
-      'Indicare il componente',
-      'Specificare la quantità',
-      'Chiedere un preventivo',
+      'Inserisca la targa o il VIN',
+      'Indichi il ricambio che serve',
+      'Ottenga i codici ricambio',
+      'Ordini dal suo fornitore',
     ],
-    featureTitle: ['Cosa può cambiare', 'il ricambio da ordinare?'],
-    checkVin: 'Controllare un VIN',
+    featureTitle: ['Tutto ciò che serve', 'per ordinare il ricambio giusto.'],
     features: [
       [
-        'Il motore',
-        'Due auto con la stessa sigla di modello possono avere motori diversi. Dia al banco i dati del veicolo presenti nell’ordine di riparazione.',
+        'Il veicolo giusto',
+        'Parts Relay identifica l’auto dalla targa o dal VIN, così può verificare modello e motore rispetto all’ordine di riparazione.',
       ],
       [
-        'Il pezzo danneggiato',
-        'Uno specchietto incrinato può voler dire vetro rotto o calotta danneggiata. Indichi il pezzo che il meccanico vuole sostituire.',
+        'Esplosi',
+        'Veda dove si trova un pezzo nel suo gruppo e distingua il singolo pezzo dal gruppo completo prima di ordinare.',
       ],
       [
-        'Il contenuto del kit',
-        'Se la serratura posteriore destra richiede anche un attuatore, lo scriva nella richiesta. Il banco può verificare se sono forniti insieme.',
+        'Originali e aftermarket',
+        'Ottenga il codice e la posizione del costruttore, più i codici aftermarket quando il catalogo li riporta.',
       ],
       [
-        'Il connettore del vecchio pezzo',
-        'Quando due componenti elettrici si assomigliano, la forma del connettore può dire al distributore quale versione monta l’auto.',
+        'Uno storico per tutto il team',
+        'Ogni ricerca viene salvata. Chiunque nel suo team può riaprirla e vedere cosa è stato trovato.',
       ],
     ],
-    deskTitle: 'Cosa vede il banco ricambi',
+    deskTitle: 'Pensato per tutto il suo team',
     deskText: [
-      'Dal distributore, il personale può cercare un ricambio in autonomia o prendere in carico una richiesta che un’officina ha inviato al numero WhatsApp dell’azienda. Le ricerche dal banco e da WhatsApp condividono un’unica coda, che mostra chi ha chiesto, da quale canale e cosa ha trovato il catalogo.',
-      'Le targhe vengono cercate nel paese impostato per la sua azienda. Se il veicolo trovato non corrisponde a quello in officina, il banco può verificare targa o VIN con l’officina prima di fare il preventivo.',
+      'Accettatori, meccanici e chi ordina i ricambi cercano tutti in un unico account aziendale. Filtri le ricerche passate per persona, stato, data o canale, oppure ne cerchi una per targa o VIN.',
+      'Il titolare gestisce il team, gli amministratori invitano le persone e gestiscono i contatti WhatsApp, e tutti accedono con Google o con un link inviato via email.',
     ],
-    recordTitle: 'In Parts Relay: cosa restituisce una ricerca',
+    recordTitle: 'In ogni ricerca',
     record: [
       [
         'Veicolo',
-        'La descrizione del veicolo dal catalogo permette all’officina di notare una discrepanza. Lo stato «Vehicle not found» è un motivo per controllare targa o VIN.',
+        'La descrizione dell’auto secondo il catalogo. Se non corrisponde a quella in officina, controlli la targa o il VIN.',
       ],
       [
         'Primo equipaggiamento',
-        'I ricambi originali arrivano con codice OE e posizione. Un esploso, se il catalogo lo prevede, aiuta a distinguere il gruppo completo da un singolo pezzo al suo interno.',
+        'I ricambi originali con codice OE e posizione, e un esploso quando il catalogo lo prevede.',
       ],
       [
         'Aftermarket',
-        'Alcuni risultati includono il codice di un altro produttore. Controlli marca e specifiche prima di proporlo come sostituto.',
+        'I codici di altri produttori per lo stesso ricambio, quando il catalogo li riporta.',
       ],
       [
-        'Verifica del fornitore',
-        'I risultati sono un aiuto all’identificazione. Chieda al fornitore di quotare il codice e verificare la disponibilità, e confermi compatibilità e contenuto del kit prima di ordinare.',
+        'Il suo fornitore',
+        'Parts Relay non vende ricambi. Ordini dal suo fornitore abituale, che conferma prezzo, disponibilità e compatibilità.',
       ],
     ],
+    plansLabel: 'Prezzi',
+    plansTitle: 'Piani per ogni officina',
+    plansText:
+      'Inizi con una prova gratuita di {days} giorni. Prenoti una chiamata se alla sua officina serve di più.',
+    comparePlans: 'Confronti i piani',
     guidesTitle: 'Guide di Parts Relay',
     viewAll: 'Vedi tutte',
     previousGuide: 'Guida precedente',
@@ -554,21 +603,26 @@ export const home = {
     guideCards: 'Schede delle guide',
     guides: {
       vin: [
-        'Prima di inviare un VIN',
-        'Controlli ciò che ha copiato dal veicolo prima di inserirlo nella richiesta.',
+        'Prima di cercare un VIN',
+        'Controlli ciò che ha copiato dal veicolo prima di avviare la ricerca.',
         'Controllo del VIN',
       ],
       shops: [
         'Dall’accettazione',
-        'Trasformi la nota del meccanico in una domanda a cui il distributore può rispondere.',
+        'Cosa scrivere in una richiesta ricambi perché il fornitore possa rispondere al primo colpo.',
         'Per le officine',
       ],
-      shopsAlt: 'Un consulente di servizio esamina un pezzo al banco dell’officina',
+      shopsAlt: 'Un accettatore esamina un pezzo al banco dell’officina',
+      counter: [
+        'Un faro con una linguetta rotta',
+        'Capire se il lavoro richiede una staffa, una lampadina o l’intero corpo faro.',
+        'Guida al banco',
+      ],
+      counterAlt:
+        'Un accettatore indica la linguetta di fissaggio rotta di un faro mentre un addetto ricambi tiene fermo il corpo faro.',
     },
-    ctaTitle: 'Verifichi se copre i lavori che riceve',
+    ctaTitle: 'Provi Parts Relay sul prossimo lavoro',
     ctaText:
-      'Scriva a {email} con due richieste recenti, una a cui ha risposto facilmente e una che ha richiesto un’altra telefonata, e il paese in cui sono immatricolati i suoi veicoli. Le confronteremo con la copertura del catalogo.',
-    ctaEmail: 'Scriva al team di Parts Relay',
-    ctaAbout: 'Informazioni su Parts Relay',
+      'Inizi una prova gratuita di {days} giorni, oppure prenoti una chiamata se alla sua officina serve più di quanto copre un piano.',
   },
 };

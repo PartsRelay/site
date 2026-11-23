@@ -1,0 +1,91 @@
+---
+import { bookCallLink, trialDays, trialLink } from '../site';
+import { currency, plans, yearlySaving } from '../plans';
+import { pricing } from '../i18n/pricing';
+
+interface Props {
+  locale: keyof typeof pricing;
+}
+
+const { locale } = Astro.props;
+const t = pricing[locale];
+const money = new Intl.NumberFormat(locale, {
+  style: 'currency',
+  currency,
+  maximumFractionDigits: 0,
+});
+const fill = (text: string) =>
+  text.replace('{days}', String(trialDays)).replace('{saving}', String(yearlySaving));
+---
+
+<div class="plan-board">
+  <!--
+    The billing switch is two radio buttons. CSS shows the matching prices, so the
+    switch works without scripts and keyboard users get the usual radio controls.
+  -->
+  <fieldset class="plan-billing">
+    <legend class="plan-sr">{t.billing.label}</legend>
+    <input type="radio" name="plan-billing" id="plan-monthly" value="monthly" checked />
+    <label for="plan-monthly">{t.billing.monthly}</label>
+    <input type="radio" name="plan-billing" id="plan-yearly" value="yearly" />
+    <label for="plan-yearly">
+      {t.billing.yearly}
+      <span class="plan-save">{fill(t.billing.save)}</span>
+    </label>
+  </fieldset>
+  <ul class="plan-cards">
+    {plans.map((plan) => {
+      const text = t.plans[plan.id as keyof typeof t.plans];
+      return (
+        <li class:list={['plan-card', { 'plan-featured': plan.featured }]}>
+          {plan.featured && <p class="plan-badge">{t.popular}</p>}
+          <h3>{text.name}</h3>
+          <p class="plan-tagline">{text.tagline}</p>
+          {plan.custom ? (
+            <div class="plan-price">
+              <strong>{t.custom}</strong>
+              <span class="plan-note">{t.customNote}</span>
+            </div>
+          ) : (
+            <div class="plan-price">
+              <strong class="plan-monthly">
+                {money.format(plan.monthly!)}
+                <span>{t.perMonth}</span>
+              </strong>
+              <strong class="plan-yearly">
+                {money.format(plan.yearly!)}
+                <span>{t.perMonth}</span>
+              </strong>
+              <span class="plan-note plan-monthly">{t.billedMonthly}</span>
+              <span class="plan-note plan-yearly">{t.billedYearly}</span>
+            </div>
+          )}
+          <a
+            class:list={['plan-cta', { 'plan-cta-call': plan.custom }]}
+            href={plan.custom ? bookCallLink : trialLink}
+          >
+            {plan.custom ? t.callCta : t.trialCta}
+          </a>
+          <p class="plan-included">{text.includedTitle}</p>
+          <ul class="plan-features">
+            {text.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+        </li>
+      );
+    })}
+  </ul>
+  <div class="plan-unsure">
+    <p>
+      <strong>{t.unsure.title}</strong>
+      {t.unsure.text}
+    </p>
+    <a href={bookCallLink}>{t.callCta}</a>
+  </div>
+  <ul class="plan-assurances">
+    {t.assurances.map((item) => (
+      <li>{fill(item)}</li>
+    ))}
+  </ul>
+</div>
