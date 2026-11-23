@@ -6,32 +6,32 @@
   line-height: 1.43;
 }
 .brand-side {
-  border-right: 1px solid #e4ecea;
+  padding: 24px 0 24px 22px;
 }
 .brand-side-inner {
   position: sticky;
   top: 104px;
-  min-height: 460px;
-  height: calc(100dvh - 104px);
-  padding: 24px 22px;
+  padding: 22px 18px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px #142b3a0a;
 }
 .brand .brand-symbol {
   width: 52px;
   height: 52px;
   object-fit: contain;
 }
-.brand-side nav,
-.brand-mobile nav {
+.brand-side nav {
   display: grid;
   margin: 28px 0;
   gap: 4px;
   width: 100%;
 }
-.brand-side button,
-.brand-mobile button {
+.brand-side button {
   background: none;
   border: 0;
   display: flex;
@@ -42,13 +42,11 @@
   color: var(--relay-deep);
   text-align: left;
 }
-.brand-side button span,
-.brand-mobile button span {
+.brand-side button span {
   color: var(--relay);
   font-size: 13px;
 }
-.brand-side button:hover,
-.brand-mobile button:hover {
+.brand-side button:hover {
   color: var(--relay);
   background: #eff6f5;
 }
@@ -196,9 +194,6 @@
 .brand-spec p {
   margin-top: 22px;
 }
-.brand-mobile {
-  display: none;
-}
 @media (max-width: 760px) {
   .brand {
     display: block;
@@ -207,19 +202,7 @@
     display: none;
   }
   .brand-main {
-    padding: 0 18px 52px;
-  }
-  .brand-mobile {
-    display: block;
-    border-bottom: 1px solid #dce6e4;
-    font-size: 15px;
-  }
-  .brand-mobile summary {
-    padding: 12px 0;
-    cursor: pointer;
-  }
-  .brand-mobile nav {
-    margin: 0 0 8px;
+    padding: 16px 18px 52px;
   }
   .brand-hero {
     min-height: clamp(295px, 84vw, 475px);
