@@ -193,15 +193,11 @@ svg {
   outline-color: var(--relay-soft);
 }
 @media (max-width: 767px) {
+  .base-actions {
+    flex-wrap: wrap;
+  }
   .base-actions .base-button {
     font-size: 15px;
-  }
-}
-/* At this mobile width the paragraph fits on one line.
-   The longer Parts Relay line still fits inside the page gutter. */
-@media (min-width: 423px) and (max-width: 767px) {
-  .base-cta p {
-    white-space: nowrap;
   }
 }
 .base-footer-rule hr {
