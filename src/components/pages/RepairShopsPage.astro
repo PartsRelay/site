@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { contactLink } from '../../site';
+import { trialLink } from '../../site';
 import ContactBand from '../ContactBand.astro';
 import { repairShops } from '../../i18n/pages/repairShops';
 import { localizedPath, ui } from '../../i18n/ui';
@@ -23,8 +23,12 @@ const principles = t.principles.items;
         <h1 tabindex="-1">{t.heading}</h1>
         <p class="team-hero-note">{t.heroNote}</p>
         <div class="team-actions">
-          <a class="team-btn" href={contactLink}>
-            {t.talk}
+          <a class="team-btn" href={trialLink}>
+            <img src="/assets/symbol-white.svg" alt="" />
+            {t.trial}
+          </a>
+          <a class="team-btn team-secondary" href={link('/pricing/')}>
+            {t.pricing}
           </a>
         </div>
       </div>
@@ -164,8 +168,8 @@ const principles = t.principles.items;
           <div>
             <h3>{t.estimate.exampleTitle}</h3>
             <p>{t.estimate.exampleText}</p>
-            <a class="team-btn" href={link('/tools/vin-check/')}>
-              {t.estimate.checkVin}
+            <a class="team-btn" href={link('/pricing/')}>
+              {t.estimate.cta}
             </a>
           </div>
           <section class="team-record">
