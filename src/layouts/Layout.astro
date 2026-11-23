@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import AskAi from '../components/AskAi.astro';
 import { contactEmail, productSummary } from '../site';
 import { alternates, splitLocale, ui } from '../i18n/ui';
 import '../styles/base.css';
@@ -126,12 +127,14 @@ const schema = {
         </div>
       )}
     </main>
+    <AskAi locale={locale} />
     <Footer locale={locale} versions={versions} />
     <script>
       import '../scripts/header.js';
       import '../scripts/header-motion.js';
       import '../scripts/page.js';
       import '../scripts/language.js';
+      import '../scripts/ask-ai.js';
     </script>
   </body>
 </html>
