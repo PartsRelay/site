@@ -41,14 +41,14 @@ function closeMenu() {
   unlockPage();
   chrome.classList.remove('site-open');
   toggle.setAttribute('aria-expanded', 'false');
-  toggle.setAttribute('aria-label', 'Open navigation');
+  toggle.setAttribute('aria-label', toggle.dataset.openLabel);
 }
 toggle.addEventListener('click', () => {
   if (chrome.classList.contains('site-open')) return closeMenu();
   chrome.classList.add('site-open');
   lockPage();
   toggle.setAttribute('aria-expanded', 'true');
-  toggle.setAttribute('aria-label', 'Close navigation');
+  toggle.setAttribute('aria-label', toggle.dataset.closeLabel);
 });
 triggers.forEach((button) => {
   const group = button.parentElement;

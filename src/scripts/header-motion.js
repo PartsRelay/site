@@ -526,9 +526,11 @@ motion.addEventListener('change', resetLogo);
 const art = document.querySelector('.base-art');
 if (art) {
   const home = document.createElement('a');
-  home.href = '/';
+  // Same address and label as the logo in the header, so it follows the page language.
+  const headerHome = document.querySelector('.site-mark');
+  home.href = headerHome.getAttribute('href');
   home.className = 'fx-footer-home';
-  home.setAttribute('aria-label', 'Parts Relay home');
+  home.setAttribute('aria-label', headerHome.getAttribute('aria-label'));
   art.before(home);
   home.append(art);
   const tiles = [...art.querySelectorAll('.base-tile')];

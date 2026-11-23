@@ -1,6 +1,16 @@
 ---
 import { contactEmail, cookiePolicy, privacyPolicy } from '../site';
+import { locales, localizedPath, ui } from '../i18n/ui';
 
+interface Props {
+  locale: keyof typeof ui;
+  versions: { locale: string; href: string }[];
+}
+
+const { locale, versions } = Astro.props;
+const t = ui[locale];
+const f = t.footer;
+const name = (code: string) => locales[code as keyof typeof locales].name;
 const year = new Date().getFullYear();
 ---
 
@@ -12,24 +22,21 @@ const year = new Date().getFullYear();
     <div class="base-columns">
       <div class="base-business">
         <a class="base-active" href="/tools/vin-check/">
-          <span aria-hidden="true"></span>VIN format check
+          <span aria-hidden="true"></span>
+          {t.items.vin[0]}
         </a>
-        <p>Product enquiries</p>
+        <p>{f.productEnquiries}</p>
         <a class="base-contact" href={`mailto:${contactEmail}`}>
           {contactEmail}
         </a>
         <div class="base-utilities">
-          <a
-            href="/tools/vin-check/"
-            title="Check a VIN’s format"
-            aria-label="Check a VIN’s format"
-          >
+          <a href="/tools/vin-check/" title={f.checkVin} aria-label={f.checkVin}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="10" cy="10" r="6.5" />
               <path d="m15 15 6.5 6.5" />
             </svg>
           </a>
-          <a href="/library/" title="Open guide library" aria-label="Open guide library">
+          <a href="/library/" title={f.openLibrary} aria-label={f.openLibrary}>
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4.5h5.5c1.4 0 2.7.4 3.5 1.2.8-.8 2.1-1.2 3.5-1.2H21v14h-5.5c-1.5 0-2.6.4-3.5 1.2-.9-.8-2-1.2-3.5-1.2H3zM12 6v13" />
             </svg>
@@ -37,35 +44,35 @@ const year = new Date().getFullYear();
         </div>
       </div>
       <div class="base-group">
-        <h3>Solutions</h3>
-        <a href="/tools/vin-check/">VIN format check</a>
-        <a href="/tools/parts-diagrams/">Parts diagrams</a>
-        <a href="/tools/part-details/">Part details</a>
+        <h3>{t.groups.solutions}</h3>
+        <a href="/tools/vin-check/">{t.items.vin[0]}</a>
+        <a href="/tools/parts-diagrams/">{t.items.diagrams[0]}</a>
+        <a href="/tools/part-details/">{t.items.details[0]}</a>
       </div>
       <div>
         <div class="base-group">
-          <h3>At the counter</h3>
-          <a href="/repair-shops/">Repair shops</a>
-          <a href="/distributors/">Distributors</a>
-          <a href="/guides/counter/">Counter guide</a>
-          <a href="/journal/">Journal</a>
+          <h3>{f.atCounter}</h3>
+          <a href="/repair-shops/">{t.items.shops[0]}</a>
+          <a href="/distributors/">{t.items.distributors[0]}</a>
+          <a href="/guides/counter/">{t.items.counter[0]}</a>
+          <a href="/journal/">{t.items.journal[0]}</a>
         </div>
         <div class="base-group base-stack">
-          <h3>On the job</h3>
-          <a href="/#workflow">The enquiry process</a>
-          <a href="/guides/vehicle-identification/">Vehicle identification</a>
-          <a href="/workshops/">Workshops</a>
+          <h3>{f.onJob}</h3>
+          <a href={localizedPath(locale, '/#workflow')}>{f.process}</a>
+          <a href="/guides/vehicle-identification/">{t.items.vehicle[0]}</a>
+          <a href="/workshops/">{t.items.workshops[0]}</a>
         </div>
       </div>
       <div class="base-group">
-        <h3>Resources</h3>
-        <a href="/library/">Guide library</a>
-        <a href="/guides/guidebook/">Parts guidebook</a>
-        <a href="/journal/">Parts Relay Journal</a>
-        <a href="/brand/">Brand assets</a>
-        <a href="/about/">About Parts Relay</a>
+        <h3>{t.groups.resources}</h3>
+        <a href="/library/">{f.library}</a>
+        <a href="/guides/guidebook/">{t.items.guidebook[0]}</a>
+        <a href="/journal/">{f.journal}</a>
+        <a href="/brand/">{t.items.brand[0]}</a>
+        <a href="/about/">{t.items.about[0]}</a>
         <a href={privacyPolicy} target="_blank" rel="noopener">
-          Privacy Policy
+          {t.items.privacy[0]}
         </a>
       </div>
     </div>
@@ -125,15 +132,30 @@ const year = new Date().getFullYear();
     </div>
     <div class="base-legal">
       <span>© {year} Parts Relay</span>
+      {versions.length > 0 && (
+        <nav class="base-languages" aria-label={f.language}>
+          {versions.map((v) => (
+            <a
+              href={v.href}
+              hreflang={v.locale}
+              lang={v.locale}
+              data-language={v.locale}
+              aria-current={v.locale === locale ? 'true' : undefined}
+            >
+              {name(v.locale)}
+            </a>
+          ))}
+        </nav>
+      )}
       <div>
-        <a href="/about/">About</a>
+        <a href="/about/">{f.about}</a>
         <span aria-hidden="true">·</span>
         <a href={privacyPolicy} target="_blank" rel="noopener">
-          Privacy
+          {f.privacy}
         </a>
         <span aria-hidden="true">·</span>
         <a href={cookiePolicy} target="_blank" rel="noopener">
-          Cookies
+          {f.cookies}
         </a>
       </div>
     </div>

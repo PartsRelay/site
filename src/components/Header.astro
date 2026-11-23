@@ -1,87 +1,86 @@
 ---
 import { contactLink, privacyPolicy } from '../site';
+import { localizedPath, ui } from '../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = ui[locale];
+const item = (key: string) => t.items[key as keyof typeof t.items];
 
 const menu = [
   {
     id: 'site-solutions',
-    label: 'Solutions',
+    label: t.groups.solutions,
     items: [
       {
+        key: 'vin',
         href: '/tools/vin-check/',
-        title: 'VIN format check',
-        text: 'Check a 17-character VIN for typing errors.',
         icon: ['M8 4a6 6 0 1 1 0 12A6 6 0 0 1 8 4Zm5 10 7 7', 'M5 10h1', 'M8 9h1', 'M11 10h1'],
       },
       {
+        key: 'diagrams',
         href: '/tools/parts-diagrams/',
-        title: 'Parts diagrams',
-        text: 'Identify a piece in an exploded view.',
         icon: ['m12 4 8 4-8 4-8-4Z', 'm4 12 8 4 8-4', 'm4 16 8 4 8-4'],
       },
       {
+        key: 'details',
         href: '/tools/part-details/',
-        title: 'Part details',
-        text: 'Compare part numbers and descriptions.',
         icon: ['M6 3h9l4 4v14H6ZM14 3v5h5M9 12h7M9 16h6'],
       },
     ],
   },
   {
     id: 'site-teams',
-    label: 'Teams',
+    label: t.groups.teams,
     items: [
       {
+        key: 'shops',
         href: '/repair-shops/',
-        title: 'Repair shops',
-        text: 'Turn a repair order into an enquiry.',
         icon: ['M3 10l2-6h14l2 6H3Zm2 0v10h14V10', 'M8 20v-6h5v6'],
       },
       {
+        key: 'distributors',
         href: '/distributors/',
-        title: 'Distributors',
-        text: 'Work through your company’s search queue.',
         icon: ['m12 3 9 5v10l-9 4-9-4V8l9-5Z', 'm3 8 9 5 9-5', 'M12 13v9', 'm7 5.8 9 5'],
       },
     ],
   },
   {
     id: 'site-workflow',
-    label: 'Workflow',
+    label: t.groups.workflow,
     items: [
       {
+        key: 'how',
         href: '/#workflow',
-        title: 'How it works',
-        text: 'See what goes into a supplier enquiry.',
         icon: ['M3 6h12v5h6', 'm17 7 4 4-4 4', 'M21 18H9v-5H3', 'm7 9-4 4 4 4'],
       },
       {
+        key: 'prepare',
         href: '/guides/guidebook/',
-        title: 'Prepare a supplier enquiry',
-        text: 'Get a parts enquiry ready to send.',
         icon: ['M3 4h17v12H9l-4 4v-4H3Z', 'M7 11v-1', 'M11 11V8', 'M15 11V6'],
       },
       {
+        key: 'workshops',
         href: '/workshops/',
-        title: 'Workshops',
-        text: 'Use a worksheet on the job.',
         icon: ['M3 3h18v13H3ZM8 21l4-5 4 5M8 8h8m-8 4h5'],
       },
     ],
   },
   {
     id: 'site-resources',
-    label: 'Resources',
+    label: t.groups.resources,
     items: [
       {
+        key: 'library',
         href: '/library/',
-        title: 'All guides',
-        text: 'Find a guide for the job at hand.',
         icon: ['M3 4h5v16H3ZM10 4h4v16h-4Z', 'm16 5 4-1 3 15-4 1Z'],
       },
       {
+        key: 'guidebook',
         href: '/guides/guidebook/',
-        title: 'Parts guidebook',
-        text: 'Get a parts enquiry ready to send.',
         icon: [
           'M3 5h6q2 0 3 2q1-2 3-2h6v14h-6q-2 0-3 2q-1-2-3-2H3ZM12 7v14',
           'M5.5 9H9',
@@ -89,40 +88,34 @@ const menu = [
         ],
       },
       {
+        key: 'vehicle',
         href: '/guides/vehicle-identification/',
-        title: 'Vehicle identification',
-        text: 'Check a vehicle that doesn’t look right.',
         icon: ['M3 10l2-5h14l2 5v8H3Z', 'M3 11h18', 'M6 15h2m8 0h2'],
       },
       {
+        key: 'about',
         href: '/about/',
-        title: 'About Parts Relay',
-        text: 'Learn who Parts Relay is for.',
         icon: ['M3 4h18v13h-9l-5 4v-4H3Z', 'M7 12h4V8h6'],
       },
       {
+        key: 'privacy',
         href: privacyPolicy,
         external: true,
-        title: 'Privacy Policy',
-        text: 'How this site handles personal data.',
         icon: ['m12 3 8 3v5q0 6-8 10-8-4-8-10V6Z', 'm8 12 3 3 5-6'],
       },
       {
+        key: 'journal',
         href: '/journal/',
-        title: 'Journal',
-        text: 'Read about the parts behind the enquiry.',
         icon: ['M4 3h16v18H4ZM7 7h10M7 11h10m-10 4h6'],
       },
       {
+        key: 'counter',
         href: '/guides/counter/',
-        title: 'Counter guide',
-        text: 'Work out which headlamp parts to quote.',
         icon: ['M4 8h16v4H4ZM6 12v7m12-7v7M9 8V4h6v4'],
       },
       {
+        key: 'brand',
         href: '/brand/',
-        title: 'Brand assets',
-        text: 'Get the logo files and type specifications.',
         icon: ['M3 5h18v14H3ZM7 14l4-5 3 3 2-2 2 4'],
       },
     ],
@@ -131,23 +124,23 @@ const menu = [
 ---
 
 <header class="site-chrome" id="site-chrome">
-  <div class="site-banner" aria-label="Announcement">
-    <span class="site-ann-wide">Have the vehicle identification number?</span>
-    <span class="site-ann-short">Have the VIN?</span>
+  <div class="site-banner" aria-label={t.banner.region}>
+    <span class="site-ann-wide">{t.banner.wide}</span>
+    <span class="site-ann-short">{t.banner.short}</span>
     <span class="site-ann-divider" aria-hidden="true"></span>
     <a href="/tools/vin-check/">
-      Check its format <i class="site-right" aria-hidden="true"></i>
+      {t.banner.link} <i class="site-right" aria-hidden="true"></i>
     </a>
-    <button class="site-dismiss" type="button" aria-label="Dismiss announcement">
+    <button class="site-dismiss" type="button" aria-label={t.banner.dismiss}>
       <span aria-hidden="true">×</span>
     </button>
   </div>
   <div class="site-nav-shell">
     <div class="site-nav">
-      <a class="site-mark" href="/" aria-label="Parts Relay home">
+      <a class="site-mark" href={localizedPath(locale, '/')} aria-label={t.nav.home}>
         <img src="/assets/symbol.svg" width="39" height="35" alt="" />
       </a>
-      <nav class="site-menu" id="site-menu" aria-label="Main navigation">
+      <nav class="site-menu" id="site-menu" aria-label={t.nav.main}>
         {menu.map((group) => (
           <div class="site-group">
             <button
@@ -159,12 +152,12 @@ const menu = [
               {group.label} <i />
             </button>
             <div class="site-dropdown" id={group.id} hidden>
-              {group.items.map((item, index) => (
+              {group.items.map((entry, index) => (
                 <a
-                  href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noopener' : undefined}
-                  aria-label={item.title}
+                  href={localizedPath(locale, entry.href)}
+                  target={entry.external ? '_blank' : undefined}
+                  rel={entry.external ? 'noopener' : undefined}
+                  aria-label={item(entry.key)[0]}
                   data-position={index + 1}
                 >
                   <span class="site-item-icon" aria-hidden="true">
@@ -178,14 +171,14 @@ const menu = [
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
-                      {item.icon.map((d) => (
+                      {entry.icon.map((d) => (
                         <path d={d} />
                       ))}
                     </svg>
                   </span>
                   <span class="site-item-labels">
-                    <strong>{item.title}</strong>
-                    <span>{item.text}</span>
+                    <strong>{item(entry.key)[0]}</strong>
+                    <span>{item(entry.key)[1]}</span>
                   </span>
                 </a>
               ))}
@@ -193,19 +186,21 @@ const menu = [
           </div>
         ))}
         <a class="site-mobile-contact" href={contactLink}>
-          Contact the Parts Relay team
+          {t.nav.mobileContact}
         </a>
       </nav>
       <div class="site-nav-side">
         <a class="site-get" href={contactLink}>
-          Contact us <i class="site-right" aria-hidden="true"></i>
+          {t.nav.contact} <i class="site-right" aria-hidden="true"></i>
         </a>
         <button
           type="button"
           class="site-mobile"
           aria-controls="site-menu"
           aria-expanded="false"
-          aria-label="Open navigation"
+          aria-label={t.nav.open}
+          data-open-label={t.nav.open}
+          data-close-label={t.nav.close}
         >
           <i></i>
           <i></i>

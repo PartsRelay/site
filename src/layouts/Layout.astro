@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { contactEmail, productSummary } from '../site';
+import { alternates, splitLocale, ui } from '../i18n/ui';
 import '../styles/base.css';
 import '../styles/header.css';
 import '../styles/home.css';
@@ -25,6 +26,22 @@ const { title, description, home = false, structuredData = false, noindex = fals
 
 const origin = Astro.site?.href;
 const canonical = origin ? new URL(Astro.url.pathname, origin).href : Astro.url.pathname;
+
+type Locale = keyof typeof ui;
+const split = splitLocale(Astro.url.pathname);
+const locale = split.locale as Locale;
+const path: string = split.path;
+const t = ui[locale];
+const versions = alternates(path);
+const toUrl = (href: string) => (origin ? new URL(href, origin).href : href);
+// What the language bar needs: where each version lives, and its offer in that language.
+const languageData = versions.length
+  ? JSON.stringify({
+      current: locale,
+      versions: Object.fromEntries(versions.map((v) => [v.locale, v.href])),
+      offers: Object.fromEntries(versions.map((v) => [v.locale, ui[v.locale as Locale].suggest])),
+    })
+  : null;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -55,7 +72,7 @@ const schema = {
 ---
 
 <!doctype html>
-<html lang="en" class={home ? undefined : 'page-interior'}>
+<html lang={locale} class={home ? undefined : 'page-interior'}>
   <head>
     <!--
       The iubenda embed has to be the first tag in the head, after its own settings.
@@ -87,13 +104,19 @@ const schema = {
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/svg+xml" href="/assets/symbol.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    {!noindex &&
+      versions.map((v) => <link rel="alternate" hreflang={v.locale} href={toUrl(v.href)} />)}
+    {!noindex && versions.length > 0 && (
+      <link rel="alternate" hreflang="x-default" href={toUrl(path)} />
+    )}
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   </head>
   <body>
     <a class="skip-main" href="#main">
-      Skip to content
+      {t.skip}
     </a>
-    <Header />
+    {languageData && <script type="application/json" id="language-data" set:html={languageData} />}
+    <Header locale={locale} />
     <main id="main" tabindex="-1">
       {home ? (
         <slot />
@@ -103,11 +126,12 @@ const schema = {
         </div>
       )}
     </main>
-    <Footer />
+    <Footer locale={locale} versions={versions} />
     <script>
       import '../scripts/header.js';
       import '../scripts/header-motion.js';
       import '../scripts/page.js';
+      import '../scripts/language.js';
     </script>
   </body>
 </html>

@@ -347,6 +347,67 @@ svg {
   gap: 12px;
   align-items: center;
 }
+.base-legal {
+  flex-wrap: wrap;
+}
+.base-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.base-footer .base-languages a[aria-current] {
+  color: var(--relay);
+  font-weight: 600;
+}
+/* Offer to switch to the visitor's language, above the header. */
+.lang-offer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 14px;
+  padding: 10px 52px;
+  background: var(--relay-deep);
+  color: #fff;
+  font: 400 14px/20px var(--body-font);
+  text-align: center;
+}
+.lang-offer p {
+  margin: 0;
+}
+.lang-offer a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lang-offer a:hover {
+  color: var(--relay-soft);
+}
+.lang-offer a:focus-visible,
+.lang-offer-close:focus-visible {
+  outline: 2px solid var(--relay-soft);
+  outline-offset: 2px;
+}
+.lang-offer-close {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  translate: 0 -50%;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.lang-offer-close:hover {
+  background: rgb(255 255 255 / 0.12);
+}
 @media (max-width: 767px) {
   html.page-interior {
     scroll-padding-top: 82px;
