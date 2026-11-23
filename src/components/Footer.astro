@@ -10,7 +10,8 @@ interface Props {
 const { locale, versions } = Astro.props;
 const t = ui[locale];
 const f = t.footer;
-const name = (code: string) => locales[code as keyof typeof locales].name;
+const language = (code: string) =>
+  locales[code as keyof typeof locales] as { name: string; english?: string };
 const year = new Date().getFullYear();
 ---
 
@@ -152,7 +153,8 @@ const year = new Date().getFullYear();
               data-language={v.locale}
               aria-current={v.locale === locale ? 'true' : undefined}
             >
-              {name(v.locale)}
+              {language(v.locale).name}
+              {language(v.locale).english && <span lang="en"> ({language(v.locale).english})</span>}
             </a>
           ))}
         </nav>

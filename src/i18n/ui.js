@@ -5,12 +5,14 @@
 
 export const defaultLocale = 'en';
 
+// Each language by its own name, with the English name beside it for readers who
+// don't recognise it.
 export const locales = {
   en: { name: 'English' },
-  de: { name: 'Deutsch' },
-  fr: { name: 'Français' },
-  es: { name: 'Español' },
-  it: { name: 'Italiano' },
+  de: { name: 'Deutsch', english: 'German' },
+  fr: { name: 'Français', english: 'French' },
+  es: { name: 'Español', english: 'Spanish' },
+  it: { name: 'Italiano', english: 'Italian' },
 };
 
 export const translatedPaths = [
