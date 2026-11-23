@@ -193,6 +193,13 @@ svg {
   outline-color: var(--relay-soft);
 }
 @media (max-width: 767px) {
+  /* On a phone the text runs the full width of the band, so keep the lines faint and to the right. */
+  .base-motion {
+    mask-image: linear-gradient(to right, transparent 45%, #000 100%);
+  }
+  .base-motion.relay-motion-ready {
+    opacity: 0.5;
+  }
   .base-actions {
     flex-wrap: wrap;
   }
