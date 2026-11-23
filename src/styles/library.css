@@ -467,25 +467,24 @@
 }
 .lib-docside {
   padding: 32px 24px 48px max(24px, calc((100vw - 1330px) / 2));
-  border-right: 1px solid var(--page-line);
 }
 .lib-docside nav {
   position: sticky;
   top: 120px;
-}
-.lib-docside nav,
-.lib-doc-mobile nav {
   display: grid;
   align-content: start;
+  padding: 16px 8px;
+  background: #fff;
+  border: 1px solid var(--page-line);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px #142b3a0a;
 }
-.lib-docside nav a,
-.lib-doc-mobile nav a {
+.lib-docside nav a {
   font: 500 15px/21px var(--body-font);
   padding: 7px 12px;
   border-radius: 7px;
 }
-.lib-page .lib-docside p,
-.lib-page .lib-doc-mobile nav p {
+.lib-page .lib-docside p {
   font-size: 14px;
   line-height: 20px;
   font-weight: 650;
@@ -493,8 +492,7 @@
   padding: 20px 12px 7px;
   margin-top: 14px;
 }
-.lib-page .lib-docside p:first-child,
-.lib-page .lib-doc-mobile nav p:first-child {
+.lib-page .lib-docside p:first-child {
   border: 0;
   margin: 0;
   padding-top: 0;
@@ -601,9 +599,6 @@
 }
 .lib-next svg {
   color: var(--relay);
-}
-.lib-doc-mobile {
-  display: none;
 }
 .lib-article {
   padding: 54px 0 108px;
@@ -874,8 +869,7 @@
 @media (hover: hover) {
   .lib-library .lib-tabs button:hover,
   .lib-rows a:hover,
-  .lib-docside nav a:hover,
-  .lib-doc-mobile nav a:hover {
+  .lib-docside nav a:hover {
     background: #eff6f4;
   }
   .lib-journal .lib-tabs button:hover,
@@ -1042,21 +1036,7 @@
     display: none;
   }
   .lib-docbody {
-    padding: 0 16px 64px;
-  }
-  .lib-doc-mobile {
-    display: block;
-    margin: 0 -16px 8px;
-    border-block: 1px solid var(--page-line);
-  }
-  .lib-doc-mobile summary {
-    font-size: 14px;
-    cursor: pointer;
-    padding: 10px 16px;
-    color: var(--page-muted);
-  }
-  .lib-doc-mobile nav {
-    padding: 8px 16px 16px;
+    padding: 28px 16px 64px;
   }
   .lib-page .lib-docbody h1 {
     font-size: 32px;
