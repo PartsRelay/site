@@ -9,9 +9,11 @@ export const productSummary =
   'lets workshops the company adds as contacts search by WhatsApp, ' +
   'and keeps every search in one company queue. Parts Relay does not sell parts.';
 
-// Placeholders until the app links and the booking page are ready. Replace before launch.
+// Placeholders until the app links are ready. Replace before launch.
 // The .example addresses are reserved and never resolve.
 export const trialLink = 'https://app.partsrelay.example/sign-up';
 export const loginLink = 'https://app.partsrelay.example/sign-in';
-export const bookCallLink = 'https://book.partsrelay.example/call';
 export const trialDays = 14;
+
+// Every "Book a call" button opens this 30-minute booking page.
+export const bookCallLink = 'https://cal.com/ryan-reason-render-adl4wl/30min';
