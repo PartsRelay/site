@@ -1,0 +1,227 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClosingBand from '../ClosingBand.astro';
+import MirrorWording from '../MirrorWording.astro';
+import { partDetails } from '../../i18n/pages/part-details';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = partDetails[locale];
+const link = (href: string) => localizedPath(locale, href);
+const wordings = t.wording.options;
+---
+
+<Layout title={t.title} description={t.description}>
+  <div class="tool tool-part-details">
+    <section class="tool-hero">
+      <div class="tool-bound">
+        <div class="tool-title">
+          <p class="tool-label">{t.label}</p>
+          <h1 tabindex="-1">{t.heading}</h1>
+          <p class="tool-intro">{t.intro}</p>
+          <div class="page-actions">
+            <button type="button" class="page-btn" data-jump="tool-mirror">
+              {t.jump}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">{t.job.label}</p>
+          <h2>{t.job.title}</h2>
+        </div>
+        <div class="tool-cards" style="--cards: 3">
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m3 10 13-7 13 7v13l-13 7-13-7zm0 0 13 7 13-7M16 17v13M9 7l13 7" />
+              </svg>
+            </div>
+            <h3>{t.job.cards[0][0]}</h3>
+            <p>{t.job.cards[0][1]}</p>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M16 29S6 18 6 12a10 10 0 1 1 20 0c0 6-10 17-10 17z" />
+                <circle cx="16" cy="12" r="3" />
+              </svg>
+            </div>
+            <h3>{t.job.cards[1][0]}</h3>
+            <p>{t.job.cards[1][1]}</p>
+          </article>
+          <article>
+            <div class="tool-glyph">
+              <svg
+                class="tool-icon"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.45"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m3 22 19-19 7 7-19 19zm5-3 4 4m0-8 3 3m1-7 4 4m0-8 3 3" />
+              </svg>
+            </div>
+            <h3>{t.job.cards[2][0]}</h3>
+            <p>{t.job.cards[2][1]}</p>
+          </article>
+        </div>
+        <dl class="tool-detail-strip">
+          {t.job.strip.map(([term, detail]) => (
+            <div>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">{t.mirror.label}</p>
+            <h2>{t.mirror.title}</h2>
+          </div>
+          <div class="tool-feature-cards">
+            <article>
+              <p>{t.mirror.glass[0]}</p>
+              <h3>{t.mirror.glass[1]}</h3>
+              <p>{t.mirror.glass[2]}</p>
+            </article>
+            <article>
+              <p>{t.mirror.fit[0]}</p>
+              <h3>{t.mirror.fit[1]}</h3>
+              <p>{t.mirror.fit[2]}</p>
+              <dl class="tool-spec">
+                {t.mirror.spec.map(([term, detail]) => (
+                  <div>
+                    <dt>{term}</dt>
+                    <dd>{detail}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section" id="tool-mirror" data-picker tabindex="-1">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div>
+            <div class="tool-head">
+              <p class="tool-label">{t.wording.label}</p>
+              <h2>{t.wording.title}</h2>
+            </div>
+            <div class="tool-choices" role="group" aria-label={t.wording.choose}>
+              {wordings.map((wording, index) => (
+                <button
+                  type="button"
+                  data-pick={index}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                >
+                  {wording.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div data-picker-text aria-live="polite">
+            <MirrorWording wording={wordings[0]} />
+          </div>
+          {wordings.map((wording, index) => (
+            <template data-option={index}>
+              <MirrorWording wording={wording} />
+            </template>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">{t.catalogue.label}</p>
+          <h2>{t.catalogue.title}</h2>
+          <p class="tool-copy">{t.catalogue.text}</p>
+        </div>
+        <div class="tool-result-grid">
+          <div>
+            <dl class="tool-field-notes">
+              {t.catalogue.notes.map(([term, detail]) => (
+                <div>
+                  <dt>{term}</dt>
+                  <dd>{detail}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <div class="tool-exploded" role="img" aria-label={t.catalogue.layersLabel}>
+            <div class="tool-stack">
+              {t.catalogue.layers.map((layer, index) => (
+                <div style={`--layer: ${index}`}>
+                  <span>{layer}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">{t.faq.label}</p>
+            <h2>{t.faq.title}</h2>
+          </div>
+          <div class="tool-faq">
+            {t.faq.items.map(([question, answer]) => (
+              <details name="details-faq">
+                <summary>{question}</summary>
+                <p>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    <ClosingBand
+      title={t.closing.title}
+      text={t.closing.text}
+      primary={{ href: link('/tools/parts-diagrams/'), label: t.closing.primary }}
+      secondary={{ href: link('/tools/vin-check/'), label: t.closing.secondary }}
+    />
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/picker.js';
+</script>

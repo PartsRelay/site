@@ -3,6 +3,9 @@ const list = document.querySelector('[data-lib-list]');
 const search = list.querySelector('[data-lib-search]');
 const filters = [...list.querySelectorAll('[data-lib-filter]')];
 const items = [...list.querySelectorAll('[data-lib-item]')];
+// The count message comes from the page in its own language, with {n} for the number.
+const count = list.querySelector('[data-lib-count]');
+const plural = new Intl.PluralRules(document.documentElement.lang);
 
 function updateResults() {
   const words = search.value.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
@@ -10,15 +13,17 @@ function updateResults() {
   const topic = active.dataset.libFilter;
   let shown = 0;
   for (const item of items) {
-    const text = (item.textContent + ' ' + item.dataset.libTopic).toLocaleLowerCase();
+    // Every entry shows its topic label, so the visible text covers the topic in any language.
+    const text = item.textContent.toLocaleLowerCase();
     const visible =
       (topic === 'All' || item.dataset.libTopic === topic) &&
       words.every((word) => text.includes(word));
     item.hidden = !visible;
     if (visible) shown++;
   }
-  list.querySelector('[data-lib-count]').textContent =
-    shown + ' ' + (shown === 1 ? 'result' : 'results');
+  const message =
+    plural.select(shown) === 'one' ? count.dataset.libCountOne : count.dataset.libCountOther;
+  count.textContent = message.replace('{n}', String(shown));
   list.querySelector('[data-lib-empty]').hidden = shown !== 0;
   list.querySelector('[data-lib-results]').hidden = shown === 0;
 }

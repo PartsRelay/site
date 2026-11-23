@@ -10,8 +10,9 @@ function show(index, control) {
   current = index;
   panel.querySelector('small').textContent = checks[index].topic;
   panel.querySelector('blockquote').textContent = checks[index].text;
-  panel.querySelector('.team-exchange-controls span').textContent =
-    index + 1 + ' / ' + checks.length;
+  panel.querySelector('.team-exchange-controls span').textContent = panel.dataset.count
+    .replace('{n}', String(index + 1))
+    .replace('{total}', String(checks.length));
   previous.disabled = index === 0;
   next.disabled = index === checks.length - 1;
   // Keep keyboard focus on a usable arrow when the one just pressed becomes disabled.

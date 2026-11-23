@@ -1,4 +1,6 @@
 ---
+import { localeOf } from '../i18n/ui';
+
 interface Props {
   wording: {
     steps: string[][];
@@ -7,6 +9,17 @@ interface Props {
 }
 
 const { wording } = Astro.props;
+
+// Quotation marks follow the page language. French keeps a non-breaking space inside them.
+const marks: Record<string, [string, string]> = {
+  en: ['“', '”'],
+  de: ['„', '“'],
+  fr: ['« ', ' »'],
+  es: ['«', '»'],
+  it: ['«', '»'],
+};
+const [open, close] = marks[localeOf(Astro.url)] ?? marks.en;
+const quoted = open + wording.example + close;
 ---
 
 <ol class="tool-steps">
@@ -22,4 +35,4 @@ const { wording } = Astro.props;
     </li>
   ))}
 </ol>
-<blockquote class="tool-example-wording">“{wording.example}”</blockquote>
+<blockquote class="tool-example-wording">{quoted}</blockquote>

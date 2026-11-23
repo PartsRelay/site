@@ -21,7 +21,7 @@ const year = new Date().getFullYear();
   <div class="base-bound">
     <div class="base-columns">
       <div class="base-business">
-        <a class="base-active" href="/tools/vin-check/">
+        <a class="base-active" href={localizedPath(locale, '/tools/vin-check/')}>
           <span aria-hidden="true"></span>
           {t.items.vin[0]}
         </a>
@@ -30,13 +30,21 @@ const year = new Date().getFullYear();
           {contactEmail}
         </a>
         <div class="base-utilities">
-          <a href="/tools/vin-check/" title={f.checkVin} aria-label={f.checkVin}>
+          <a
+            href={localizedPath(locale, '/tools/vin-check/')}
+            title={f.checkVin}
+            aria-label={f.checkVin}
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <circle cx="10" cy="10" r="6.5" />
               <path d="m15 15 6.5 6.5" />
             </svg>
           </a>
-          <a href="/library/" title={f.openLibrary} aria-label={f.openLibrary}>
+          <a
+            href={localizedPath(locale, '/library/')}
+            title={f.openLibrary}
+            aria-label={f.openLibrary}
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 4.5h5.5c1.4 0 2.7.4 3.5 1.2.8-.8 2.1-1.2 3.5-1.2H21v14h-5.5c-1.5 0-2.6.4-3.5 1.2-.9-.8-2-1.2-3.5-1.2H3zM12 6v13" />
             </svg>
@@ -45,32 +53,34 @@ const year = new Date().getFullYear();
       </div>
       <div class="base-group">
         <h3>{t.groups.solutions}</h3>
-        <a href="/tools/vin-check/">{t.items.vin[0]}</a>
-        <a href="/tools/parts-diagrams/">{t.items.diagrams[0]}</a>
-        <a href="/tools/part-details/">{t.items.details[0]}</a>
+        <a href={localizedPath(locale, '/tools/vin-check/')}>{t.items.vin[0]}</a>
+        <a href={localizedPath(locale, '/tools/parts-diagrams/')}>{t.items.diagrams[0]}</a>
+        <a href={localizedPath(locale, '/tools/part-details/')}>{t.items.details[0]}</a>
       </div>
       <div>
         <div class="base-group">
           <h3>{f.atCounter}</h3>
-          <a href="/repair-shops/">{t.items.shops[0]}</a>
-          <a href="/distributors/">{t.items.distributors[0]}</a>
-          <a href="/guides/counter/">{t.items.counter[0]}</a>
-          <a href="/journal/">{t.items.journal[0]}</a>
+          <a href={localizedPath(locale, '/repair-shops/')}>{t.items.shops[0]}</a>
+          <a href={localizedPath(locale, '/distributors/')}>{t.items.distributors[0]}</a>
+          <a href={localizedPath(locale, '/guides/counter/')}>{t.items.counter[0]}</a>
+          <a href={localizedPath(locale, '/journal/')}>{t.items.journal[0]}</a>
         </div>
         <div class="base-group base-stack">
           <h3>{f.onJob}</h3>
           <a href={localizedPath(locale, '/#workflow')}>{f.process}</a>
-          <a href="/guides/vehicle-identification/">{t.items.vehicle[0]}</a>
-          <a href="/workshops/">{t.items.workshops[0]}</a>
+          <a href={localizedPath(locale, '/guides/vehicle-identification/')}>
+            {t.items.vehicle[0]}
+          </a>
+          <a href={localizedPath(locale, '/workshops/')}>{t.items.workshops[0]}</a>
         </div>
       </div>
       <div class="base-group">
         <h3>{t.groups.resources}</h3>
-        <a href="/library/">{f.library}</a>
-        <a href="/guides/guidebook/">{t.items.guidebook[0]}</a>
-        <a href="/journal/">{f.journal}</a>
-        <a href="/brand/">{t.items.brand[0]}</a>
-        <a href="/about/">{t.items.about[0]}</a>
+        <a href={localizedPath(locale, '/library/')}>{f.library}</a>
+        <a href={localizedPath(locale, '/guides/guidebook/')}>{t.items.guidebook[0]}</a>
+        <a href={localizedPath(locale, '/journal/')}>{f.journal}</a>
+        <a href={localizedPath(locale, '/brand/')}>{t.items.brand[0]}</a>
+        <a href={localizedPath(locale, '/about/')}>{t.items.about[0]}</a>
         <a href={privacyPolicy} target="_blank" rel="noopener">
           {t.items.privacy[0]}
         </a>
@@ -148,7 +158,7 @@ const year = new Date().getFullYear();
         </nav>
       )}
       <div>
-        <a href="/about/">{f.about}</a>
+        <a href={localizedPath(locale, '/about/')}>{f.about}</a>
         <span aria-hidden="true">·</span>
         <a href={privacyPolicy} target="_blank" rel="noopener">
           {f.privacy}

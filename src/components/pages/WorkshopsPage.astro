@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { workshops } from '../../i18n/pages/workshops';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = workshops[locale];
+const link = (href: string) => localizedPath(locale, href);
+// The filter keys stay the same in every language; only the labels change.
+const filters = [
+  { key: 'All', label: t.all },
+  { key: 'Repair shops', label: t.roles.shops },
+  { key: 'Distributors', label: t.roles.distributors },
+  { key: 'Both teams', label: t.roles.both },
+];
+const sessions = [
+  {
+    role: 'Repair shops',
+    label: t.roles.shops,
+    minutes: 10,
+    href: '/workshops/first-request/',
+    image: '/assets/workshop.webp',
+    ...t.sessions.firstRequest,
+  },
+  {
+    role: 'Distributors',
+    label: t.roles.distributors,
+    minutes: 15,
+    href: '/workshops/fit-check/',
+    image: '/assets/alternator.svg',
+    ...t.sessions.fitCheck,
+  },
+  {
+    role: 'Both teams',
+    label: t.roles.both,
+    minutes: 12,
+    href: '/workshops/handoff/',
+    image: '/assets/counter.webp',
+    ...t.sessions.handoff,
+  },
+];
+---
+
+<Layout title={t.title} description={t.description}>
+  <div class="workshop">
+    <div class="workshop-cover">
+      <img src="/assets/workshop-traces.svg" alt="" />
+      <div class="workshop-emblem">
+        <img src="/assets/symbol.svg" alt="" />
+      </div>
+    </div>
+    <div class="workshop-bound">
+      <header class="workshop-header">
+        <h1 tabindex="-1">{t.heading}</h1>
+        <p>{t.intro}</p>
+      </header>
+      <div class="workshop-directory">
+        <section>
+          <h2>{t.chooseTitle}</h2>
+          <p class="workshop-chooser">{t.chooser}</p>
+          <div class="workshop-filters" role="group" aria-label={t.filtersLabel}>
+            {filters.map((filter, index) => (
+              <button
+                type="button"
+                data-workshop-filter={filter.key}
+                aria-pressed={index === 0 ? 'true' : 'false'}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
+          <ul class="workshop-list">
+            {sessions.map((session) => (
+              <li data-workshop-role={session.role}>
+                <span class="workshop-duration">
+                  <strong>{session.minutes}</strong> {t.minutes}
+                </span>
+                <a href={link(session.href)}>
+                  <div>
+                    <span>{session.label}</span>
+                    <h3>{session.title}</h3>
+                    <p>{session.text}</p>
+                  </div>
+                  <img src={session.image} alt="" loading="lazy" />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p
+            class="workshop-status"
+            aria-live="polite"
+            data-status-one={t.status.one}
+            data-status-other={t.status.other}
+          ></p>
+        </section>
+        <aside class="workshop-aside">
+          <h2>{t.aside.title}</h2>
+          {t.aside.text.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+          <a href={link('/guides/guidebook/')}>{t.aside.link}</a>
+        </aside>
+      </div>
+      <section class="workshop-debrief">
+        <h2>{t.debrief.title}</h2>
+        <div>
+          {t.debrief.text.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/workshops.js';
+</script>

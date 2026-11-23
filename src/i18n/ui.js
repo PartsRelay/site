@@ -1,6 +1,6 @@
 // Languages the site is published in, and the text shared by every page:
 // the header, the footer and the language suggestion bar.
-// Only the pages listed in translatedPaths exist in every language. Every other
+// Only the pages listed in translatedPaths exist in every language. Any other
 // page is English only, and links to it stay English from any language.
 
 export const defaultLocale = 'en';
@@ -13,7 +13,28 @@ export const locales = {
   it: { name: 'Italiano' },
 };
 
-export const translatedPaths = ['/'];
+export const translatedPaths = [
+  '/',
+  '/about/',
+  '/brand/',
+  '/distributors/',
+  '/repair-shops/',
+  '/guides/counter/',
+  '/guides/guidebook/',
+  '/guides/vehicle-identification/',
+  '/library/',
+  '/journal/',
+  '/journal/alternator-labels/',
+  '/journal/brake-pad-sets/',
+  '/journal/mirror-glass/',
+  '/tools/vin-check/',
+  '/tools/part-details/',
+  '/tools/parts-diagrams/',
+  '/workshops/',
+  '/workshops/first-request/',
+  '/workshops/fit-check/',
+  '/workshops/handoff/',
+];
 
 /** Splits a URL path into its language and the English path it matches. */
 export function splitLocale(pathname) {
@@ -32,6 +53,11 @@ export function localizedPath(locale, href) {
   return `/${locale}${path}` + (hash ? `#${hash}` : '');
 }
 
+/** The language of the page being built, from its address. */
+export function localeOf(url) {
+  return splitLocale(url.pathname).locale;
+}
+
 /** Every language version of a page, or an empty list when the page is English only. */
 export function alternates(path) {
   if (!translatedPaths.includes(path)) return [];
@@ -41,6 +67,7 @@ export function alternates(path) {
 export const ui = {
   en: {
     skip: 'Skip to content',
+    workshop: { poster: 'Workshop', back: 'All workshops' },
     banner: {
       region: 'Announcement',
       wide: 'Have the vehicle identification number?',
@@ -102,6 +129,7 @@ export const ui = {
   },
   de: {
     skip: 'Zum Inhalt springen',
+    workshop: { poster: 'Workshop', back: 'Alle Workshops' },
     banner: {
       region: 'Hinweis',
       wide: 'Haben Sie die Fahrzeug-Identifizierungsnummer?',
@@ -163,6 +191,7 @@ export const ui = {
   },
   fr: {
     skip: 'Aller au contenu',
+    workshop: { poster: 'Atelier pratique', back: 'Tous les ateliers pratiques' },
     banner: {
       region: 'Annonce',
       wide: 'Vous avez le numéro d’identification du véhicule ?',
@@ -227,6 +256,7 @@ export const ui = {
   },
   es: {
     skip: 'Saltar al contenido',
+    workshop: { poster: 'Práctica', back: 'Todas las prácticas' },
     banner: {
       region: 'Aviso',
       wide: '¿Tiene el número de identificación del vehículo?',
@@ -291,6 +321,7 @@ export const ui = {
   },
   it: {
     skip: 'Vai al contenuto',
+    workshop: { poster: 'Esercitazione', back: 'Tutte le esercitazioni' },
     banner: {
       region: 'Avviso',
       wide: 'Ha il numero di identificazione del veicolo?',

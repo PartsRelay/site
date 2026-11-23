@@ -77,10 +77,8 @@ form.addEventListener('submit', (event) => {
   }
   const vin = details.vin.replace(/\s/g, '').toUpperCase();
   if (!VIN_PATTERN.test(vin)) {
-    showFieldError(
-      form.elements.vin,
-      'Enter 17 letters and numbers. A VIN uses the digits 0 and 1 and excludes the letters I, O and Q.'
-    );
+    // The message comes from the page, in the page's language.
+    showFieldError(form.elements.vin, form.dataset.vinError);
     return;
   }
   details.vin = vin;

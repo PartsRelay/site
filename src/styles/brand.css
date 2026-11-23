@@ -301,6 +301,11 @@
 .brand-guidance dt {
   font-weight: 650;
 }
+/* Some translated labels are single long words, wider than the label column on a phone. */
+.brand-guidance dt:not(:lang(en)) {
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
 .brand-guidance dd {
   color: #455a64;
 }

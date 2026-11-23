@@ -1,0 +1,151 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { counter } from '../../i18n/pages/counter';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = counter[locale];
+const link = (href: string) => localizedPath(locale, href);
+---
+
+<Layout title={t.title} description={t.description}>
+  <article class="team-page team-story">
+    <div class="team-story-col team-story-head">
+      <div class="team-story-tag">
+        <img src="/assets/symbol.svg" alt="" />
+        {t.tag}
+      </div>
+      <h1 tabindex="-1">{t.heading}</h1>
+      <p class="team-story-dek">{t.dek}</p>
+      <dl class="team-facts">
+        {t.facts.map(([term, detail]) => (
+          <div>
+            <dt>{term}</dt>
+            <dd>{detail}</dd>
+          </div>
+        ))}
+      </dl>
+      <figure class="team-story-photo">
+        <img src="/assets/counter.webp" alt={t.photoAlt} width="768" height="432" />
+        <button
+          type="button"
+          class="team-cover-open"
+          data-team-open
+          aria-expanded="false"
+          aria-controls="team-counter-exchange"
+        >
+          <span aria-hidden="true">▶</span>
+          {t.openChecklist}
+        </button>
+        <div
+          class="team-exchange"
+          id="team-counter-exchange"
+          role="region"
+          aria-label={t.checklistLabel}
+          data-checks={JSON.stringify(t.checks)}
+          data-count={t.count}
+          hidden
+        >
+          <button
+            type="button"
+            class="team-exchange-close"
+            data-team-close
+            aria-label={t.closeChecklist}
+          >
+            ×
+          </button>
+          <div aria-live="polite" class="team-exchange-copy">
+            <small></small>
+            <blockquote></blockquote>
+          </div>
+          <div class="team-exchange-controls">
+            <button type="button" data-team-prev aria-label={t.previousCheck}>
+              ←
+            </button>
+            <span></span>
+            <button type="button" data-team-next aria-label={t.nextCheck}>
+              →
+            </button>
+          </div>
+        </div>
+      </figure>
+      <p class="team-lede">{t.lede}</p>
+      {t.before.map(([heading, text]) => (
+        <div class="team-story-block">
+          <h2>{heading}</h2>
+          <p>{text}</p>
+        </div>
+      ))}
+    </div>
+    <section class="team-story-quote">
+      <div>
+        <blockquote>{t.quote}</blockquote>
+        <p>{t.quoteNote}</p>
+      </div>
+    </section>
+    <div class="team-story-col team-story-after">
+      <div class="team-story-block">
+        <h2>{t.labelTitle}</h2>
+        <p>{t.labelText[0]}</p>
+        <p>{t.labelText[1]}</p>
+      </div>
+      <div class="team-story-block">
+        <h2>{t.estimateTitle}</h2>
+        <p>{t.estimateText}</p>
+      </div>
+      <section class="team-record">
+        <h3>{t.recordTitle}</h3>
+        <dl>
+          {t.record.map(([term, detail]) => (
+            <div>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+      <aside class="team-story-next">
+        <div>
+          <h2>{t.nextTitle}</h2>
+          <p>{t.nextText}</p>
+        </div>
+        <div class="team-actions">
+          <a class="team-btn" href={link('/workshops/handoff/')}>
+            {t.handoff}
+          </a>
+          <a class="team-btn team-secondary" href={link('/repair-shops/')}>
+            {t.intake}
+          </a>
+        </div>
+      </aside>
+    </div>
+    <div class="team-story-float">
+      <span>{t.floatText}</span>
+      <a class="team-btn" href={link('/tools/parts-diagrams/')}>
+        {t.floatAction}
+      </a>
+    </div>
+    <section class="team-cta">
+      <div class="team-frame">
+        <h2 class="team-h2">{t.ctaTitle}</h2>
+        <p>{t.ctaText}</p>
+        <div class="team-actions">
+          <a class="team-btn" href={link('/tools/vin-check/')}>
+            {t.ctaVin}
+          </a>
+          <a class="team-btn team-secondary" href={link('/tools/part-details/')}>
+            {t.ctaDetails}
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<script>
+  import '../../scripts/counter.js';
+</script>

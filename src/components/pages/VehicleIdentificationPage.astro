@@ -1,0 +1,87 @@
+---
+import Article from '../../layouts/Article.astro';
+import { vehicleIdentification } from '../../i18n/pages/vehicle-identification';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = vehicleIdentification[locale];
+const link = (href: string) => localizedPath(locale, href);
+
+const relatedLinks = ['/journal/brake-pad-sets/', '/journal/alternator-labels/', '/library/'];
+const related = relatedLinks.map((href, index) => ({ href: link(href), label: t.related[index] }));
+---
+
+<Article
+  title={t.title}
+  description={t.description}
+  heading={t.heading}
+  topic={t.topic}
+  topicHref={link('/library/')}
+  readTime={t.readTime}
+  relatedHeading={t.relatedHeading}
+  related={related}
+>
+  <Fragment slot="intro">{t.intro}</Fragment>
+  <div slot="cover" class="lib-art lib-art-vin" aria-label={t.coverLabel} role="img">
+    <div class="lib-plate">
+      <span>{t.plateTitle}</span>
+      <strong>{t.plateCode}</strong>
+      <i></i>
+      <small>{t.plateName}</small>
+    </div>
+  </div>
+  <section>
+    <h2>{t.sourceTitle}</h2>
+    <p>{t.sourceText}</p>
+    <dl class="lib-record">
+      {t.sources.map(([term, detail]) => (
+        <div>
+          <dt>{term}</dt>
+          <dd>{detail}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+  <section>
+    <h2>{t.agreeTitle}</h2>
+    <p>{t.agreeText}</p>
+  </section>
+  <section class="lib-case">
+    <h2>{t.caseTitle}</h2>
+    <p>{t.caseText}</p>
+    <dl class="lib-evidence">
+      {t.cases.map(([term, detail]) => (
+        <div>
+          <dt>{term}</dt>
+          <dd>{detail}</dd>
+        </div>
+      ))}
+    </dl>
+  </section>
+  <p>
+    <a class="lib-inline-link" href={link('/tools/vin-check/')}>
+      {t.checkVin}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.55"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M4 12h15m-6-6 6 6-6 6" />
+      </svg>
+    </a>
+  </p>
+  <p class="lib-product-note">
+    {t.productNote}
+    <a class="lib-inline-link" href={link('/about/')}>
+      {t.productLink}
+    </a>
+  </p>
+</Article>

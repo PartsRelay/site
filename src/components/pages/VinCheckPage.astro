@@ -1,0 +1,377 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ClosingBand from '../ClosingBand.astro';
+import { contactEmail } from '../../site';
+import { vinCheck } from '../../i18n/pages/vin-check';
+import { localizedPath, ui } from '../../i18n/ui';
+
+interface Props {
+  locale: keyof typeof ui;
+}
+
+const { locale } = Astro.props;
+const t = vinCheck[locale];
+const link = (href: string) => localizedPath(locale, href);
+const guideLinks = [
+  '/guides/vehicle-identification/',
+  '/tools/parts-diagrams/',
+  '/tools/part-details/',
+];
+---
+
+<Layout title={t.title} description={t.description}>
+  <div class="tool tool-lookup">
+    <section class="tool-hero">
+      <div class="tool-bound">
+        <div class="tool-title">
+          <p class="tool-label">{t.label}</p>
+          <h1 tabindex="-1">{t.heading}</h1>
+          <p class="tool-intro">{t.intro}</p>
+          <div class="page-actions">
+            <button type="button" class="page-btn" data-tool-action="jump">
+              {t.jump}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div aria-hidden="true" class="tool-ticker is-badges">
+      <div class="tool-track">
+        <div>
+          <span class="tool-tick tool-tick-0">{t.ticker[0]}</span>
+          <span class="tool-tick tool-tick-1">{t.ticker[1]}</span>
+          <span class="tool-tick tool-tick-2">{t.ticker[2]}</span>
+          <span class="tool-tick tool-tick-3">{t.ticker[3]}</span>
+          <span class="tool-tick tool-tick-4">{t.ticker[4]}</span>
+          <span class="tool-tick tool-tick-5">{t.ticker[5]}</span>
+          <span class="tool-tick tool-tick-0">{t.ticker[6]}</span>
+          <span class="tool-tick tool-tick-1">{t.ticker[7]}</span>
+          <span class="tool-tick tool-tick-2">{t.ticker[8]}</span>
+          <span class="tool-tick tool-tick-3">{t.ticker[9]}</span>
+          <span class="tool-tick tool-tick-4">{t.ticker[10]}</span>
+          <span class="tool-tick tool-tick-5">{t.ticker[11]}</span>
+        </div>
+        <div>
+          <span class="tool-tick tool-tick-0">{t.ticker[0]}</span>
+          <span class="tool-tick tool-tick-1">{t.ticker[1]}</span>
+          <span class="tool-tick tool-tick-2">{t.ticker[2]}</span>
+          <span class="tool-tick tool-tick-3">{t.ticker[3]}</span>
+          <span class="tool-tick tool-tick-4">{t.ticker[4]}</span>
+          <span class="tool-tick tool-tick-5">{t.ticker[5]}</span>
+          <span class="tool-tick tool-tick-0">{t.ticker[6]}</span>
+          <span class="tool-tick tool-tick-1">{t.ticker[7]}</span>
+          <span class="tool-tick tool-tick-2">{t.ticker[8]}</span>
+          <span class="tool-tick tool-tick-3">{t.ticker[9]}</span>
+          <span class="tool-tick tool-tick-4">{t.ticker[10]}</span>
+          <span class="tool-tick tool-tick-5">{t.ticker[11]}</span>
+        </div>
+      </div>
+    </div>
+    <section id="page-workspace" class="page-scene tool-workspace" aria-label={t.workspace}>
+      <noscript>{t.noscript.replace('{email}', contactEmail)}</noscript>
+      <div class="page-wrap page-panel page-split">
+        <div class="page-text" data-tool-view="form">
+          <p class="page-overline">{t.form.overline}</p>
+          <h2 tabindex="-1" class="page-heading">
+            {t.form.heading}
+          </h2>
+          <p class="page-desc">{t.form.text}</p>
+          <form
+            class="page-part-form"
+            data-tool-form="vin"
+            data-vin-error={t.form.error}
+            autocomplete="off"
+            novalidate
+          >
+            <div class="page-field">
+              <label for="page-field-vin">{t.form.vin}</label>
+              <input
+                id="page-field-vin"
+                name="vin"
+                value=""
+                type="text"
+                spellcheck="false"
+                autocapitalize="characters"
+                maxlength="64"
+                required
+                disabled
+              />
+            </div>
+            <div class="page-field">
+              <label for="page-field-vehicle">{t.form.vehicle}</label>
+              <input
+                id="page-field-vehicle"
+                name="vehicle"
+                value=""
+                type="text"
+                maxlength="180"
+                disabled
+              />
+            </div>
+            <div class="page-ctrls">
+              <button class="page-btn" type="submit" disabled>
+                {t.form.submit}
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="page-text" data-tool-view="result" hidden>
+          <p class="page-overline">{t.result.overline}</p>
+          <h2 tabindex="-1" class="page-heading">
+            {t.result.heading}
+          </h2>
+          <p class="page-desc">{t.result.text}</p>
+          <div class="page-field">
+            <label for="page-checked-vin">{t.result.checked}</label>
+            <input id="page-checked-vin" value="" readonly />
+          </div>
+          <div class="page-ctrls">
+            <button type="button" class="page-btn" data-tool-action="edit-vin">
+              {t.result.edit}
+            </button>
+          </div>
+        </div>
+        <figure class="page-vehicle-panel">
+          <svg
+            viewBox="0 0 140 60"
+            aria-hidden="true"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              fill="#fff"
+              stroke-width="1.8"
+              d="m9 32 4-10 25-3L50 6q2-2 6-2h27q5 0 11 8l13 11 14 3 7 8-2 4h-12a12 12 0 0 0-23 0H41a12 12 0 0 0-24 0h-7z"
+            />
+            <path d="m44 19 10-11h11v11zm25 0V8h13l12 11zM42 24h42m-17 1v7" />
+            <g fill="#fff" stroke-width="1.8">
+              <circle cx="29" cy="38" r="8" />
+              <circle cx="103" cy="38" r="8" />
+            </g>
+          </svg>
+          {/* prettier-ignore */}
+          <figcaption>
+            {t.panel[0]}<strong>{t.panel[1]}</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">{t.app.label}</p>
+            <h2>{t.app.title}</h2>
+            <p class="tool-copy">{t.app.text}</p>
+          </div>
+          <dl class="tool-field-notes">
+            {t.app.notes.map(([term, detail]) => (
+              <div>
+                <dt>{term}</dt>
+                <dd>{detail}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-center">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">{t.fitment.label}</p>
+          <h2>{t.fitment.title}</h2>
+        </div>
+        <div class="tool-tiles">
+          <article>
+            <div class="tool-tile-art is-vin">
+              <div class="tool-vin-card">
+                <span>{t.fitment.card[0]}</span>
+                <strong>{t.fitment.card[1]}</strong>
+                <i></i>
+              </div>
+            </div>
+            <h3>{t.fitment.tiles[0][0]}</h3>
+            <p>{t.fitment.tiles[0][1]}</p>
+          </article>
+          <article>
+            <div class="tool-tile-art is-pads">
+              <img loading="lazy" src="/assets/brake-pads.svg" alt={t.fitment.padsAlt} />
+            </div>
+            <h3>{t.fitment.tiles[1][0]}</h3>
+            <p>{t.fitment.tiles[1][1]}</p>
+          </article>
+          <article>
+            <div class="tool-tile-art is-alternator">
+              <img loading="lazy" src="/assets/alternator.svg" alt={t.fitment.alternatorAlt} />
+            </div>
+            <h3>{t.fitment.tiles[2][0]}</h3>
+            <p>{t.fitment.tiles[2][1]}</p>
+          </article>
+          <article>
+            <div class="tool-tile-art is-route">
+              <div class="tool-routing">
+                <svg
+                  class="tool-icon"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.45"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M8 3h13l5 5v21H8zM21 3v6h5M12 14h10m-10 5h10m-10 5h6" />
+                </svg>
+                <b>→</b>
+                <svg
+                  class="tool-icon"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.45"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3 5h24v17H14l-8 5v-5H3zM8 11h14m-14 5h9" />
+                </svg>
+                <b>→</b>
+                <svg
+                  class="tool-icon"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.45"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m3 10 13-7 13 7v13l-13 7-13-7zm0 0 13 7 13-7M16 17v13M9 7l13 7" />
+                </svg>
+              </div>
+            </div>
+            <h3>{t.fitment.tiles[3][0]}</h3>
+            <p>{t.fitment.tiles[3][1]}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-columns">
+          <div class="tool-head">
+            <p class="tool-label">{t.reading.label}</p>
+            <h2>{t.reading.title}</h2>
+          </div>
+          <ol class="tool-steps">
+            {t.reading.steps.map(([heading, text], index) => (
+              <li>
+                <span class="tool-stepno" aria-hidden="true">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3>{heading}</h3>
+                  {index === 2 ? (
+                    <p>
+                      {text}
+                      <a class="tool-textlink" href="https://vpic.nhtsa.dot.gov/decoder/">
+                        {t.reading.decoder}
+                      </a>
+                    </p>
+                  ) : (
+                    <p>{text}</p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="tool-section tool-muted">
+      <div class="tool-bound">
+        <div class="tool-feature">
+          <div>
+            <div class="tool-head">
+              <p class="tool-label">{t.counter.label}</p>
+              <h2>{t.counter.title}</h2>
+              <p class="tool-copy">{t.counter.text}</p>
+            </div>
+            <a class="tool-textlink" href={link('/guides/counter/')}>
+              {t.counter.link}
+            </a>
+          </div>
+          <img loading="lazy" src="/assets/counter.webp" alt={t.counter.alt} />
+        </div>
+      </div>
+    </section>
+    <section class="tool-section">
+      <div class="tool-bound">
+        <div class="tool-head">
+          <p class="tool-label">{t.guides.label}</p>
+          <h2>{t.guides.title}</h2>
+        </div>
+        <div class="tool-guides">
+          <a class="tool-textlink" href={link(guideLinks[0])}>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="3" y="7" width="26" height="18" rx="2" />
+              <path d="M8 11v10m3-10v10m4-10v10m5-10v10m3-10v10" />
+            </svg>
+            <span>{t.guides.links[0]}</span>
+          </a>
+          <a class="tool-textlink" href={link(guideLinks[1])}>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m2 11 14-7 14 7-14 7zm1 6 13 7 13-7M3 23l13 7 13-7" />
+            </svg>
+            <span>{t.guides.links[1]}</span>
+          </a>
+          <a class="tool-textlink" href={link(guideLinks[2])}>
+            <svg
+              class="tool-icon"
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.45"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 3h13l5 5v21H8zM21 3v6h5M12 14h10m-10 5h10m-10 5h6" />
+            </svg>
+            <span>{t.guides.links[2]}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <ClosingBand
+      title={t.closing.title}
+      text={t.closing.text}
+      primary={{ href: link('/guides/vehicle-identification/'), label: t.closing.primary }}
+      secondary={{ href: link('/tools/part-details/'), label: t.closing.secondary }}
+    />
+  </div>
+</Layout>
+
+<script>
+  import '../../scripts/tools.js';
+</script>
