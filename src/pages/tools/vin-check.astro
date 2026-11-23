@@ -21,9 +21,6 @@ import ClosingBand from '../../components/ClosingBand.astro';
             <button type="button" class="page-btn" data-tool-action="jump">
               Check a VIN
             </button>
-            <a class="page-btn page-secondary" href="/tools/enquiry-builder/">
-              Prepare an enquiry
-            </a>
           </div>
         </div>
       </div>
@@ -122,10 +119,7 @@ import ClosingBand from '../../components/ClosingBand.astro';
             <input id="page-checked-vin" value="" readonly />
           </div>
           <div class="page-ctrls">
-            <a class="page-btn" data-tool-action="use-vehicle" href="/tools/enquiry-builder/">
-              Use vehicle in enquiry
-            </a>
-            <button type="button" class="page-btn page-secondary" data-tool-action="edit-vin">
+            <button type="button" class="page-btn" data-tool-action="edit-vin">
               Edit vehicle details
             </button>
           </div>
@@ -428,8 +422,8 @@ import ClosingBand from '../../components/ClosingBand.astro';
     <ClosingBand
       title="What does the workshop need?"
       text="Add the part description and quantity to your vehicle details before contacting the distributor."
-      primary={{ href: '/tools/enquiry-builder/', label: 'Write your enquiry' }}
-      secondary={{ href: '/guides/vehicle-identification/', label: 'Read the vehicle guide' }}
+      primary={{ href: '/guides/vehicle-identification/', label: 'Read the vehicle guide' }}
+      secondary={{ href: '/tools/part-details/', label: 'Describe the part' }}
     />
   </div>
 </Layout>

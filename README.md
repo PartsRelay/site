@@ -10,7 +10,7 @@ Built with [Astro](https://astro.build). The output is static HTML, CSS and a sm
 - `src/layouts/` the page shell (`Layout.astro`) and the two shells built on it, for journal articles and workshop pages
 - `src/components/` the header, the footer and blocks used on more than one page
 - `src/styles/` stylesheets, loaded in the order listed in `Layout.astro`. Class names start with the area they belong to: `site-`, `home-`, `tool-`, `team-`, `lib-`, `workshop-`, `brand-`
-- `src/scripts/` browser scripts for the menu, the home page drawings, the two tools and the filters
+- `src/scripts/` browser scripts for the menu, the home page drawings, the VIN check and the filters
 - `src/site.js` contact address and policy links used in more than one place
 - `public/assets/` images, video, fonts and the brand kit download, copied as they are
 - `public/worksheets/` the Markdown worksheets linked from the workshop pages
